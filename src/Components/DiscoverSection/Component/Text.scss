@@ -1,0 +1,57 @@
+#text1 {
+	h6 {
+		color: rgb(32, 149, 174);
+		font-family: Barlow, sans-serif;
+		font-size: 13px;
+		letter-spacing: 5px;
+	}
+	h2 {
+		color: rgb(15, 36, 84);
+		font-family: Poppins, sans-serif;
+		font-size: 45px;
+		font-weight: 700;
+		span {
+			color: rgb(32, 149, 174);
+		}
+	}
+	p {
+		color: rgb(103, 105, 119);
+
+		font-family: Barlow, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+	}
+	.checkDiv {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		background-color: rgb(32, 149, 174);
+		color: white;
+		font-size: 13px;
+	}
+	.phoneIcon {
+		color: rgb(32, 149, 174);
+		font-size: 35px;
+	}
+	a {
+		font-family: Barlow, sans-serif;
+		font-size: 24px;
+		color: rgb(32, 149, 174);
+        text-decoration: none;
+	}
+    @media screen and (max-width:767px) {
+        p,h6{
+            font-size: 11px;
+        }
+        h2{
+            font-size: 30px;
+            width: fit-content;
+        }
+    }
+    @media screen and (min-width:768px) and (max-width:992px) {
+        h2{
+            font-size: 40px;
+            width: fit-content;
+        }
+    }
+}

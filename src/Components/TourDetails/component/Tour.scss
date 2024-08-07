@@ -1,0 +1,57 @@
+#tourDiv {
+  padding: 10px;
+  height: 380px;
+  .box {
+    width: 80px;
+    height: 30px;
+    background-color: rgb(32, 149, 174);
+    top: 40px;
+    right: 0;
+    z-index: 3;
+    transform: rotate(270deg);
+    h6 {
+      color: white !important;
+      font-family: Barlow, sans-serif;
+      text-align: center;
+      font-size: 13px;
+    }
+  }
+  .tab .overlay {
+    background-color: rgba(82, 82, 82, 0.419);
+    opacity: 0;
+    transition: 1s;
+  }
+  .tab:hover .overlay {
+    opacity: 1;
+  }
+  img {
+    transition: 1s;
+  }
+  .tab:hover img {
+    scale: (1.1);
+  }
+  .text {
+    bottom: 10%;
+    left: 5%;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: Poppins, sans-serif;
+    transition: 1s;
+  }
+  .detail {
+    color: #fff;
+    font-size: 24px;
+    bottom: 5%;
+    left: 5%;
+    span {
+      font-family: Poppins, sans-serif;
+      color: #fff;
+      font-size: 13px;
+    }
+    transition: 1s;
+  }
+  .tab:hover .detail {
+    display: grid !important;
+  }
+}

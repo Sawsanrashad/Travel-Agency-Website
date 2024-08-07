@@ -1,0 +1,52 @@
+#travel {
+  background-color: rgb(15, 36, 84);
+  .animate {
+    background: rgb(21, 94, 117);
+    background: radial-gradient(
+      circle,
+      rgba(21, 94, 117, 1) 17%,
+      rgba(12 ,17, 43, 1) 62%
+    );
+    filter: blur(10px);
+    opacity: 0.5;
+  }
+  padding: 6rem 0;
+  p {
+    color: rgb(32, 149, 174);
+    font-family: Barlow, sans-serif;
+    font-size: 13px;
+    letter-spacing: 5px;
+  }
+  h2 {
+    color: white;
+    font-family: Poppins, sans-serif;
+    font-size: 45px;
+    font-weight: 700;
+    span {
+      color: rgb(32, 149, 174);
+    }
+  }
+  .swiper {
+    padding: 5rem 0;
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: white;
+      font-size: 10px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid white;
+      border-radius: 50%;
+    }
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 12px;
+    }
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover {
+      color: rgb(32, 149, 174);
+      width: 35px;
+      height: 35px;
+      border: 1px solid rgb(32, 149, 174);
+    }
+  }
+}

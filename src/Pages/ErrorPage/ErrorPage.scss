@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Domine:wght@400..700&family=Spicy+Rice&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Spicy+Rice&display=swap");
+#error {
+	height: 100vh;
+	h1 {
+		font-family: "Abril Fatface", serif;
+		font-weight: 700;
+		font-size: 130px;
+		color: #105590;
+	}
+    p{
+        font-family: "Domine", serif;
+        font-size: 30px;
+        color: #0a2d4b;
+    }
+    span{
+        font-family: "Domine", serif;
+        color: rgb(149, 146, 146);
+    }
+}

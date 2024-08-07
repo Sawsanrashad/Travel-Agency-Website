@@ -1,0 +1,51 @@
+#categoryTours {
+  padding: 15px;
+  .form {
+    padding: 2rem 0;
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    list-style-type: none !important;
+    padding: 0;
+  }
+
+  .pagination li {
+    margin: 0 5px !important;
+  }
+
+  .pagination li a {
+    display: block !important;
+    padding: 10px 15px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    color: rgb(32, 149, 174) !important;
+  }
+
+  .pagination li a:hover {
+    background-color: #eee !important;
+  }
+
+  .pagination li.active a {
+    background-color: rgb(32, 149, 174) !important;
+    color: white !important;
+    border: 1px solid rgb(32, 149, 174) !important;
+  }
+
+  .pagination li.disabled a {
+    color: #ddd !important;
+  }
+
+  .pagination .break-me {
+    cursor: default !important;
+  }
+  @media screen and (max-width: 767px) {
+    .pagination li {
+      margin: 0 !important;
+    }
+    .pagination li a {
+      padding: 5px 5px !important;
+    }
+  }
+}

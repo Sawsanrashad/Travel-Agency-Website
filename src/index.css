@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Zain:wght@200;300;400;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+[dir="rtl"] body {
+  font-family: "Zain", sans-serif !important;
+
+
+  p,
+  h6 {
+    letter-spacing: 0 !important;
+    font-size: 18px !important;
+  }
+}
+
+.custom_container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1280px) {
+  .custom_container {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 960px) {
+  .custom_container {
+    max-width: 95%;
+  }
+}
+
+.swiper-slide {
+  height: auto;
+}
+
+.spinner span {
+  border-width: 4px !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,84 @@
+#footer {
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  background-color: rgb(15, 36, 84);
+  h5 {
+    color: rgb(255, 255, 255);
+    font-family: Poppins, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  p,
+  ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    font-family: Barlow, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .call {
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .separator {
+    width: 1px;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .logo {
+    p {
+      font-family: "Salsa";
+      font-size: 20px;
+      color: white;
+    }
+    .planeIcon {
+      color: white;
+      font-size: 20px;
+    }
+  }
+  .footerIconDiv {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(32, 149, 174);
+    border-radius: 50%;
+  }
+  .footerIcons {
+    color: white;
+  }
+  h4 {
+    color: rgb(255, 255, 255);
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  ul li a {
+    text-decoration: none;
+  }
+  ul li a:hover {
+    color: rgb(32, 149, 174);
+  }
+  ::marker {
+    color: rgb(32, 149, 174);
+  }
+  button {
+    padding: 12px 25px;
+    background-color: rgb(32, 149, 174);
+    border: none;
+    color: white;
+    right: 5px;
+    top: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .separator {
+    width: 100% !important;
+    height: 1px !important;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .separator {
+    width: 100% !important;
+    height: 1px !important;
+  }
+}

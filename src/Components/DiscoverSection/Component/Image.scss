@@ -1,0 +1,55 @@
+#imageSection {
+  .rec {
+    background-color: rgb(32, 149, 174);
+  }
+  .dot {
+    width: 200px;
+    height: 200px;
+    background-image: url(../../../assets/images/dots.png);
+    background-repeat: repeat;
+  }
+  img {
+    object-fit: cover;
+  }
+  .girl {
+    z-index: 9;
+    transition: 2s;
+  }
+  .girl:hover {
+    transform: scale(0.9);
+  }
+  .svg {
+    bottom: 20%;
+    right: -10%;
+    width: 80px;
+    z-index: 10;
+    animation: rotateOut 2s infinite linear;
+  }
+  @media screen and (max-width: 767px) {
+    .dot {
+      width: 100px;
+      height: 100px;
+    }
+    .rec {
+      height: 250px;
+    }
+  }
+  @media screen and (min-width: 768px) and (max-width: 992px) {
+    .dot {
+      top: -7% !important;
+    }
+    .rec {
+      height: 600px;
+    }
+  }
+  @media screen and (min-width: 993px) and (max-width: 1200px) {
+    .rec {
+      height: 370px;
+    }
+  }
+  @media screen and (min-width: 1201px) and (max-width: 1500px) {
+    .rec {
+      height: 430px !important;
+    }
+  }
+}

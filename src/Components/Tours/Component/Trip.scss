@@ -1,0 +1,39 @@
+#trip {
+	// padding: 1rem;
+	.tab {
+		border-radius: 10px;
+        height: 300px !important;
+	}
+	.tab img {
+		object-fit: cover;
+		border-radius: 10px;
+		transition: 1s ease-in-out;
+		
+	}
+	.tab:hover img {
+		transform: scale(1.2);
+	}
+	.tab .overlay {
+		background-color: rgba(82, 82, 82, 0.419);
+		opacity: 0;
+		transition: 1s;
+	}
+	.tab:hover .overlay {
+		opacity: 1;
+	}
+	.tab .tripTitle {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: 0.5s;
+		color: white;
+		font-size: 45px !important;
+		font-family: Poppins, sans-serif;
+		font-weight: 700;
+	}
+	@media screen and (max-width: 767px) {
+		.tab .tripTitle{
+            font-size: 30px !important;
+        }
+    }
+}

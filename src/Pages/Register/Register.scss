@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+#regsiter {
+  padding: 1rem 0;
+  h1 {
+    color: rgb(32, 149, 174);
+    font-family: "Rubik Moonrocks", sans-serif;
+    font-weight: 400;
+  }
+  .registerForm {
+    border-radius: 30px;
+    p {
+      font-size: 16px;
+      font-family: "Barlow", sans-serif;
+    }
+  }
+  #button {
+    text-transform: uppercase;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+    background: rgb(32, 149, 174);
+    cursor: pointer;
+    border: none;
+  }
+  #button:hover {
+    border: 1px solid black;
+  }
+}

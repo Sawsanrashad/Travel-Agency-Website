@@ -1,0 +1,53 @@
+#popular {
+	padding: 5rem 0;
+	width: 100%;
+	background-color: rgb(244, 245, 248);
+	p {
+		color: rgb(32, 149, 174);
+		font-family: Barlow, sans-serif;
+		font-size: 13px;
+		letter-spacing: 5px;
+	}
+	h2 {
+		color: rgb(15, 36, 84);
+		font-family: Poppins, sans-serif;
+		font-size: 45px;
+		font-weight: 700;
+		span {
+			color: rgb(32, 149, 174);
+		}
+	}
+	.swiper {
+        padding: 2rem 0;
+		.swiper-slide {
+			height: auto;
+			img {
+				object-fit: cover;
+			}
+		}
+		.pagination-custom,
+		.swiper-horizontal > .swiper-pagination-bullets,
+		.swiper-pagination-bullets.swiper-pagination-horizontal {
+			bottom: 0px;
+		}
+		.swiper-pagination-bullet {
+			width: 13px;
+			height: 13px;
+			background-color: rgba(32, 148, 174, 0.285);
+			opacity: 0.8;
+		}
+		.swiper-pagination-bullet:hover {
+			background: rgb(32, 149, 174);
+			border: none;
+		}
+		.swiper-pagination-bullet-active {
+			background: rgb(32, 149, 174);
+			border: none;
+		}
+	}
+	@media screen and (max-width: 767px) {
+		h2 {
+			font-size: 30px;
+		}
+	}
+}

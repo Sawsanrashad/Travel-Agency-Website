@@ -1,0 +1,16 @@
+#loginModal {
+  top: 50px;
+  right: 12%;
+  z-index: 9999;
+  a,
+  p {
+    text-decoration: none !important;
+    color: rgb(32, 149, 174) !important;
+    font-family: Barlow, sans-serif;
+    font-weight: 600;
+  }
+}
+[dir="rtl"] #loginModal {
+  right: auto;
+  left: 10% !important;
+}

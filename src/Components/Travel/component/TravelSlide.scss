@@ -1,0 +1,45 @@
+#TravelSlide {
+  img {
+    object-fit: cover;
+    transition: 0.5s;
+    height: 600px;
+  }
+  .text {
+    bottom: -10%;
+    left: 10%;
+    transition: 0.5s;
+    h4 {
+      font-family: Poppins, sans-serif;
+      color: rgb(15, 36, 84);
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+  .box {
+    background-color: rgb(32, 149, 174);
+    color: white;
+    top: 10px;
+    font-family: Poppins, sans-serif;
+    left: 10px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    h6 {
+      font-size: 20px;
+      font-family: Poppins, sans-serif;
+    }
+  }
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.247);
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .tab:hover .overlay {
+    opacity: 1;
+  }
+  .tab:hover .text {
+    bottom: 10%;
+  }
+  .tab:hover img {
+    transform: scale(1.2);
+  }
+}

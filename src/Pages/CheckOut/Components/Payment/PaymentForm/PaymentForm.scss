@@ -1,0 +1,19 @@
+#paymentForm {
+ 
+  button {
+    background-color: rgb(32, 149, 174);
+    font-family: Barlow, sans-serif;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  button:hover {
+    background-color: rgb(15, 36, 84);
+  }
+  label {
+    color: rgb(15, 36, 84);
+    font-family: Barlow, sans-serif;
+    font-weight: bold;
+  }
+}

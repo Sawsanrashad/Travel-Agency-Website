@@ -1,0 +1,13 @@
+#discover {
+  padding: 7rem 3rem;
+  .animate {
+    background: rgb(21, 94, 117);
+    background: radial-gradient(
+      circle,
+      rgba(21, 94, 117, 1) 17%,
+      rgba(12 ,17, 43, 1)62%
+    );
+    filter: blur(10px);
+    opacity: 0.5;
+  }
+}

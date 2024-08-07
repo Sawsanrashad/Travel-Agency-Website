@@ -1,0 +1,21 @@
+#navMenu {
+  top: 0;
+  z-index: 9999;
+  right: 0;
+  button {
+    color: white;
+    background-color: rgb(32, 149, 174);
+    // position: absolute;
+    right: 0;
+  }
+
+  a {
+    color: rgb(75, 78, 79) !important;
+    text-decoration: none !important;
+  }
+  p,
+  .planeIcon,
+  .active {
+    color: rgb(32, 149, 174) !important;
+  }
+}
