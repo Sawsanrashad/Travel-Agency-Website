@@ -38,7 +38,7 @@ export const BookedToursDashboard = () => {
             </div>
         );
     } else if (bookedTours.length === 0) {
-        content = <h3 className='text-center h-full dark:!text-white'> {<FormattedMessage id='noBookedTours'/>}</h3>;
+        content = <h3 className='text-center h-full dark:!text-white py-60 font-medium'> {<FormattedMessage id='noBookedTours' />}</h3>;
     } else {
         content = (
             <div>

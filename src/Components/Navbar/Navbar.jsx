@@ -2,13 +2,14 @@ import './Navbar.scss';
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useRecoilState } from 'recoil';
-import { $login, $menuState, $theme } from '../../Store';
+import { $loggedIn, $loggedInModal, $login, $menuState, $theme } from '../../Store';
 import { FaPlaneDeparture } from "react-icons/fa6";
 import { PiUserCircleFill } from "react-icons/pi";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FormattedMessage } from 'react-intl';
 import { GrLanguage } from "react-icons/gr";
 import { MdLightMode } from "react-icons/md";
+import { SlUserFollowing } from "react-icons/sl";
 
 export default function Navbar() {
     const [sideMenuIndex, setSideMenuIndex] = useRecoilState($menuState);
@@ -16,6 +17,8 @@ export default function Navbar() {
     const [colorChange, setColorChange] = useState(false);
     const lang = localStorage.getItem("lang") || "ltr";
     const [theme, settheme] = useRecoilState($theme);
+    const [loggedState, setLoggedState] = useRecoilState($loggedIn);
+    const [loggedInModalState, setLoggedInModalState] = useRecoilState($loggedInModal)
 
     const changeNavbarColor = () => {
         if (window.scrollY >= 80) {
@@ -59,35 +62,33 @@ export default function Navbar() {
                     </span>
                 </div>
                 <div className='hidden lg:flex gap-3 justify-center items-center'>
-                    <NavLink to={"/"}><FormattedMessage id='home' /></NavLink>
-                    <NavLink to={"/about"}><FormattedMessage id='about' /></NavLink>
-                    <NavLink to={"/tours"}><FormattedMessage id='tours' /></NavLink>
-                    <NavLink to={"/blog"}><FormattedMessage id='blog' /></NavLink>
-                    <NavLink to={"/contact"}><FormattedMessage id='contact' /></NavLink>
-                    <span className='Icon' onClick={() => setLoginState(!loginState)}>
+                    <NavLink to={"/"} className='dark:!text-white'>
+                        <FormattedMessage id='home' />
+                    </NavLink>
+                    <NavLink to={"/about"} className='dark:!text-white'>
+                        <FormattedMessage id='about' />
+                    </NavLink>
+                    <NavLink to={"/tours"} className='dark:!text-white'>
+                        <FormattedMessage id='tours' />
+                    </NavLink>
+                    <NavLink to={"/blog"} className='dark:!text-white'>
+                        <FormattedMessage id='blog' />
+                    </NavLink>
+                    <NavLink to={"/contact"} className='dark:!text-white'>
+                        <FormattedMessage id='contact'
+                        /></NavLink>
+                    <span className={`Icon ${loggedState ? 'hidden' : 'block'}`} onClick={() => setLoginState(!loginState)} >
                         <PiUserCircleFill size={30} />
+                    </span>
+                    <span className={`Icon ${loggedState ? 'block' : 'hidden'}`} onClick={() => setLoggedInModalState(!loggedInModalState)} >
+                        {/* <img src={user} alt="" width={"40px"} height={"40px"} /> */}
+                        <SlUserFollowing size={25} />
                     </span>
                     <span onClick={handleLang} className='Icon'>
                         <GrLanguage size={20} />
                     </span>
                     <span onClick={handleMode} className='Icon'>
-                        <label for="theme" class="theme">
-                            <span class="theme__toggle-wrap">
-                                <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark" />
-                                <span class="theme__fill"></span>
-                                <span class="theme__icon">
-                                    <span class="theme__icon-part"></span>
-                                    <span class="theme__icon-part"></span>
-                                    <span class="theme__icon-part"></span>
-                                    <span class="theme__icon-part"></span>
-                                    <span class="theme__icon-part"></span>
-                                    <span class="theme__icon-part"></span>
-                                    <span class="theme__icon-part"></span>
-                                    <span class="theme__icon-part"></span>
-                                    <span class="theme__icon-part"></span>
-                                </span>
-                            </span>
-                        </label>
+                        <MdLightMode size={25} />
                     </span>
                 </div>
             </div>

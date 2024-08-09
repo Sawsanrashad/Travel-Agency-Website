@@ -17,8 +17,8 @@ export const ToursTableDashboard = ({ tours, deleteTour }) => {
     };
 
     return (
-        <div id='ToursTableDashboard'>
-            <table className='table-fixed border-collapse border-slate-400'>
+        <div id='ToursTableDashboard' className='flex justify-center items-center'>
+            <table className='table-fixed border-collapse border-slate-400 w-[95%]'>
                 <thead>
                     <tr>
                         <th className='border border-slate-300 p-3 dark:!text-white'>-</th>

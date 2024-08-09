@@ -32,11 +32,11 @@ export default function Testominals() {
         content =
             <div className='flex items-center justify-center'>
                 <div class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
+                    <span className="visually-hidden dark:text-white">Loading...</span>
                 </div>
             </div>
     } else if (!reviews) {
-        content = <h3 className='text-center'> {<FormattedMessage id='noReviewsYet' />}</h3 >
+        content = <h3 className='text-center dark:text-white'> {<FormattedMessage id='noReviewsYet' />}</h3 >
 
     } else {
         content =
@@ -75,12 +75,12 @@ export default function Testominals() {
             <div className='overlay w-full h-full absolute top-0'></div>
             <div className='custom_container md:grid md:grid-cols-12 justify-between items-center h-full'>
                 <div className=' flex-col md:grid md:col-span-7 justify-center items-start gap-3 z-10'>
-                    <h4 className='md:max-w-[65%] dark:!text-[#121c2a]'>{<FormattedMessage id='websiteDescription' />}</h4>
+                    <h4 className='md:max-w-[65%] '>{<FormattedMessage id='websiteDescription' />}</h4>
                     <div className='flex gap-2 items-center'>
-                        <span><FiPhoneCall className='text-white dark:!text-[#121c2a]' size={40} /></span>
+                        <span><FiPhoneCall className='text-white ' size={40} /></span>
                         <div>
-                            <h6 className='dark:!text-[#121c2a]'>{<FormattedMessage id='callNow' />}</h6>
-                            <a href='tel:+12031230606"' className='dark:!text-[#121c2a]'>855 333 4444</a>
+                            <h6 className=''>{<FormattedMessage id='callNow' />}</h6>
+                            <a href='tel:+12031230606"' className=''>855 333 4444</a>
                         </div>
                     </div>
                 </div>

@@ -51,11 +51,11 @@ export const BlogsDashboard = () => {
             </div>
         );
     } else if (blogs.length === 0) {
-        content = <h3 className='text-center h-full dark:text-white'>{<FormattedMessage id='noBlogsToShow' />}</h3>;
+        content = <h3 className='text-center h-full dark:text-white py-60 font-medium'>{<FormattedMessage id='noBlogsToShow' />}</h3>;
     } else {
         content = (
-            <div>
-                <button className='bg-cyan-800  p-2 rounded-md mb-2 text-white '>Add New Blog</button>
+            <div className='flex flex-col'>
+                <button className='bg-cyan-800  p-2 rounded-md mb-3 text-white w-[20%] mr-7 self-end'>Add New Blog</button>
                 <BlogsTableDashboard blogs={displayBlogs} deleteBlog={handleDelete} />
                 <ReactPaginate
                     previousLabel={'<'}

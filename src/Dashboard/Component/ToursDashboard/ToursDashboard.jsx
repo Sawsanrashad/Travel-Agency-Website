@@ -63,11 +63,11 @@ export const ToursDashboard = () => {
             </div>
         );
     } else if (tours.length === 0) {
-        content = <h3 className='text-center h-full'> No Tours To Show</h3>;
+        content = <h3 className='text-center h-full py-60 font-medium dark:text-white'> No Tours To Show</h3>;
     } else {
         content = (
-            <div>
-                <button className='bg-cyan-800 p-2 rounded-md mb-2 text-white addFormButton' onClick={handleAddNewTour}>Add New Tour</button>
+            <div className='flex flex-col'>
+                <button className='bg-cyan-800 p-2 rounded-md mb-3 text-white addFormButton self-end w-[20%] mr-7' onClick={handleAddNewTour}>Add New Tour</button>
                 <ToursTableDashboard tours={currentTours} deleteTour={handleDelete} />
                 <ReactPaginate
                     previousLabel={"previous"}

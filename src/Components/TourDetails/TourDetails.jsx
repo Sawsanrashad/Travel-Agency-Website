@@ -41,12 +41,12 @@ export default function TourDetails() {
                 </div>
             </div>;
     } else if (tours.length === 0) {
-        content = <h3 className='text-center h-full'> {<FormattedMessage id='noToursToShow' />}</h3>;
+        content = <h3 className='text-center h-full dark:text-white'> {<FormattedMessage id='noToursToShow' />}</h3>;
     } else {
         content =
             <div className='custom_container flex flex-col h-full'>
                 <p>{<FormattedMessage id='chooseYourTour' />}</p>
-                <h2>{<FormattedMessage id='ourTours' />}</h2>
+                <h2 className='dark:!text-white'>{<FormattedMessage id='ourTours' />}</h2>
                 <div className='md:grid md:grid-cols-12 items-stretch flex-wrap'>
                     {displayTours.map((tour, index) => (
                         <Tour key={`tour__item__${index}`} col={index === 0 || index === displayTours.length - 1 ? "md:col-span-8" : "md:col-span-4"} tour={tour} />

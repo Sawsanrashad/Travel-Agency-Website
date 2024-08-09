@@ -28,11 +28,11 @@ export default function Destination() {
         content =
             <div className='flex items-center justify-center'>
                 <div class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
+                    <span className="visually-hidden dark:text-white">Loading...</span>
                 </div>
             </div>
     } else if (!tours) {
-        content = <h3 className='text-center'> {<FormattedMessage id='noToursToShow' />}</h3 >
+        content = <h3 className='text-center h-full dark:text-white'> {<FormattedMessage id='noToursToShow' />}</h3 >
 
     } else {
         content =

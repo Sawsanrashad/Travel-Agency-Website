@@ -59,7 +59,7 @@ export default function CategoryTours() {
                 </div>
             </div>;
     } else if (categoryTours.length === 0) {
-        content = <h3 className='text-center dark:text-white'>{<FormattedMessage id='noToursToShow' />}</h3>;
+        content = <h3 className='text-center dark:text-white h-full'>{<FormattedMessage id='noToursToShow' />}</h3>;
     } else {
         content = <div className='justify-center items-start  md:grid flex-col'>
             <div className='form '>

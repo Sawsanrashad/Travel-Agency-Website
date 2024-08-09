@@ -52,7 +52,7 @@ export const ReviewsDashboard = () => {
             </div>
         );
     } else if (reviews.length === 0) {
-        content = <h3 className='text-center h-full dark:!text-white'>{<FormattedMessage id='noReviewsToShow' />}</h3>;
+        content = <h3 className='text-center h-full dark:!text-white py-60 font-medium'>{<FormattedMessage id='noReviewsToShow' />}</h3>;
     } else {
         content = (
             <div>
@@ -114,7 +114,7 @@ export const ReviewsDashboard = () => {
 //                 </div>
 //             </div>;
 //     } else if (reviews.length === 0) {
-//         content = <h3 className='text-center h-full'> No Reviews To Show</h3>;
+//         content = <h3 className='text-center h-full dark:text-white'> No Reviews To Show</h3>;
 //     } else {
 //         content =
 //             <div className=''>

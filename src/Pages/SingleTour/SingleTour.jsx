@@ -35,7 +35,7 @@ export default function SingleTour() {
     } else if (!tour) {
         content =
             <div className=' flex justify-center items-center'>
-                <h3 className='text-center py-48 font-medium'> {<FormattedMessage id='noToursToShow' />}</h3 >
+                <h3 className='text-center py-48 font-medium dark:text-white'> {<FormattedMessage id='noToursToShow' />}</h3 >
             </div>
     } else {
         content =

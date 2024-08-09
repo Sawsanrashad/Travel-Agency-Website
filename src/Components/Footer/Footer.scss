@@ -68,6 +68,16 @@
     right: 5px;
     top: 0px;
   }
+  button:hover {
+    background-color: rgb(15, 36, 84);
+  }
+  .footerIconDiv:hover {
+    background-color: rgb(14, 28, 61);
+  }
+}
+[dir="rtl"] button {
+  right: auto !important;
+  left: 10px !important;
 }
 
 @media screen and (max-width: 767px) {
@@ -76,9 +86,4 @@
     height: 1px !important;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 992px) {
-  .separator {
-    width: 100% !important;
-    height: 1px !important;
-  }
-}
+

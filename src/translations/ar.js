@@ -160,6 +160,7 @@ export const arabic = {
 	createNewAccount: "إنشاء حساب جديد؟",
 	forgetPassword: "نسيت كلمة المرور؟",
 	reTypePassword: "إعادة كتابة كلمة المرور",
+	searchNow: "إبحث الأن",
 };
 
 

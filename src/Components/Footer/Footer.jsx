@@ -1,29 +1,31 @@
 import './Footer.scss';
 import { FiPhoneCall } from "react-icons/fi";
 import Icon from './component/Icon';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaPlaneDeparture } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { FaPinterestP } from "react-icons/fa";
 import { Link, NavLink } from 'react-router-dom';
 import { FaInstagram } from "react-icons/fa";
-import { FormattedMessage } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
+import { FaEnvelopeOpenText } from "react-icons/fa";
+import { FaMapLocationDot } from "react-icons/fa6";
 export default function Footer() {
+    let intl = useIntl();
     return (
         <div id='footer' className=' dark:!bg-[#0c112b] '>
             <div className='custom_container flex flex-col justify-center items-center gap-5'>
                 <div className='call md:grid md:grid-cols-3 justify-between items-center md:gap-2 w-full'>
-                    <div className='flex flex-col md:flex-row md:items-center gap-5'>
+                    <div className='flex flex-col md:flex-row md:items-center justify-center gap-5'>
                         <Icon title={<FormattedMessage id='footerCallUs' />} icon={<FiPhoneCall className='text-white ' size={40} />} text={"+1 123-456-0606"} />
                         <div className='separator'></div>
                     </div>
-                    <div className='flex flex-col md:flex-row md:items-center gap-5'>
-                        <Icon title={<FormattedMessage id='footerWriteToUs' />} icon={<FiPhoneCall className='text-white ' size={40} />} text={"info@bonvoyage.com"} />
+                    <div className='flex flex-col md:flex-row md:items-center justify-center gap-5'>
+                        <Icon title={<FormattedMessage id='footerWriteToUs' />} icon={<FaEnvelopeOpenText className='text-white ' size={40} />} text={"info@bonvoyage.com"} />
                         <div className='separator'></div>
                     </div>
-                    <div className='flex flex-col md:flex-row md:items-center gap-5'>
-                        <Icon title={<FormattedMessage id='footerAddress' />} icon={<FiPhoneCall className='text-white ' size={40} />} text={"24 King St, SC 29401 USAx"} />
+                    <div className='flex flex-col md:flex-row md:items-center justify-center gap-5'>
+                        <Icon title={<FormattedMessage id='footerAddress' />} icon={<FaMapLocationDot className='text-white ' size={40} />} text={<FormattedMessage id='locationDetails' />} />
                     </div>
                 </div>
                 <div className='md:grid md:grid-cols-3 justify-between items-center'>
@@ -86,7 +88,7 @@ export default function Footer() {
                         <p className='my-3'>{<FormattedMessage id='subscribeDescription' />}</p>
                         <div className='bg-white p-2'>
                             <div className='relative'>
-                                <input type="email" className='p-3 w-full' placeholder='Email' />
+                                <input type="email" className='p-3 w-full' placeHolder={intl.formatMessage({ id: "email" })} />
                                 <button className='absolute'>{<FormattedMessage id='sendButton' />}</button>
                             </div>
                         </div>

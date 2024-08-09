@@ -67,6 +67,14 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.247);
   }
+  @media screen and (max-width: 767px) {
+    .text {
+      border-radius: 0 !important;
+    }
+    button {
+      border-radius: 0 !important;
+    }
+  }
 }
 
 // #HeaderSwiperSlide {

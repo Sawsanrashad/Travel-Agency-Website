@@ -12,7 +12,6 @@ export default function LoginPage() {
     let intl = useIntl()
     const params = new URLSearchParams(window.location.search);
     const redirect = params.get('redirect');
-    console.log(redirect)
     let loginForm = useRef();
     const navigate = useNavigate()
     let handleSubmit = (values) => {

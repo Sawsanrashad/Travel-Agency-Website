@@ -157,5 +157,6 @@ We are committed to delivering excellence in customer service and satisfaction.`
 	resetPassword: "Reset Password",
 	createNewAccount: "Create New Account?",
 	forgetPassword: "Forget Password?",
-	reTypePassword:"ReType Password",
+	reTypePassword: "ReType Password",
+	searchNow: "Search Now",
 };

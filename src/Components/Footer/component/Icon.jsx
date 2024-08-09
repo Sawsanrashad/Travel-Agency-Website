@@ -5,7 +5,7 @@ export default function Icon({ icon, title, text }) {
     return (
         <>
             <div className=' flex gap-3 md:justify-center items-center mb-3 md:mb-0' id='iconsSection'>
-                <div className='icon flex md:justify-center items-center'>
+                <div className='icon flex justify-center items-center'>
                     <span>{icon}</span>
                 </div>
                 <div>

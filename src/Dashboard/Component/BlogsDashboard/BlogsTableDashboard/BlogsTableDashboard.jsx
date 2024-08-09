@@ -7,8 +7,8 @@ import { FormattedMessage } from 'react-intl';
 export const BlogsTableDashboard = ({ blogs, deleteBlog }) => {
     const [langState] = useRecoilState($lang);
     return (
-        <div>
-            <table className=' table-fixed border-collapse border-spacing-9  border-slate-400 ...'>
+        <div className='flex justify-center'>
+            <table className=' table-fixed border-collapse border-spacing-9  border-slate-400 w-[95%]'>
                 <thead>
                     <tr>
                         <th className='border border-slate-300 p-3 dark:!text-white'>-</th>

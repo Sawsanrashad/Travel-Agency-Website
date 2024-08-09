@@ -27,3 +27,11 @@ export const $theme = atom({
 	key: "$theme",
 	default: localStorage.getItem("theme") ?? "light",
 });
+export const $loggedIn = atom({
+	key: "$loggedIn",
+	default: localStorage.getItem('AuthUser'),
+});
+export const $loggedInModal = atom({
+	key: "$loggedInModal",
+	default: false,
+});

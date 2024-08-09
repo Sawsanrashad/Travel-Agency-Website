@@ -34,7 +34,7 @@ export const SingleBlog = () => {
     } else if (!blog) {
         content =
             <div className=' flex justify-center items-center'>
-                <h3 className='text-center'> {<FormattedMessage id='noToursToShow' />}</h3 >
+                <h3 className='text-center dark:text-white h-full'> {<FormattedMessage id='noToursToShow' />}</h3 >
             </div>
     } else {
         content =

@@ -9,6 +9,7 @@ import NavSideMenu from '../Components/NavSideMenu/NavSideMenu'
 import ScrollProgressBar from '../Components/ProgressBar/ProgressBar'
 import { Modal } from '../Components/Modal/Modal'
 import LoginPage from '../Pages/LoginPage/LoginPage'
+import { LoggedClientModal } from '../Components/LoggedClientModal/LoggedClientModal'
 
 export const MainLayout = () => {
     return (
@@ -21,7 +22,7 @@ export const MainLayout = () => {
             <LoginModal />
             <NavSideMenu />
             <ScrollProgressBar />
-          
+            <LoggedClientModal />
         </>
     )
 }

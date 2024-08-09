@@ -29,7 +29,7 @@ export default function PopularDestination() {
         content =
             <div className='flex items-center justify-center'>
                 <div class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
+                    <span className="visually-hidden dark:text-white">Loading...</span>
                 </div>
             </div>
     } else if (!tours) {

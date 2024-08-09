@@ -4,8 +4,8 @@ import { CiEdit } from "react-icons/ci";
 import { FormattedMessage } from 'react-intl';
 export const ReviewsTableDashboard = ({ reviews, deletReview }) => {
     return (
-        <div>
-            <table className=' table-fixed border-collapse border-spacing-9  border-slate-400 mt-6 w-full'>
+        <div className='flex justify-center'>
+            <table className=' table-fixed border-collapse border-spacing-9  border-slate-400 mt-6 w-[90%]'>
                 <thead>
                     <tr>
                         <th className='border border-slate-300 p-3 dark:!text-white'>-</th>

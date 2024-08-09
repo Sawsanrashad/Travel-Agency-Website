@@ -5,8 +5,8 @@ import { useRecoilState } from 'recoil';
 export const BookedToursTableDashboard = (bookedTours, deleteBookedTour) => {
     const [langState] = useRecoilState($lang);
     return (
-        <div>
-            <table className=' table-fixed border-collapse  border-slate-400'>
+        <div className='flex justify-center'>
+            <table className=' table-fixed border-collapse  border-slate-400 w-[90%]'>
                 <thead>
                     <tr>
                         <th className='border border-slate-300 p-3 dark:!text-white'>-</th>

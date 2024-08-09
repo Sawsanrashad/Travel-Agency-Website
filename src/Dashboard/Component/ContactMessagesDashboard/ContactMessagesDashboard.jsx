@@ -38,7 +38,7 @@ export const ContactMessagesDashboard = () => {
       </div>
     );
   } else if (messages.length === 0) {
-    content = <h3 className='text-center h-full dark:!text-white'>{<FormattedMessage id='noMessagesToShow' />}</h3>;
+    content = <h3 className='text-center h-full dark:!text-white py-60 font-medium'>{<FormattedMessage id='noMessagesToShow' />}</h3>;
   } else {
     content = (
       <div>

@@ -39,11 +39,11 @@ export default function Travel() {
         content =
             <div className='flex items-center justify-center'>
                 <div class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
+                    <span className="visually-hidden dark:text-white">Loading...</span>
                 </div>
             </div>
     } else if (!blogs) {
-        content = <h3 className='text-center'> {<FormattedMessage id='noToursToShow' />}</h3 >
+        content = <h3 className='text-center dark:text-white h-full'> {<FormattedMessage id='noToursToShow' />}</h3 >
     } else {
         content = <div className='custom_container'>
             <p>{<FormattedMessage id='travelBlog' />}</p>
