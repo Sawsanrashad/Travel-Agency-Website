@@ -2,28 +2,24 @@ import React, { useEffect } from 'react';
 import { DashboardNav } from '../DashboardNav/DashboardNav';
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import './DashboardLayout.scss';
-import { Modal } from '../../../Components/Modal/Modal';
-import LoginPage from '../../../Pages/LoginPage/LoginPage';
-
+import { AdminCheck } from '../../../Components/AdminCheck/AdminCheck';
+import { DashboardNavSideMenu } from '../DashboardNavSideMenu/DashboardNavSideMenu';
 export const DashboardLayout = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    console.log(location.pathname)
     useEffect(() => {
         if (location.pathname == "/dashboard") {
-            console.log("object")
             navigate('/dashboard/home');
         }
     }, [location])
 
     return (
-        <div className='h-screen flex gap-3 dark:bg-[#0e1b31]'>
-            <DashboardNav />
-            <div className='outlet'><Outlet /></div>
-            <Modal>
-                <LoginPage />
-                <LoginPage />
-            </Modal>
-        </div>
+        <AdminCheck>
+            <div className='layout flex  flex-row-reverse dark:bg-[#0e1b31] min-h-screen w-full relative'>
+                <DashboardNav />
+                <DashboardNavSideMenu />
+                <div className='outlet dark:bg-[#0e1b31] mb-5 mt-5 py-6'><Outlet /></div>
+            </div>
+        </AdminCheck>
     )
 }

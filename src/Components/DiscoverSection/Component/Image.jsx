@@ -5,7 +5,7 @@ import 'animate.css';
 
 export default function Image() {
   return (
-    <div className='h-full' id='imageSection'>
+    <div className='h-full w-full' id='imageSection'>
       <div className='flex justify-center items-center relative'>
         <div className='dot absolute left-[-10%] top-[-10%]'></div>
         <img src={img} alt="" className='w-full h-full girl' />

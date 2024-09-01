@@ -15,8 +15,9 @@
   a {
     font-family: "Barlow", sans-serif;
     font-size: 16px;
-    text-decoration: none;
     color: white;
+    text-decoration: none;
+    font-weight: 500;
   }
   .planeIcon,
   .barIcon {
@@ -26,6 +27,7 @@
   .Icon {
     color: white;
     cursor: pointer;
+    z-index: 10;
   }
   .active {
     color: rgb(14, 26, 86);
@@ -39,7 +41,7 @@
   background-color: white;
   a,
   .barIcon {
-    color: rgb(75, 78, 79) !important;
+    color: rgb(154, 155, 156) !important;
   }
 
   p,

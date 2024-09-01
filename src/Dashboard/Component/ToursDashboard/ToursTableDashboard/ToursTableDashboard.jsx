@@ -17,8 +17,8 @@ export const ToursTableDashboard = ({ tours, deleteTour }) => {
     };
 
     return (
-        <div id='ToursTableDashboard' className='flex justify-center items-center'>
-            <table className='table-fixed border-collapse border-slate-400 w-[95%]'>
+        <div id='ToursTableDashboard' className='w-[80%] md:w-full'>
+            <table className=' border-slate-400 md:w-[95%]'>
                 <thead>
                     <tr>
                         <th className='border border-slate-300 p-3 dark:!text-white'>-</th>
@@ -34,21 +34,23 @@ export const ToursTableDashboard = ({ tours, deleteTour }) => {
                 <tbody>
                     {tours.map((tour, index) => (
                         <tr key={index}>
-                            <td className='tourImage border border-slate-300 p-3 dark:!text-white'>{index + 1}</td>
+                            <td className='border border-slate-300 p-3 dark:!text-white table__small'>{index + 1}</td>
                             <td className='tourImage border border-slate-30 p-3'>
                                 <img className='w-20 h-20 rounded-md' src={tour[`${langState}`]?.imageUrl} alt="" />
                             </td>
                             <td className='border border-slate-300 p-3 dark:!text-white'>{tour[`${langState}`]?.title}</td>
-                            <td className='border border-slate-300 p-3 dark:!text-white'>{tour[`${langState}`]?.description}</td>
+                            <td className='border border-slate-300 p-3 dark:!text-white'>
+                                {tour[`${langState}`]?.description.slice(0, 50)}{tour[`${langState}`]?.description.length > 50 && '...'}
+                            </td>
                             <td className='border border-slate-300 p-3 dark:!text-white'>{tour[`${langState}`]?.duration}</td>
                             <td className='border border-slate-300 p-3 dark:!text-white'>${tour[`${langState}`]?.price}</td>
-                            <td className='border border-slate-300 p-3 dark:!text-white'>
-                                <button className='bg-black p-2 rounded-md' onClick={handleEditButtonClick}>
+                            <td className='border border-slate-300 p-3 dark:!text-white table__small'>
+                                <button className='bg-black p-2 rounded-md block m-auto' onClick={handleEditButtonClick}>
                                     <span className='text-white'><CiEdit size={20} /></span>
                                 </button>
                             </td>
                             <td className='border border-slate-300 p-3'>
-                                <button className='bg-red-800 p-2 rounded-md' onClick={() => deleteTour(tour.id)}>
+                                <button className='bg-red-800 p-2 rounded-md block m-auto' onClick={() => deleteTour(tour.id)}>
                                     <span className='text-white'><RiDeleteBin5Line size={20} /></span>
                                 </button>
                             </td>

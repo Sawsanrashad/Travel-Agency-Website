@@ -2,12 +2,17 @@ import './TourDetails.scss';
 import Tour from './component/Tour';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
 import { FormattedMessage } from 'react-intl';
+import { SearchForm } from '../SearchForm/SearchForm';
+import { useRecoilState } from 'recoil';
+import { $lang } from '../../Store';
+import { Loading } from '../Loading/Loading';
 
 export default function TourDetails() {
+    const [langState] = useRecoilState($lang);
     const [tours, setTours] = useState([]);
+    const [filteredTours, setFilteredTours] = useState([]); // State for filtered tours
     const [isLoading, setIsLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(0);
     const toursPerPage = 10;
@@ -17,6 +22,7 @@ export default function TourDetails() {
         axios.get(`http://localhost:3000/allTours`)
             .then((response) => {
                 setTours(response.data);
+                setFilteredTours(response.data); // Initialize filteredTours with full tour list
             })
             .catch((error) => {
                 console.error("There was an error fetching the data!", error);
@@ -30,21 +36,33 @@ export default function TourDetails() {
         setCurrentPage(data.selected);
     };
 
-    const displayTours = tours.slice(currentPage * toursPerPage, (currentPage + 1) * toursPerPage);
+
+    const onSearch = (value) => {
+        if (value.trim() === "") {
+            setFilteredTours(tours); // Reset to full list if search is cleared
+        } else {
+            const searchValue = value.trim().toLowerCase();
+            const filtered = tours.filter((tour) =>
+                langState === 'ar'
+                    ? tour.ar.title.toLowerCase().includes(searchValue)
+                    : tour.en.title.toLowerCase().includes(searchValue)
+            );
+            setFilteredTours(filtered);
+        }
+        setCurrentPage(0);
+    };
+
+    const displayTours = filteredTours.slice(currentPage * toursPerPage, (currentPage + 1) * toursPerPage);
 
     let content;
     if (isLoading) {
         content =
-            <div className='flex items-center justify-center'>
-                <div className="spinner-border text-primary" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
-            </div>;
-    } else if (tours.length === 0) {
-        content = <h3 className='text-center h-full dark:text-white'> {<FormattedMessage id='noToursToShow' />}</h3>;
+            <Loading />
+    } else if (filteredTours.length === 0) {
+        content = <h3 className='text-center h-full dark:text-white py-48'> {<FormattedMessage id='noToursToShow' />}</h3>;
     } else {
         content =
-            <div className='custom_container flex flex-col h-full'>
+            <div className='custom_container flex flex-col h-full gap-4'>
                 <p>{<FormattedMessage id='chooseYourTour' />}</p>
                 <h2 className='dark:!text-white'>{<FormattedMessage id='ourTours' />}</h2>
                 <div className='md:grid md:grid-cols-12 items-stretch flex-wrap'>
@@ -54,11 +72,11 @@ export default function TourDetails() {
                 </div>
                 <div className='flex justify-center items-center'>
                     <ReactPaginate
-                        previousLabel={'Previous'}
-                        nextLabel={'Next'}
+                        previousLabel={<FormattedMessage id='previous' />}
+                        nextLabel={<FormattedMessage id='next' />}
                         breakLabel={'...'}
                         breakClassName={'break-me'}
-                        pageCount={Math.ceil(tours.length / toursPerPage)}
+                        pageCount={Math.ceil(filteredTours.length / toursPerPage)}
                         marginPagesDisplayed={2}
                         pageRangeDisplayed={5}
                         onPageChange={handlePageClick}
@@ -68,10 +86,13 @@ export default function TourDetails() {
                 </div>
             </div>;
     }
+
     return (
-        <div id='tourDetails' className='dark:!bg-[#0c112b] '>
+        <div id='tourDetails' className='dark:!bg-[#0c112b] flex flex-col items-center justify-center '>
+            <div className='form w-full'>
+                <SearchForm onSearch={onSearch} />
+            </div>
             {content}
         </div>
     );
 }
-

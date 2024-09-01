@@ -8,6 +8,7 @@ import Slide from './Components/Slide';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FormattedMessage } from 'react-intl';
+import { Loading } from '../Loading/Loading';
 export default function Destination() {
     const [tours, setTours] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
@@ -26,11 +27,7 @@ export default function Destination() {
     let content;
     if (isLoading) {
         content =
-            <div className='flex items-center justify-center'>
-                <div class="spinner-border text-primary" role="status">
-                    <span className="visually-hidden dark:text-white">Loading...</span>
-                </div>
-            </div>
+            <Loading />
     } else if (!tours) {
         content = <h3 className='text-center h-full dark:text-white'> {<FormattedMessage id='noToursToShow' />}</h3 >
 
@@ -38,7 +35,7 @@ export default function Destination() {
         content =
             <div className='custom_container'>
                 <p><FormattedMessage id='topDestination' /></p>
-                <h2 className='dark:!text-white'><FormattedMessage id='popularDestinations' /> </h2>
+                <h2 className='dark:!text-white'><FormattedMessage id='popularDestinationsInEgypt' /> </h2>
                 <Swiper
                     breakpoints={{
                         320: {

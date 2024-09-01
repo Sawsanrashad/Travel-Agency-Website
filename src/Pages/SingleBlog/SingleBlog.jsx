@@ -8,6 +8,7 @@ import Testominals from '../../Components/Testominals/Testominals';
 import IconSlider from '../../Components/IconSlider/IconSlider';
 import { useRecoilState } from 'recoil';
 import { $lang } from '../../Store';
+import { Loading } from '../../Components/Loading/Loading';
 
 export const SingleBlog = () => {
     const [langState] = useRecoilState($lang);
@@ -30,7 +31,7 @@ export const SingleBlog = () => {
 
     let content;
     if (isLoading) {
-        content = <isLoading />
+        content = <Loading />
     } else if (!blog) {
         content =
             <div className=' flex justify-center items-center'>

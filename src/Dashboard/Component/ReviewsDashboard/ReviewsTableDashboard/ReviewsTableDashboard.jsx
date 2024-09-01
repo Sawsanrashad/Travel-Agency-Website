@@ -1,11 +1,10 @@
 import React from 'react'
 import { RiDeleteBin5Line } from "react-icons/ri";
-import { CiEdit } from "react-icons/ci";
 import { FormattedMessage } from 'react-intl';
 export const ReviewsTableDashboard = ({ reviews, deletReview }) => {
     return (
-        <div className='flex justify-center'>
-            <table className=' table-fixed border-collapse border-spacing-9  border-slate-400 mt-6 w-[90%]'>
+        <div className='w-[80%] md:w-full'>
+            <table className=' border-slate-400 md:w-[95%]'>
                 <thead>
                     <tr>
                         <th className='border border-slate-300 p-3 dark:!text-white'>-</th>
@@ -23,7 +22,7 @@ export const ReviewsTableDashboard = ({ reviews, deletReview }) => {
                             <tr key={index} >
                                 <td className='tourImage border border-slate-300 p-3 dark:!text-white '>{index + 1}</td>
                                 <td className='reviewsImage border border-slate-300 p-3 '>
-                                    <img className='w-20 h-20' src={review?.img} alt="" />
+                                    <img className='w-20 h-20 object-cover' src={review?.img} alt="" />
                                 </td>
                                 <td className='border border-slate-300 p-3 dark:!text-white '>{review?.name}</td>
                                 <td className=' border border-slate-300 p-3 dark:!text-white'>{review?.tourid}</td>

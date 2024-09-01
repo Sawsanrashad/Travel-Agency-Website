@@ -6,8 +6,14 @@
     font-weight: 600;
     font-size: 17px;
     border: none;
+    transition: 0.5s;
   }
   button:hover {
     background-color: rgb(15, 36, 84);
+  }
+  @media screen and (max-width: 767px) {
+    button {
+      font-size: 13px;
+    }
   }
 }

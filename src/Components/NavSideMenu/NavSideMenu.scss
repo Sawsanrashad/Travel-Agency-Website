@@ -5,10 +5,13 @@
   button {
     color: white;
     background-color: rgb(32, 149, 174);
-    // position: absolute;
     right: 0;
   }
-
+  .Icon {
+    color: rgb(32, 149, 174);
+    cursor: pointer;
+    z-index: 10;
+  }
   a {
     color: rgb(75, 78, 79) !important;
     text-decoration: none !important;

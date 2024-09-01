@@ -15,6 +15,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { $lang } from '../../Store';
+import { Loading } from '../Loading/Loading';
 
 export default function Travel() {
     const [langState] = useRecoilState($lang);
@@ -37,11 +38,7 @@ export default function Travel() {
     let content;
     if (isLoading) {
         content =
-            <div className='flex items-center justify-center'>
-                <div class="spinner-border text-primary" role="status">
-                    <span className="visually-hidden dark:text-white">Loading...</span>
-                </div>
-            </div>
+            <Loading />
     } else if (!blogs) {
         content = <h3 className='text-center dark:text-white h-full'> {<FormattedMessage id='noToursToShow' />}</h3 >
     } else {

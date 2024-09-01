@@ -1,3 +1,17 @@
 .outlet {
-  width: calc(100% - 288px) !important;
+  width: calc(100% - 300px) !important;
+}
+[dir="rtl"] .outlet {
+  right: auto;
+  left: 0 !important;
+}
+@media screen and (max-width: 767px) {
+  .outlet {
+    width: 100% !important;
+  }
+}
+@media screen and (min-width: 768x) and (max-width: 992px) {
+  .outlet {
+    width: 100% !important;
+  }
 }

@@ -4,6 +4,9 @@ import ReactPaginate from 'react-paginate';
 import { BlogsTableDashboard } from './BlogsTableDashboard/BlogsTableDashboard';
 import './BlogsDashboard.scss';
 import { FormattedMessage } from 'react-intl';
+import { confirmAlert } from 'react-confirm-alert';
+import { ToastContainer } from 'react-toastify';
+import { Loading } from '../../../Components/Loading/Loading';
 
 export const BlogsDashboard = () => {
     const [blogs, setBlogs] = useState([]);
@@ -26,13 +29,48 @@ export const BlogsDashboard = () => {
     }, []);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:3000/blogs/${id}`).
-            then((response) => {
-                setBlogs(blogs.filter(blog => blog.id !== id));
-            })
-            .catch((error) => {
-                console.error("There was an error deleting the blog!", error);
-            });
+        confirmAlert({
+            title: 'Confirm Delete',
+            message: 'Are you sure you want to delete this blog?',
+            buttons: [{
+                label: 'Yes',
+                onClick: () => {
+                    axios.delete(`http://localhost:3000/blogs/${id}`).
+                        then((response) => {
+                            setBlogs(blogs.filter(blog => blog.id !== id));
+                            toast.success("Blog deleted successfully", {
+                                position: "top-right",
+                                autoClose: 3000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                            });
+                        })
+                        .catch((error) => {
+                            console.error("There was an error deleting the blog!", error);
+                            toast.error("Error deleting blog", {
+                                position: "top-right",
+                                autoClose: 3000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                            });
+                        });
+                }
+            },
+            {
+                label: 'No',
+                onClick: () => {
+                    // Do nothing if 'No' is clicked
+                }
+            }
+            ]
+        })
+
     };
 
     const handlePageClick = (data) => {
@@ -44,22 +82,18 @@ export const BlogsDashboard = () => {
     let content;
     if (isLoading) {
         content = (
-            <div className='flex items-center justify-center'>
-                <div className="spinner-border text-primary" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
-            </div>
+            <Loading />
         );
     } else if (blogs.length === 0) {
         content = <h3 className='text-center h-full dark:text-white py-60 font-medium'>{<FormattedMessage id='noBlogsToShow' />}</h3>;
     } else {
         content = (
-            <div className='flex flex-col'>
-                <button className='bg-cyan-800  p-2 rounded-md mb-3 text-white w-[20%] mr-7 self-end'>Add New Blog</button>
+            <div className='flex flex-col justify-center items-center w-full'>
+                <button className='bg-cyan-800  p-2 rounded-md mb-3 text-white md:w-[20%] mr-7 self-end addFormButton'><FormattedMessage id='addNewBlog' /></button>
                 <BlogsTableDashboard blogs={displayBlogs} deleteBlog={handleDelete} />
                 <ReactPaginate
-                    previousLabel={'<'}
-                    nextLabel={'>'}
+                    previousLabel={<FormattedMessage id='previous' />}
+                    nextLabel={<FormattedMessage id='next' />}
                     breakLabel={'...'}
                     breakClassName={'break-me'}
                     pageCount={Math.ceil(blogs.length / blogsPerPage)}
@@ -82,6 +116,7 @@ export const BlogsDashboard = () => {
     return (
         <div id='blogs'>
             {content}
+            <ToastContainer />
         </div>
     );
 }

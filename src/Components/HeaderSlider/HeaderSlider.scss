@@ -4,14 +4,26 @@
 #HeaderSlider {
   .swiper {
     .slide1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
       background-image: url("../../assets/images/1.jpg");
       background-size: cover;
     }
     .slide2 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
       background-image: url("../../assets/images/2.jpg");
       background-size: cover;
     }
     .slide3 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
       background-image: url("../../assets/images/3.jpg");
       background-size: cover;
     }
@@ -40,10 +52,12 @@
     .swiper-slide {
       p {
         font-size: 11px !important;
+        padding: 10px;
       }
       h1 {
         font-size: 30px !important;
         width: fit-content !important;
+        padding: 10px;
       }
     }
   }

@@ -8,13 +8,18 @@ import { ReviewForm } from '../ReviewForm/ReviewForm';
 import HeroSlider from '../../../Components/Slider/HeroSlider';
 import Accordion from '../../../Components/Accordion/Accordion';
 import { FormattedMessage } from 'react-intl';
+import { useRecoilState } from 'recoil';
+import { $loggedIn } from '../../../Store';
+import { useParams } from 'react-router-dom';
 export const TourContent = ({ tour }) => {
     const [reviews, setReviews] = useState([]);
+    let { id } = useParams();
+
     const scrollToRef = useRef();
 
     useEffect(() => {
         if (tour) {
-            axios.get(`http://localhost:3000/reviews?tourid=${tour.id}`)
+            axios.get(`http://localhost:3000/reviews?tourid=${id}`)
                 .then((response) => {
                     setReviews(response.data);
                 })
@@ -76,7 +81,7 @@ export const TourContent = ({ tour }) => {
                     </div>
                 </div>
                 <div className='md:grid md:col-span-5 mt-3'>
-                    <BookingForm tour={tour} />
+                    <BookingForm id={id} tour={tour} />
                 </div>
             </div>
         </div>

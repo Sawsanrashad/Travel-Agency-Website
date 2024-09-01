@@ -1,27 +1,27 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { bookSchema } from '../BookSchema'
 import { Error } from '../../../Components/Error/Error'
 import { useNavigate } from 'react-router-dom'
 import { FormattedMessage, useIntl } from 'react-intl'
+import { useRecoilState } from 'recoil'
+import { $bookedTourInfo, $loggedIn } from '../../../Store'
 
-export const BookingForm = ({ tour }) => {
+export const BookingForm = ({ id, tour }) => {
     // let authData = JSON.parse(localStorage.getItem('AuthUser'));
+    const [authUser, setAuthUser] = useRecoilState($loggedIn);
+    const [loggedState, setLoggedState] = useRecoilState($loggedIn);
+    const [bookedTourInfo, setBookedTourInfo] = useRecoilState($bookedTourInfo);
     let intl = useIntl()
     const navigate = useNavigate()
 
     const initialValues = {
-        name: "",
-        email: "",
+        name: authUser ? authUser.name : "",
+        email: authUser ? authUser.email : "",
         date: "",
-        // enquiry: ""
     }
-    let handleSubmit = (values) => {
-        if (!authData) {
-            navigate(`/login?redirect=${tour.id}`)
-        }
-        console.log(values)
-    }
+
+
     return (
         <div className='formPart flex flex-col  rounded-lg overflow-hidden'>
             <div className='titleDiv flex justify-center items-center  py-4 w-full '>
@@ -29,9 +29,25 @@ export const BookingForm = ({ tour }) => {
             </div>
             <div className='flex justify-center items-center bg-slate-200 w-full dark:!bg-slate-900'>
                 <Formik
-                    // validationSchema={bookSchema}
+                    validationSchema={bookSchema}
                     initialValues={initialValues}
-                    onSubmit={(values) => handleSubmit(values)}
+                    onSubmit={(values) => {
+                        console.log(authUser)
+                        console.log("object")
+                        if (!authUser) {
+                            navigate(`/login?redirect=${id}`);
+                        } else {
+                            setBookedTourInfo({
+                                tourImage: tour.imageUrl,
+                                tourTitle: tour.title,
+                                tourPrice: tour.price,
+                                clientName: values.name,
+                                clientEmail: values.email,
+                                bookedDate: values.date
+                            });
+                            navigate(`/checkout?tourid=${id}`);
+                        }
+                    }}
                 >
                     <Form className='w-full flex justify-between items-center flex-wrap p-3 gap-7'>
                         <div className='w-full'>
@@ -47,10 +63,6 @@ export const BookingForm = ({ tour }) => {
                             <Field name="date" type="date" placeHolder=" yyy-mm-dd" className=" w-full p-3 border-0 rounded-sm dark:!bg-slate-800" />
                             <Error><ErrorMessage name='date' /></Error>
                         </div>
-                        {/* <div className='w-full'>
-                            <Field as="textarea" name="enquiry" type="text" placeHolder="Your Enquiry" className=" w-full px-3 border-0 rounded-sm" />
-                            <Error><ErrorMessage name='enquiry' /></Error>
-                        </div> */}
                         <button type='submit' className='py-3 px-4 w-full dark:hover:!bg-[#0c112b]  dark:!text-[#0c112b]  dark:hover:!text-white'>{<FormattedMessage id='bookNow' />}</button>
                     </Form>
                 </Formik>

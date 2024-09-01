@@ -34,17 +34,20 @@
       height: 250px;
     }
   }
-  @media screen and (min-width: 768px) and (max-width: 992px) {
-    .dot {
-      top: -7% !important;
-    }
-    .rec {
-      height: 600px;
-    }
-  }
+  // @media screen and (min-width: 768px) and (max-width: 992px) {
+  //   .dot {
+  //     top: -15% !important;
+  //   }
+  //   .rec {
+  //     height: 240px;
+  //   }
+  // }
   @media screen and (min-width: 993px) and (max-width: 1200px) {
+    .dot {
+      top: -9% !important;
+    }
     .rec {
-      height: 370px;
+      height: 320px;
     }
   }
   @media screen and (min-width: 1201px) and (max-width: 1500px) {

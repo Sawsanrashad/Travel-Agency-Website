@@ -23,6 +23,9 @@ import { ContactMessagesDashboard } from "../Dashboard/Component/ContactMessages
 import { BookedToursDashboard } from "../Dashboard/Component/BookedToursDashboard/BookedToursDashboard";
 import { BlogsDashboard } from "../Dashboard/Component/BlogsDashboard/BlogsDashboard";
 import { ForgetPassword } from "../Pages/ForgetPassword/ForgetPassword";
+import { UserProfile } from "../Components/UserProfile/UserProfile";
+import { UserInfo } from "../Components/UserProfile/UserInfo/UserInfo";
+import { UserTransactions } from "../Components/UserProfile/UserTransaction/UserTransactions";
 
 const router = createBrowserRouter([
     {
@@ -67,12 +70,18 @@ const router = createBrowserRouter([
                 element: <SingleBlog />
             },
             {
-                path: "",
-                element: <AboutPage />
-            },
-            {
-                path: "",
-                element: <AboutPage />
+                path: "profile",
+                element: <UserProfile />,
+                children: [
+                    {
+                        path: "info",
+                        element: <UserInfo />
+                    },
+                    {
+                        path: "transactions",
+                        element: <UserTransactions />
+                    },
+                ]
             },
         ]
 

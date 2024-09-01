@@ -32,7 +32,7 @@ export default function TextDiv({ place }) {
                     </div>
                 </div>
                 <Link to={'/tours'}>
-                    <button className='w-full md:w-auto'>{<FormattedMessage id='allToursButton' />} <FontAwesomeIcon icon={faArrowRight} /></button>
+                    <button className='w-full md:w-auto rounded-lg'>{<FormattedMessage id='allToursButton' />} <FontAwesomeIcon icon={faArrowRight} /></button>
                 </Link>
             </div>
         </div>

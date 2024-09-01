@@ -23,6 +23,10 @@
     }
   }
   @media screen and (max-width: 767px) {
+    .backgroundVideo {
+      height: 40vh;
+      z-index: -1;
+    }
     .caption {
       left: 10%;
       h3 {

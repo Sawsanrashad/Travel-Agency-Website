@@ -17,15 +17,15 @@ export default function Footer() {
             <div className='custom_container flex flex-col justify-center items-center gap-5'>
                 <div className='call md:grid md:grid-cols-3 justify-between items-center md:gap-2 w-full'>
                     <div className='flex flex-col md:flex-row md:items-center justify-center gap-5'>
-                        <Icon title={<FormattedMessage id='footerCallUs' />} icon={<FiPhoneCall className='text-white ' size={40} />} text={"+1 123-456-0606"} />
-                        <div className='separator'></div>
+                        <Icon title={<FormattedMessage id='footerCallUs' />} icon={<FiPhoneCall className='text-white w-[65px]  ' size={40} />} text={"+1 123-456-0606"} />
+                        <div className='separator mb-3'></div>
                     </div>
                     <div className='flex flex-col md:flex-row md:items-center justify-center gap-5'>
-                        <Icon title={<FormattedMessage id='footerWriteToUs' />} icon={<FaEnvelopeOpenText className='text-white ' size={40} />} text={"info@bonvoyage.com"} />
-                        <div className='separator'></div>
+                        <Icon title={<FormattedMessage id='footerWriteToUs' />} icon={<FaEnvelopeOpenText className='text-white w-[65px]  ' size={40} />} text={"info@bonvoyage.com"} />
+                        <div className='separator mb-3'></div>
                     </div>
                     <div className='flex flex-col md:flex-row md:items-center justify-center gap-5'>
-                        <Icon title={<FormattedMessage id='footerAddress' />} icon={<FaMapLocationDot className='text-white ' size={40} />} text={<FormattedMessage id='locationDetails' />} />
+                        <Icon title={<FormattedMessage id='footerAddress' />} icon={<FaMapLocationDot className='text-white w-[65px] ' size={40} />} text={<FormattedMessage id='locationDetails' />} />
                     </div>
                 </div>
                 <div className='md:grid md:grid-cols-3 justify-between items-center'>

@@ -6,9 +6,11 @@ import { $lang } from '../../../../Store';
 import { FormattedMessage } from 'react-intl';
 export const BlogsTableDashboard = ({ blogs, deleteBlog }) => {
     const [langState] = useRecoilState($lang);
+    console.log(Math.floor(Math.random() * 900000) + 100000)
+
     return (
-        <div className='flex justify-center'>
-            <table className=' table-fixed border-collapse border-spacing-9  border-slate-400 w-[95%]'>
+        <div className='w-[80%] md:w-full'>
+            <table className=' border-slate-400 md:w-[95%]'>
                 <thead>
                     <tr>
                         <th className='border border-slate-300 p-3 dark:!text-white'>-</th>
@@ -25,10 +27,12 @@ export const BlogsTableDashboard = ({ blogs, deleteBlog }) => {
                     {blogs.map((blog, index) => {
                         return (
                             <tr key={index} >
-                                <td className='tourImage border border-slate-300 p-3  dark:!text-white'>{index + 1}</td>
+                                <td className='tourImage border border-slate-300 p-3 dark:!text-white'>{index + 1}</td>
                                 <td className='reviewsImage border border-slate-300 p-3 '><img src={blog[`${langState}`]?.image} alt="" width={'100px'} height={'100px'} /></td>
                                 <td className='border border-slate-300 p-3 dark:!text-white '>{blog[`${langState}`]?.title}</td>
-                                <td className=' border border-slate-300 p-3 dark:!text-white'>{blog[`${langState}`]?.description}</td>
+                                <td className='border border-slate-300 p-3 dark:!text-white'>
+                                    {blog[`${langState}`].description[0]}
+                                </td>
                                 <td className=' border border-slate-300 p-3 dark:!text-white'>{blog[`${langState}`]?.date}</td>
                                 <td className=' border border-slate-300 p-3 dark:!text-white'>
                                     <button className=' bg-black p-2  rounded-md'>

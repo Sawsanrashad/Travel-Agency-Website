@@ -41,6 +41,7 @@ export default function IconSlider() {
                                 delay: 5000,
                                 pauseOnMouseEnter: true,
                             }}
+                            className='en'
                             slidesPerView={4}
                             onSwiper={(swiper) => console.log(swiper)}
                             onSlideChange={() => console.log('slide change')}

@@ -1,5 +1,5 @@
 {
-  "allTours": [
+   "allTours": [
     {
       "id": "1",
       "en": {
@@ -11093,37 +11093,68 @@
       "id": "7c4e",
       "comment": "ssss",
       "rating": 3
-    },
-    {
-      "id": "af69",
-      "comment": "amazing",
-      "rating": 3
     }
   ],
-  "contactMessages": [],
-  "users": [
+  "contactMessages": [
     {
-      "id": "d37c",
-      "name": "Youssef Ali ",
-      "email": "yossifali149@gmail.com",
-      "password": "JOE123joe",
-      "confirmPassword": "JOE123joe",
-      "phone": "01062697154"
+      "id": "45f0",
+      "name": "sawsan",
+      "email": "sawsan@gmail.com",
+      "subject": "sssss",
+      "message": "aaaaaaaaaaaaa"
     },
     {
-      "id": "06b9",
-      "name": "sawsan rashad",
+      "id": "ff35",
+      "name": "sohila",
+      "email": "sohila@gmail.com",
+      "subject": "test",
+      "message": "tessttt"
+    },
+    {
+      "id": "59a0",
+      "name": "sawsan",
       "email": "sawsan@gmail.com",
-      "password": "ssss",
-      "confirmPassword": "ssss",
+      "subject": "test",
+      "message": "testtt"
+    },
+    {
+      "id": "44ce",
+      "name": "sawsan",
+      "email": "sawsan@gmail.com",
+      "subject": "test",
+      "message": "test"
+    },
+    {
+      "id": "9f15",
+      "name": "dw",
+      "email": "ddfsf@add.dw",
+      "subject": "dw",
+      "message": "dwd"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Sawsan Rashad",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "role": "admin",
       "phone": "01007441528"
+    },
+    {
+      "id": "2",
+      "name": "youssef",
+      "email": "youssef@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "phone": "01062697154"
     },
     {
       "id": "6419",
       "name": "Nada",
       "email": "Nada@gmail.com",
       "password": "1234",
-      "confirmPassword": "1234",
+      "role": "user",
       "phone": "01092025777"
     },
     {
@@ -11131,6 +11162,7 @@
       "name": "sawsann",
       "email": "sawsann@sawsann.sawsann",
       "password": "sawsann",
+      "role": "user",
       "phone": "01062697154"
     },
     {
@@ -11138,11 +11170,50 @@
       "name": "Menna",
       "email": "mennafarouk307@gmail.com",
       "password": "menna123",
-      "confirm": "menna123",
-      "phone": 1094854159
+      "role": "user",
+      "phone": "01094854159"
+    },
+    {
+      "id": "453f",
+      "name": "sohila sobhy",
+      "email": "sohila@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "phone": 1033660360
     }
   ],
-  "bookedTours": [],
+  "bookedTours": [
+    {
+      "id": "415a",
+      "tourImage": "/src/assets/images/aswan.jpg",
+      "tourTitle": "Aswan Wonders",
+      "tourPrice": 120,
+      "clientName": "Nada",
+      "clientEmail": "Nada@gmail.com",
+      "bookedDate": "2024-08-19",
+      "paymentDate": "8/18/2024"
+    },
+    {
+      "id": "a053",
+      "tourImage": "/src/assets/images/1.jpg",
+      "tourTitle": "Paris Adventure",
+      "tourPrice": 2000,
+      "clientName": "Nada",
+      "clientEmail": "Nada@gmail.com",
+      "bookedDate": "2024-08-30",
+      "paymentDate": "8/29/2024"
+    },
+    {
+      "id": "7eb2",
+      "tourImage": "/src/assets/images/fayoumOasis.jpg",
+      "tourTitle": "Fayoum Oasis",
+      "tourPrice": 110,
+      "clientName": "Nada",
+      "clientEmail": "Nada@gmail.com",
+      "bookedDate": "2024-09-07",
+      "paymentDate": "8/29/2024"
+    }
+  ],
   "blogs": [
     {
       "id": "1",
@@ -11172,7 +11243,7 @@
           "النقل: التاكسي، تطبيقات مشاركة الركوب، ووسائل النقل العام شائعة. تتوفر الرحلات الداخلية والقطارات للمسافات الطويلة."
         ],
         "image": "/src/assets/images/s1.jpg",
-        "date": "AUG 2"
+        "date": "2 أغسطس"
       }
     },
     {
@@ -11199,7 +11270,7 @@
           "ساحل نيو إنجلاند: بما في ذلك كيب كود، مارثا فينيارد، ونانتوكيت."
         ],
         "image": "/src/assets/images/s2.jpg",
-        "date": "AUG 2"
+        "date": "2 أغسطس"
       }
     },
     {
@@ -11228,7 +11299,7 @@
           "التعبئة بحكمة: احزم الأساسيات والملابس المتعددة الاستخدامات. ضع في اعتبارك مناخ الوجهة والأنشطة."
         ],
         "image": "/src/assets/images/s3.jpg",
-        "date": "AUG 2"
+        "date": "2 أغسطس"
       }
     },
     {
@@ -11255,7 +11326,7 @@
           "حديقة إيفرجليدز الوطنية: قم بجولة بالقارب لمشاهدة الحياة البرية مثل التماسيح في بيئتها الطبيعية."
         ],
         "image": "/src/assets/images/3.jpg",
-        "date": "AUG 2"
+        "date": "2 أغسطس"
       }
     },
     {
@@ -11282,7 +11353,7 @@
           "استكشاف تايلاند: جولات ثقافية، محميات الفيلة، وأنشطة الشاطئ."
         ],
         "image": "/src/assets/images/s4.jpg",
-        "date": "AUG 2"
+        "date": "2 أغسطس"
       }
     },
     {
@@ -11309,7 +11380,7 @@
           "أفريقيا: سفاري في كينيا، تنزانيا، وجنوب أفريقيا مع الرحلات الجوية."
         ],
         "image": "/src/assets/images/s5.jpg",
-        "date": "AUG 2"
+        "date": "2 أغسطس"
       }
     }
   ]

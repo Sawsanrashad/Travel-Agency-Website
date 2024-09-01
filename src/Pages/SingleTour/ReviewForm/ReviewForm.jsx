@@ -5,8 +5,11 @@ import { ReviewSchema } from '../ReviewSchema'
 import axios from 'axios'
 import { RateStarsClick } from '../../../Components/RateStarsClick/RateStarsClick'
 import { FormattedMessage, useIntl } from 'react-intl'
+import { useRecoilState } from 'recoil'
+import { $loggedIn } from '../../../Store'
 
 export const ReviewForm = ({ reviews, setReviews }) => {
+    const [loggedState, setLoggedState] = useRecoilState($loggedIn);
     let intl = useIntl();
     let form = useRef()
     let handleReviewSubmit = (values) => {
@@ -24,7 +27,7 @@ export const ReviewForm = ({ reviews, setReviews }) => {
             )
     }
     return (
-        <div>
+        <div className={`${loggedState ? 'block' : 'hidden'}`}>
             <h3 className='dark:!text-white'>{<FormattedMessage id='addYourReview' />}</h3>
             <Formik
                 initialValues={{

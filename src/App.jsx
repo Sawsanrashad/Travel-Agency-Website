@@ -58,8 +58,6 @@ export default function App() {
     <div className={``}>
       <IntlProvider locale={locale} messages={translation} defaultLocale='en' >
         <RouterProvider router={router} />
-
-
       </IntlProvider>
     </div>
   )

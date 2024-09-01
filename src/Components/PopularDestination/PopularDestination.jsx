@@ -8,6 +8,7 @@ import dubai from '../../assets/images/dubai1.jpg';
 import Slide from '../Destination/Components/Slide';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Loading } from '../Loading/Loading';
 
 export default function PopularDestination() {
     const [tours, setTours] = useState(null);
@@ -27,11 +28,7 @@ export default function PopularDestination() {
     let content;
     if (isLoading) {
         content =
-            <div className='flex items-center justify-center'>
-                <div class="spinner-border text-primary" role="status">
-                    <span className="visually-hidden dark:text-white">Loading...</span>
-                </div>
-            </div>
+            <Loading />
     } else if (!tours) {
         content = <h3 className='text-center'> No Tours To Show</h3 >
 

@@ -19,10 +19,8 @@ export const MainLayout = () => {
             <Footer />
             <ToastContainer position={"top-right"} autoClose={3000} />
             <ScrollToTop />
-            <LoginModal />
             <NavSideMenu />
             <ScrollProgressBar />
-            <LoggedClientModal />
         </>
     )
 }

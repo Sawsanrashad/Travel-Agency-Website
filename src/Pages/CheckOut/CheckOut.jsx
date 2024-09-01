@@ -1,10 +1,13 @@
 import React from 'react'
 import './CheckOut.scss';
 import { Payment } from './Components/Payment/Payment';
+import { LoggedIn } from '../../Components/LoggedIn/LoggedIn';
 export const CheckOut = () => {
     return (
-        <div>
-            <Payment />
-        </div>
+        <LoggedIn>
+            <div>
+                <Payment />
+            </div>
+        </LoggedIn>
     )
 }

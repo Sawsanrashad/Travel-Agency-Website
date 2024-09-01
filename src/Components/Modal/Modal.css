@@ -1,6 +1,8 @@
-.testr {
-    /* margin: 50px; */
+.centerModal {
+    top: 50%;
+    transform: translateY(-50%);
 }
+
 /* For Webkit browsers (Chrome, Safari, etc.) */
 /* .custom-scrollbar::-webkit-scrollbar {
     width: 12px;

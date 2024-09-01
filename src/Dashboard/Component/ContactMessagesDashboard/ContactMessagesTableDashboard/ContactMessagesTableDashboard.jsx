@@ -4,8 +4,8 @@ import { CiEdit } from "react-icons/ci";
 import { FormattedMessage } from 'react-intl';
 export const ContactMessagesTableDashboard = ({ messages, deleteMessage }) => {
     return (
-        <div className='flex justify-center'>
-            <table className=' table-fixed border-collapse border-spacing-9  border-slate-400 mt-6 w-[90%]'>
+        <div className='w-[80%] md:w-full'>
+            <table className=' border-slate-400 md:w-[95%]'>
                 <thead>
                     <tr>
                         <th className='border border-slate-300 p-3 dark:!text-white'>-</th>

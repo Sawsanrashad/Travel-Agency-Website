@@ -20,6 +20,44 @@
       color: rgb(32, 149, 174);
     }
   }
+  // .formbg {
+  //   border-radius: 15px;
+  //   z-index: 4;
+  //   background-color: rgba(104, 162, 173, 0.245);
+  //   padding: 1rem;
+  //   input,
+  //   select {
+  //     border: none;
+  //     color: grey;
+  //     outline: none;
+  //   }
+  //   .text {
+  //     border-radius: 10px 0 0 10px;
+  //   }
+  //   button {
+  //     background-color: rgb(32, 149, 174);
+  //     border: none;
+  //     color: white;
+  //     border-radius: 0 10px 10px 0;
+  //     font-family: Barlow, sans-serif;
+  //     transition: 0.5s;
+  //     .serachIcon {
+  //       left: 30%;
+  //       top: 40%;
+  //     }
+  //   }
+  //   button:hover {
+  //     background-color: rgb(5, 5, 60);
+  //   }
+  // }
+  [dir="rtl"] & {
+    .text {
+      border-radius: 0 10px 10px 0 !important;
+    }
+    button {
+      border-radius: 10px 0 0 10px !important;
+    }
+  }
   .pagination {
     display: flex;
     justify-content: center;
@@ -63,6 +101,12 @@
     }
     .pagination li a {
       padding: 5px 5px !important;
+    }
+    .text {
+      border-radius: 0 !important;
+    }
+    button {
+      border-radius: 0 !important;
     }
   }
 }

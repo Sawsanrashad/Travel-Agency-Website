@@ -10,6 +10,7 @@ import TesominalSlide from './component/TesominalSlide';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { FormattedMessage } from 'react-intl';
+import { Loading } from '../Loading/Loading';
 
 export default function Testominals() {
     const [reviews, setReviews] = useState(null);
@@ -30,11 +31,7 @@ export default function Testominals() {
     let content;
     if (isLoading) {
         content =
-            <div className='flex items-center justify-center'>
-                <div class="spinner-border text-primary" role="status">
-                    <span className="visually-hidden dark:text-white">Loading...</span>
-                </div>
-            </div>
+            <Loading />
     } else if (!reviews) {
         content = <h3 className='text-center dark:text-white'> {<FormattedMessage id='noReviewsYet' />}</h3 >
 

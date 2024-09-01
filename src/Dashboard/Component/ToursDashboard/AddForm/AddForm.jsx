@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useRecoilState } from 'recoil';
 import { $addFormState } from '../../../../Store';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
@@ -7,88 +7,166 @@ import { useIntl } from 'react-intl';
 import './AddForm.scss';
 import axios from 'axios';
 import { Error } from '../../../../Components/Error/Error';
+import { Modal } from '../../../../Components/Modal/Modal';
 
 export const AddForm = () => {
     let intl = useIntl();
     let form = useRef();
     const [addForm, setAddForm] = useRecoilState($addFormState);
+    const [step, setStep] = useState(1);
+    const [isOpen, setIsOpen] = useState(false);
     let handleAddNewTour = (values) => {
-        axios.post('http://localhost:3000/allTours', values)
-            .then(() => {
-                localStorage.setItem('newTour', JSON.stringify(response.data[0]))
+        const formData = {
+            id: new Date().getTime().toString(),
+            en: {
+                title: values.en.title,
+                description: values.en.description,
+                price: values.en.price,
+                duration: values.en.duration,
+                imageUrl: values.en.image ? URL.createObjectURL(values.en.image) : '', // Create object URL if file exists
+            },
+            ar: {
+                title: values.ar.title,
+                description: values.ar.description,
+                price: values.ar.price,
+                duration: values.ar.duration,
+                imageUrl: values.ar.image ? URL.createObjectURL(values.ar.image) : '', // Create object URL if file exists
+            }
+        };
+
+        axios.post('http://localhost:3000/allTours', formData)
+            .then((response) => {
+                console.log(response.data);
+                localStorage.setItem('newTour', JSON.stringify(response.data));
                 form.current.resetForm();
             })
             .catch((err) => {
-                console.log(err)
-            }
-            )
-    }
+                console.log(err);
+            });
+    };
 
-    function closeAddForm(e) {
 
-        if (!e.target.closest(".addForm") && !e.target.closest(".addFormButton")) {
+    return (
+        <>
+            <Modal show={addForm} setAddForm={setAddForm} size={'md'}>
+                <div id='addForm' className='addForm my-8'>
+                    <div>
+                        <Formik
+                            initialValues={{
+                                en: {
+                                    image: null,
+                                    title: '',
+                                    description: '',
+                                    duration: '',
+                                    price: ''
+                                },
+                                ar: {
+                                    image: null,
+                                    title: '',
+                                    description: '',
+                                    duration: '',
+                                    price: ''
+                                }
+                            }}
 
-            setAddForm(false);
-        }
-    }
+                            validationSchema={AddFormValidationSchema}
+                            innerRef={form}
+                            onSubmit={(values) => handleAddNewTour(values)}
+                        >
 
-    useEffect(() => {
-        document.addEventListener("click", closeAddForm);
-        return () => {
-            document.removeEventListener("click", closeAddForm);
-        };
-    }, []);
+                            <Form className=' aForm flex flex-col'>
+                                {step === 1 && (
+                                    <>
+                                        <p>English</p>
+                                        <div className='flex flex-col gap-3'>
+                                            <label className='font-medium dark:text-white'>Image Upload</label>
+                                            <input
+                                                name="en.image"
+                                                type="file"
+                                                onChange={(event) => {
+                                                    setFieldValue("en.image", event.currentTarget.files[0]);
+                                                }}
+                                                className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800"
+                                            />
+                                            <Error><ErrorMessage name="en.image" /></Error>
+                                        </div>
 
-    if (addForm) {
-        return (
-            <div id='addForm' className='addForm'>
-                <div className='bg-slate-100 border w-[50%]  fixed top-[0] right-[20%] z-10 rounded-md p-3'>
-                    <Formik
-                        initialValues={{
-                            image: null,
-                            title: '',
-                            description: '',
-                            duration: '',
-                            price: ''
-                        }}
-                        validationSchema={<AddFormValidationSchema />}
-                        innerRef={form}
-                        onSubmit={(values) => handleAddNewTour(values)}
-                    >
+                                        <div className='flex flex-col gap-3'>
+                                            <label className='font-medium dark:text-white'>Tour Title</label>
+                                            <Field name="en.title" type="text" placeholder={intl.formatMessage({ id: "title" })} className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800" />
+                                            <Error><ErrorMessage name="en.title" /></Error>
+                                        </div>
+                                        <div className='flex flex-col gap-3'>
+                                            <label className='font-medium dark:text-white'>Description</label>
+                                            <Field name="en.description" as="textarea" placeholder={intl.formatMessage({ id: "description" })} className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800" />
+                                            <Error><ErrorMessage name="en.description" /></Error>
+                                        </div>
+                                        <div className='flex flex-col gap-3'>
+                                            <label className='font-medium dark:text-white'>Duration</label>
+                                            <Field name="en.duration" type="text" placeholder={intl.formatMessage({ id: "duration" })} className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800" />
+                                            <Error><ErrorMessage name="en.duration" /></Error>
+                                        </div>
+                                        <div className='flex flex-col gap-3'>
+                                            <label className='font-medium dark:text-white'>Price</label>
+                                            <Field name="en.price" type="number" placeholder={intl.formatMessage({ id: "price" })} className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800" />
+                                            <Error><ErrorMessage name="en.price" /></Error>
+                                        </div>
+                                        <button type="button" onClick={() => setStep(2)} className='buttons py-3 w-[25%] self-end rounded-lg dark:!text-[#0c112b]'>Next</button>
+                                    </>
+                                )}
 
-                        <Form className='flex flex-col'>
-                            <div className='flex flex-col'>
-                                <label>Image Upload</label>
-                                <Field name="image" type="text" placeHolder={intl.formatMessage({ id: "image" })} className="w-full px-3 py-4 border-0 rounded-lg dark:!bg-slate-800" />
-                                <Error><ErrorMessage name="image" /> </Error>
-                            </div>
 
-                            <div className='flex flex-col'>
-                                <label>Tour Title</label>
-                                <Field name="title" type="text" placeHolder={intl.formatMessage({ id: "title" })} className="w-full px-3 py-4 border-0 rounded-lg dark:!bg-slate-800" />
-                                <Error><ErrorMessage name="title" /> </Error>
-                            </div>
-                            <div className='flex flex-col'>
-                                <label>Description</label>
-                                <Field name="description" as="textarea" placeHolder={intl.formatMessage({ id: "description" })} className="w-full px-3 py-4 border-0 rounded-lg dark:!bg-slate-800" />
-                                <Error><ErrorMessage name="description" /> </Error>
-                            </div>
-                            <div className='flex flex-col '>
-                                <label>Duration</label>
-                                <Field name="duration" type="text" placeHolder={intl.formatMessage({ id: "duration" })} className="w-full px-3 py-4 border-0 rounded-lg dark:!bg-slate-800" />
-                                <Error><ErrorMessage name="duration" /> </Error>
-                            </div>
-                            <div className='flex flex-col'>
-                                <label>Price</label>
-                                <Field name="price" type="number" placeHolder={intl.formatMessage({ id: "price" })} className="w-full px-3 py-4 border-0 rounded-lg dark:!bg-slate-800" />
-                                <Error><ErrorMessage name="price" /> </Error>
-                            </div>
-                            <button type="submit" className='py-3 w-full rounded-lg dark:!text-[#0c112b] '>ADD</button>
-                        </Form>
+                                {step === 2 && (
+                                    <>
+                                        <p>Arabic</p>
+                                        <div className='flex flex-col gap-3'>
+                                            <label className='font-medium dark:text-white'>Image Upload</label>
+                                            <input
+                                                name="ar.image"
+                                                type="file"
+                                                onChange={(event) => {
+                                                    setFieldValue("ar.image", event.currentTarget.files[0]);
+                                                }}
+                                                className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800"
+                                            />
+                                            <Error><ErrorMessage name="ar.image" /></Error>
+                                        </div>
 
-                    </Formik>
+                                        <div className='flex flex-col gap-3'>
+                                            <label className='font-medium dark:text-white'>Tour Title</label>
+                                            <Field name="ar.title" type="text" placeholder={intl.formatMessage({ id: "title" })} className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800" />
+                                            <Error><ErrorMessage name="ar.title" /></Error>
+                                        </div>
+                                        <div className='flex flex-col gap-3'>
+                                            <label className='font-medium dark:text-white'>Description</label>
+                                            <Field name="ar.description" as="textarea" placeholder={intl.formatMessage({ id: "description" })} className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800" />
+                                            <Error><ErrorMessage name="ar.description" /></Error>
+                                        </div>
+                                        <div className='flex flex-col gap-3'>
+                                            <label className='font-medium dark:text-white'>Duration</label>
+                                            <Field name="ar.duration" type="text" placeholder={intl.formatMessage({ id: "duration" })} className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800" />
+                                            <Error><ErrorMessage name="ar.duration" /></Error>
+                                        </div>
+                                        <div className='flex flex-col gap-3'>
+                                            <label className='font-medium dark:text-white'>Price</label>
+                                            <Field name="ar.price" type="number" placeholder={intl.formatMessage({ id: "price" })} className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800" />
+                                            <Error><ErrorMessage name="ar.price" /></Error>
+                                        </div>
+                                        <div className='flex justify-between'>
+                                            <button type="button" onClick={() => setStep(1)} className='buttons py-3 w-[25%] rounded-lg dark:!text-[#0c112b]'>Back</button>
+                                            <button type="submit" className='py-3 w-[25%] rounded-lg dark:!text-[#0c112b]'>Submit</button>
+                                        </div>
+                                    </>
+                                )}
+
+
+                            </Form>
+
+                        </Formik>
+                    </div>
                 </div>
-            </div>
-        );
-    }
+            </Modal>
+        </>
+    );
+
 };

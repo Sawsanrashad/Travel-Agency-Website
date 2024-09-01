@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { Pagination, A11y } from 'swiper/modules';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
@@ -12,14 +12,16 @@ import axios from 'axios';
 import { FormattedMessage } from 'react-intl';
 import { useRecoilState } from 'recoil';
 import { $lang } from '../../Store';
+import { Loading } from '../Loading/Loading';
 export default function Popular() {
     const [abroadTours, setAbroadTours] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [langState] = useRecoilState($lang);
     useEffect(() => {
         setIsLoading(true)
         axios.get(`http://localhost:3000/allTours`)
             .then((response) => {
-                setAbroadTours(response.data.filter((item) => item.en.category == 'abroad'));
+                setAbroadTours(response.data.filter((item) => item[`${langState}`]?.category == 'abroad'));
             })
             .catch((error) => {
                 console.error("There was an error fetching the data!", error);
@@ -27,23 +29,18 @@ export default function Popular() {
                 setIsLoading(false);
             });
     }, []);
-    console.log(abroadTours)
 
     let content;
     if (isLoading) {
         content =
-            <div className='flex items-center justify-center'>
-                <div class="spinner-border text-primary" role="status">
-                    <span className="visually-hidden dark:text-white">Loading...</span>
-                </div>
-            </div>
+            <Loading />
     } else if (!abroadTours) {
         content = <h3 className='text-center h-full dark:text-white'> {<FormattedMessage id='noToursToShow' />}</h3 >
     } else {
         content = <div className='custom_container flex flex-col gap-5 py-3'>
             <div>
                 <p>{<FormattedMessage id='mostPopular' />}</p>
-                <h2 className='dark:!text-white'>{<><FormattedMessage id='travel' /> <span><FormattedMessage id='countries' /></span></>}</h2>
+                <h2 className='dark:!text-white'>{<><FormattedMessage id='popularToursAbroad' /> </>}</h2>
             </div>
             <div className='justify-between items-stretch md:grid  md:grid-cols-12 md:gap-3'>
                 <div className='md:col-span-5 py-5'>

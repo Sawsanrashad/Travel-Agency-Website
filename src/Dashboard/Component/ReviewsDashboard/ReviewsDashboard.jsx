@@ -4,6 +4,9 @@ import ReactPaginate from 'react-paginate';
 import { ReviewsTableDashboard } from './ReviewsTableDashboard/ReviewsTableDashboard';
 import './ReviewsDashboard.scss';
 import { FormattedMessage } from 'react-intl';
+import { confirmAlert } from 'react-confirm-alert';
+import { ToastContainer } from 'react-toastify';
+import { Loading } from '../../../Components/Loading/Loading';
 
 export const ReviewsDashboard = () => {
     const [reviews, setReviews] = useState([]);
@@ -26,13 +29,48 @@ export const ReviewsDashboard = () => {
     }, []);
 
     const handleDelete = (id) => {
-        axios.delete(`http://localhost:3000/reviews/${id}`)
-            .then((response) => {
-                setReviews(reviews.filter(review => review.id !== id));
-            })
-            .catch((error) => {
-                console.error("There was an error deleting the review!", error);
-            });
+        confirmAlert({
+            title: 'Confirm Delete',
+            message: 'Are you sure you want to delete this review?',
+            buttons: [{
+                label: 'Yes',
+                onClick: () => {
+                    axios.delete(`http://localhost:3000/reviews/${id}`)
+                        .then((response) => {
+                            setReviews(reviews.filter(review => review.id !== id));
+                            toast.success("Review deleted successfully", {
+                                position: "top-right",
+                                autoClose: 3000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                            });
+                        })
+                        .catch((error) => {
+                            console.error("There was an error deleting the review!", error);
+                            toast.error("Error deleting review", {
+                                position: "top-right",
+                                autoClose: 3000,
+                                hideProgressBar: false,
+                                closeOnClick: true,
+                                pauseOnHover: true,
+                                draggable: true,
+                                progress: undefined,
+                            });
+                        });
+                }
+            },
+            {
+                label: 'No',
+                onClick: () => {
+                    // Do nothing if 'No' is clicked
+                }
+            }
+            ]
+        })
+
     };
 
     const handlePageClick = (event) => {
@@ -45,11 +83,7 @@ export const ReviewsDashboard = () => {
     let content;
     if (isLoading) {
         content = (
-            <div className='flex items-center justify-center'>
-                <div className="spinner-border text-primary" role="status">
-                    <span className="visually-hidden">Loading...</span>
-                </div>
-            </div>
+            <Loading />
         );
     } else if (reviews.length === 0) {
         content = <h3 className='text-center h-full dark:!text-white py-60 font-medium'>{<FormattedMessage id='noReviewsToShow' />}</h3>;
@@ -58,8 +92,8 @@ export const ReviewsDashboard = () => {
             <div>
                 <ReviewsTableDashboard reviews={currentReviews} deletReview={handleDelete} />
                 <ReactPaginate
-                    previousLabel={"previous"}
-                    nextLabel={"next"}
+                    previousLabel={<FormattedMessage id='previous' />}
+                    nextLabel={<FormattedMessage id='next' />}
                     breakLabel={"..."}
                     pageCount={Math.ceil(reviews.length / reviewsPerPage)}
                     marginPagesDisplayed={2}
@@ -76,6 +110,7 @@ export const ReviewsDashboard = () => {
     return (
         <div id='reviewDashboard'>
             {content}
+            <ToastContainer />
         </div>
     );
 };

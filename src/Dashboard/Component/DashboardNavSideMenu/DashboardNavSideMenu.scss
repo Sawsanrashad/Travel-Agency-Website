@@ -1,0 +1,14 @@
+#dashboardNavSideMenu {
+  [dir="rtl"] & {
+    right: 0;
+  }
+  .active {
+    background-color: #fff;
+    color: black !important;
+    border-radius: 5px;
+  }
+  button {
+    background-color: white;
+    right: 0;
+  }
+}

@@ -6,8 +6,6 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/scss/effect-fade';
 import './HeaderSlider.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faS, faSearch } from '@fortawesome/free-solid-svg-icons';
 import HeaderSwiperSlide from './Component/HeaderSwiperSlide';
 export default function HeaderSlider() {
     return (
@@ -21,6 +19,7 @@ export default function HeaderSlider() {
                 }}
                 spaceBetween={50}
                 slidesPerView={1}
+                className='en'
                 effect={'fade'}
                 navigation
                 pagination={{ clickable: true }}

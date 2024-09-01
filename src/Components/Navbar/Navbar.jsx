@@ -10,6 +10,8 @@ import { FormattedMessage } from 'react-intl';
 import { GrLanguage } from "react-icons/gr";
 import { MdLightMode } from "react-icons/md";
 import { SlUserFollowing } from "react-icons/sl";
+import { LoginModal } from '../LoginModal/LoginModal';
+import { LoggedClientModal } from '../LoggedClientModal/LoggedClientModal';
 
 export default function Navbar() {
     const [sideMenuIndex, setSideMenuIndex] = useRecoilState($menuState);
@@ -49,7 +51,7 @@ export default function Navbar() {
 
     return (
         <div id='navbar' className={colorChange ? 'navbar-color-change  dark:!bg-[#0c112b]' : ''}>
-            <div className='flex gap-2 justify-between items-center'>
+            <div className='flex gap-2 justify-between items-center '>
                 <div className='flex gap-2 justify-center items-center'>
                     <p className='m-0'>BON VOYAGE</p>
                     <span className='planeIcon'>
@@ -62,27 +64,28 @@ export default function Navbar() {
                     </span>
                 </div>
                 <div className='hidden lg:flex gap-3 justify-center items-center'>
-                    <NavLink to={"/"} className='dark:!text-white'>
+                    <NavLink to={"/"} className='dark:text-white'>
                         <FormattedMessage id='home' />
                     </NavLink>
-                    <NavLink to={"/about"} className='dark:!text-white'>
+                    <NavLink to={"/about"} className='dark:text-white'>
                         <FormattedMessage id='about' />
                     </NavLink>
-                    <NavLink to={"/tours"} className='dark:!text-white'>
+                    <NavLink to={"/tours"} className='dark:text-white'>
                         <FormattedMessage id='tours' />
                     </NavLink>
-                    <NavLink to={"/blog"} className='dark:!text-white'>
+                    <NavLink to={"/blog"} className='dark:text-white'>
                         <FormattedMessage id='blog' />
                     </NavLink>
-                    <NavLink to={"/contact"} className='dark:!text-white'>
+                    <NavLink to={"/contact"} className='dark:text-white'>
                         <FormattedMessage id='contact'
                         /></NavLink>
-                    <span className={`Icon ${loggedState ? 'hidden' : 'block'}`} onClick={() => setLoginState(!loginState)} >
+                    <span className={`Icon relative logIcon ${loggedState ? 'hidden' : 'block'}`} onClick={() => setLoginState(!loginState)} >
                         <PiUserCircleFill size={30} />
+                        <LoginModal />
                     </span>
-                    <span className={`Icon ${loggedState ? 'block' : 'hidden'}`} onClick={() => setLoggedInModalState(!loggedInModalState)} >
-                        {/* <img src={user} alt="" width={"40px"} height={"40px"} /> */}
+                    <span className={`Icon relative loggedUser ${loggedState ? 'block' : 'hidden'}`} onClick={() => setLoggedInModalState(!loggedInModalState)} >
                         <SlUserFollowing size={25} />
+                        <LoggedClientModal />
                     </span>
                     <span onClick={handleLang} className='Icon'>
                         <GrLanguage size={20} />
