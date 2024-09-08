@@ -76,7 +76,7 @@ export const BookedToursDashboard = () => {
         content = <h3 className='text-center h-full dark:!text-white py-60 font-medium'> {<FormattedMessage id='noBookedTours' />}</h3>;
     } else {
         content = (
-            <div>
+            <div className='flex flex-col w-full justify-center items-center'>
                 <BookedToursTableDashboard bookedTours={bookedTours} deleteBookedTour={handleDelete} />
             </div>
         );
@@ -84,7 +84,6 @@ export const BookedToursDashboard = () => {
     return (
         <div id='bookedToursDashboard'>
             {content}
-            <ToastContainer />
         </div>
     )
 }

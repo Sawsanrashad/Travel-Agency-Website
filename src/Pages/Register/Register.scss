@@ -13,7 +13,7 @@
       font-family: "Barlow", sans-serif;
     }
   }
-  #button {
+  .button {
     text-transform: uppercase;
     border-radius: 8px;
     font-size: 17px;
@@ -23,8 +23,17 @@
     cursor: pointer;
     border: none;
     transition: 0.5s;
+    padding: 10px 25px;
   }
-  #button:hover {
+  .button:hover {
     border: 1px solid black;
+  }
+  @media screen and (max-width: 767px) {
+    h1 {
+      font-size: 30px;
+    }
+    .button {
+      font-size: 14px;
+    }
   }
 }

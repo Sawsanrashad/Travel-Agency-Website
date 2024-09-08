@@ -116,7 +116,6 @@ export const BlogsDashboard = () => {
     return (
         <div id='blogs'>
             {content}
-            <ToastContainer />
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-export const AddFormValidationSchema = Yup.object().shape({
+export const EditFormValidationSchema = Yup.object().shape({
     en: Yup.object().shape({
         image: Yup.mixed().required("English Image is required"),
         title: Yup.string().required("English Title is required"),
@@ -40,16 +40,3 @@ export const AddFormValidationSchema = Yup.object().shape({
         cancellationPolicy: Yup.string().required("Arabic cancellation Policy is required"),
     }),
 });
-
-
-
-
-// import * as Yup from "yup";
-// export const AddFormValidationSchema = Yup.object().shape({
-//     title: Yup.string().required('Name is required'),
-//     image: Yup.mixed().required("image is required"),
-//     description: Yup.string().required('description is required'),
-//     duration: Yup.string().required('duration is required'),
-//     price: Yup.number().typeError('Enter Price').required('price is required'),
-
-// });

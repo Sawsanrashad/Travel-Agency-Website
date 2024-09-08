@@ -5,10 +5,12 @@ import './UserTransaction.scss'
 import axios from 'axios';
 import { Loading } from '../../Loading/Loading';
 import { FormattedMessage } from 'react-intl';
+
 export const UserTransactions = () => {
     const [loggedState, setLoggedState] = useRecoilState($loggedIn);
     const [bookedTours, setBookedTours] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+
     useEffect(() => {
         setIsLoading(true);
         axios.get(`http://localhost:3000/bookedTours`)
@@ -23,9 +25,12 @@ export const UserTransactions = () => {
             });
     }, []);
 
-    let email = loggedState ? loggedState.email : null
-    let userTours = bookedTours.filter((item) => item.clientEmail === email)
-    if (userTours) {
+    let email = loggedState ? loggedState.email : null;
+    let userTours = bookedTours.filter((item) => item.clientEmail === email);
+
+    if (isLoading) {
+        return <Loading />;
+    } else if (userTours.length > 0) {
         return (
             <div className='userTransaction'>
                 <h2 className='dark:!text-white font-medium md:text-xl '>{<FormattedMessage id='myBookedTours' />}</h2>
@@ -58,11 +63,11 @@ export const UserTransactions = () => {
                 })}
             </div>
         )
-    }
-    else if (isLoading) return <Loading />
-    else {
+    } else {
         return (
-            <h2 className='userTransaction dark:text-white font-medium px-2 md:px-7 py-3 md:text-xl'> No Transactions Yet</h2>
-        )
+            <h2 className='userTransaction dark:text-white font-medium px-2 md:px-7 py-3 md:text-xl'>
+                {<FormattedMessage id='noTransactionsYet' />}
+            </h2>
+        );
     }
 }

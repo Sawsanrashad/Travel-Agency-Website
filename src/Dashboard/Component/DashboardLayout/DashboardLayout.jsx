@@ -15,7 +15,7 @@ export const DashboardLayout = () => {
 
     return (
         <AdminCheck>
-            <div className='layout flex  flex-row-reverse dark:bg-[#0e1b31] min-h-screen w-full relative'>
+            <div className='layout flex lg:flex-row-reverse dark:bg-[#0e1b31] min-h-screen w-full relative'>
                 <DashboardNav />
                 <DashboardNavSideMenu />
                 <div className='outlet dark:bg-[#0e1b31] mb-5 mt-5 py-6'><Outlet /></div>

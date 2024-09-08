@@ -7,6 +7,7 @@ import { RateStarsClick } from '../../../Components/RateStarsClick/RateStarsClic
 import { FormattedMessage, useIntl } from 'react-intl'
 import { useRecoilState } from 'recoil'
 import { $loggedIn } from '../../../Store'
+import { toast, ToastContainer } from 'react-toastify'
 
 export const ReviewForm = ({ reviews, setReviews }) => {
     const [loggedState, setLoggedState] = useRecoilState($loggedIn);
@@ -19,7 +20,7 @@ export const ReviewForm = ({ reviews, setReviews }) => {
             .then((response) => {
                 setReviews([...reviews, values])
                 form.current.resetForm();
-                // tostify
+                toast.success("Review submitted successfully!");
             })
             .catch((err) => {
                 console.log(err)

@@ -4,9 +4,7 @@ import { MainLayout } from "../layout/MainLayout";
 import HomePage from "../Pages/HomePage/HomePage";
 import AboutPage from "../Pages/AboutPage/AboutPage";
 import ToursPage from "../Pages/ToursPage/ToursPage";
-import DestinationPage from "../Pages/DestinationPage/DestinationPage";
 import Blog from "../Pages/Blog/Blog";
-import ContactForm from "../Pages/ContactPage/Components/ContactForm";
 import ContactPage from "../Pages/ContactPage/ContactPage";
 import { CheckOut } from "../Pages/CheckOut/CheckOut";
 import CategoryTours from "../Pages/CategoryTours/CategoryTours";
@@ -88,12 +86,15 @@ const router = createBrowserRouter([
     }, {
         path: "/login",
         element: <LoginPage />,
+        errorElement: <ErrorPage />
     }, {
         path: "/register",
-        element: <Register />
+        element: <Register />,
+        errorElement: <ErrorPage />
     }, {
         path: "dashboard",
         element: <DashboardLayout />,
+        errorElement: <ErrorPage />,
         children: [
             {
                 path: "home",
@@ -126,7 +127,8 @@ const router = createBrowserRouter([
         ]
     }, {
         path: "/forgetPassword",
-        element: <ForgetPassword />
+        element: <ForgetPassword />,
+        errorElement: <ErrorPage />
     }
 ]);
 

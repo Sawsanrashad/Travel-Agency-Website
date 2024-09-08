@@ -79,7 +79,7 @@ export const UsersDashboard = () => {
         content = <h3 className='text-center h-full'> No Users To Show</h3>;
     } else {
         content = (
-            <div>
+            <div className='flex w-full justify-center items-center'>
                 <UsersTableDashboard users={users} onDelete={handleDelete} />
             </div>
         );
@@ -88,7 +88,6 @@ export const UsersDashboard = () => {
     return (
         <div id='userDashboard'>
             {content}
-            <ToastContainer />
         </div>
     );
 }

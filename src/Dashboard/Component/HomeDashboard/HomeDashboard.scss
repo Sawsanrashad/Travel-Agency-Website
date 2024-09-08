@@ -4,4 +4,9 @@
     color: rgb(15, 36, 84);
     font-family: Poppins, sans-serif;
   }
+  .chart-container {
+    position: relative;
+    height: 400px; // Adjust this height as needed
+    width: 100%;
+  }
 }

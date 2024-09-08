@@ -11,6 +11,7 @@ import { FormattedMessage } from 'react-intl';
 import { useRecoilState } from 'recoil';
 import { $loggedIn } from '../../../Store';
 import { useParams } from 'react-router-dom';
+import user from '../../../assets/images/user2.png';
 export const TourContent = ({ tour }) => {
     const [reviews, setReviews] = useState([]);
     let { id } = useParams();
@@ -39,10 +40,15 @@ export const TourContent = ({ tour }) => {
                 </div>
             );
         }
+        else if (!Array.isArray(tour.itinerary)) {
+            return (
+                <h5>{tour.itinerary}</h5>
+            )
+        }
         else {
             return (
                 <ul>
-                    {tour.inclusions.map((itinerary, index) => (
+                    {tour.itinerary.map((itinerary, index) => (
                         <li key={index}>
                             {itinerary} <br />
                         </li>
@@ -69,9 +75,9 @@ export const TourContent = ({ tour }) => {
                             reviews.map((review, index) => {
                                 return (
                                     <div key={index} className='flex items-center gap-4 border rounded-md p-3 my-3 dark:!border-slate-800'>
-                                        <img src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg" className='rounded-full h-[60px] w-[60px]' alt="userImg" />
+                                        <img src={user} className='rounded-full h-[50px] w-[50px]' alt="userImg" />
                                         <div className="data">
-                                            <h6 className=' dark:!text-white'>{review.name}</h6>
+                                            {/* <h6 className=' dark:!text-white'>{review.name}</h6> */}
                                             <RateStars rate={review.rating} />
                                             <p className='px-1 mt-3  dark:!text-white'>{review.comment}</p>
                                         </div>

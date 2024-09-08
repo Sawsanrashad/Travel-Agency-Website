@@ -15,7 +15,7 @@ export const DashboardNav = () => {
                     <FaBarsStaggered size={25} />
                 </span>
             </div>
-            <div id='dashboardNav' className='lg:w-72 bg-cyan-700 rounded-r-md pt-5 hidden lg:flex lg:flex-col gap-5 dark:bg-sky-950 fixed top-0 left-0 h-screen'>
+            <div id='dashboardNav' className='lg:w-72 bg-cyan-700 rounded-r-md pt-5 hidden lg:flex lg:flex-col gap-5 dark:bg-sky-950 fixed top-0 left-0 min-h-screen'>
                 <div className='flex gap-5 justify-center items-center'>
                     <p className='m-0 text-white'>BON VOYAGE</p>
                     <span className='planeIcon text-white'>

@@ -6,7 +6,7 @@ import './ToursDashboard.scss';
 import { ClipLoader } from 'react-spinners';
 import { EditForm } from './EditForm/EditForm';
 import { useRecoilState } from 'recoil';
-import { $addFormState } from '../../../Store';
+import { $addFormState, $tours } from '../../../Store';
 import { AddForm } from './AddForm/AddForm';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,7 +17,7 @@ import { Loading } from '../../../Components/Loading/Loading';
 
 export const ToursDashboard = () => {
     const [addForm, setAddForm] = useRecoilState($addFormState);
-    const [tours, setTours] = useState([]);
+    const [tours, setTours] = useRecoilState($tours);
     const [isLoading, setIsLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(0);
     const [toursPerPage] = useState(4);
@@ -122,7 +122,6 @@ export const ToursDashboard = () => {
             <AddForm />
             <EditForm />
             {content}
-            <ToastContainer />
         </div>
     );
 };

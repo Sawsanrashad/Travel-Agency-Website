@@ -31,7 +31,7 @@ export const SearchForm = ({ onSearch }) => {
                                     setValue(e.target.value)
                                 }
                                 }
-                                className="md:p-3 p-2 border-0 bg-slate-200 dark:!bg-slate-800 w-full"
+                                className="md:p-3 p-2 border-0 bg-slate-200 dark:!bg-slate-800 w-full dark:placeholder-white dark:text-white"
                             />
                             {/* <Error><ErrorMessage name="where" /></Error> */}
                         </div>

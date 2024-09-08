@@ -15,6 +15,9 @@ export const LoginModal = () => {
 
     useEffect(() => {
         document.addEventListener("click", closeLoginModal);
+        return () => {
+            document.removeEventListener("click", closeLoginModal);
+        };
     }, []);
     if (loginState) {
         return (

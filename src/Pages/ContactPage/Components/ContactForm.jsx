@@ -81,20 +81,20 @@ export default function ContactForm() {
                                 <Form ref={contactForm} className='w-full flex justify-between items-center flex-col p-3 gap-1'>
                                     <div className='md:grid md:grid-cols-2 gap-2 flex-col w-full'>
                                         <div className='w-full'>
-                                            <Field name="name" type="text" placeholder={intl.formatMessage({ id: "name" })} className="w-full px-3 py-4 border-0 rounded-lg dark:!bg-slate-800" />
+                                            <Field name="name" type="text" placeholder={intl.formatMessage({ id: "name" })} className="w-full px-3 py-4 border-0 rounded-lg dark:!bg-slate-800 dark:placeholder-white dark:text-white" />
                                             <Error><ErrorMessage name='name' /></Error>
                                         </div>
                                         <div className='w-full'>
-                                            <Field name="email" type="email" placeholder={intl.formatMessage({ id: "email" })} className="w-full px-3 py-4 border-0 rounded-lg dark:!bg-slate-800" />
+                                            <Field name="email" type="email" placeholder={intl.formatMessage({ id: "email" })} className="w-full px-3 py-4 border-0 rounded-lg dark:!bg-slate-800 dark:placeholder-white dark:text-white" />
                                             <Error><ErrorMessage name='email' /></Error>
                                         </div>
                                     </div>
                                     <div className='w-full'>
-                                        <Field name="subject" type="text" placeholder={intl.formatMessage({ id: "subject" })} className=" w-full px-3 py-4 border-0 rounded-lg dark:!bg-slate-800" />
+                                        <Field name="subject" type="text" placeholder={intl.formatMessage({ id: "subject" })} className=" w-full px-3 py-4 border-0 rounded-lg dark:!bg-slate-800 dark:placeholder-white dark:text-white" />
                                         <Error><ErrorMessage name='subject' /></Error>
                                     </div>
                                     <div className='w-full'>
-                                        <Field as="textarea" name="message" type="text" placeholder={intl.formatMessage({ id: "message" })} className="w-full px-3 border-0 rounded-lg dark:!bg-slate-800" />
+                                        <Field as="textarea" name="message" type="text" placeholder={intl.formatMessage({ id: "message" })} className="w-full px-3 border-0 rounded-lg dark:!bg-slate-800 dark:placeholder-white dark:text-white" />
                                         <Error><ErrorMessage name='message' /></Error>
                                     </div>
                                     <button type='submit' className='py-3 w-full rounded-lg dark:!text-[#0c112b]'>{<FormattedMessage id='sendMessageButton' />}</button>

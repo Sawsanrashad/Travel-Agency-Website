@@ -40,24 +40,24 @@ export default function Footer() {
                         </p>
                         <div className='flex gap-3'>
                             <div className='footerIconDiv flex justify-center items-center'>
-                                <span className='footerIcons'>
+                                <a className='footerIcons decoration-none' href='https://www.facebook.com/login/'>
                                     <FaFacebookF size={23} />
-                                </span>
+                                </a>
                             </div>
                             <div className='footerIconDiv flex justify-center items-center'>
-                                <span className='footerIcons'>
+                                <a className='footerIcons decoration-none' href='https://www.linkedin.com/login'>
                                     <TiSocialLinkedin size={23} />
-                                </span>
+                                </a>
                             </div>
                             <div className='footerIconDiv flex justify-center items-center'>
-                                <span className='footerIcons'>
+                                <a className='footerIcons decoration-none' href='https://www.pinterest.com/login/'>
                                     <FaPinterestP size={23} />
-                                </span>
+                                </a>
                             </div>
                             <div className='footerIconDiv flex justify-center items-center'>
-                                <span className='footerIcons'>
+                                <a className='footerIcons decoration-none' href='https://www.instagram.com/accounts/login/'>
                                     <FaInstagram size={23} />
-                                </span>
+                                </a>
                             </div>
                         </div>
                     </div>

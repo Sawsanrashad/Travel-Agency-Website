@@ -14,7 +14,12 @@
       font-family: "Barlow", sans-serif;
     }
   }
-  // .button {
-  //   background: rgb(32, 149, 174);
-  // }
+  @media screen and (max-width: 767px) {
+    h1 {
+      font-size: 30px;
+    }
+    .button {
+      font-size: 14px;
+    }
+  }
 }

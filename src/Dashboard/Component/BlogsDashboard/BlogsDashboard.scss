@@ -40,10 +40,11 @@
   }
   @media screen and (max-width: 767px) {
     .pagination li {
-      margin: 0 !important;
+      margin: 2px !important;
     }
     .pagination li a {
       padding: 5px 5px !important;
+      font-size: 11px;
     }
   }
 }

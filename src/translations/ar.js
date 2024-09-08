@@ -186,7 +186,24 @@ export const arabic = {
 	myInformation: "بياناتي",
 	myTransactions: "معاملاتي",
 	myBookedTours: "رحلاتي",
-
+	category: 'الفئة',
+	location: 'الموقع',
+	historicalInfo: 'المعلومات التاريخية',
+	itinerary: 'خط سير الرحلة',
+	inclusions: 'المشتملات',
+	exclusions: 'الاستثناءات',
+	meetingPoint: 'نقطة الالتقاء',
+	groupSize: 'حجم المجموعة',
+	difficultyLevel: 'مستوى الصعوبة',
+	languages: 'اللغات',
+	specialRequirements: 'المتطلبات الخاصة',
+	cancellationPolicy: 'سياسة الإلغاء',
+	englishForm: "النموذج باللغة الإنجليزية",
+	arabicForm: "النموذج باللغة العربية",
+	imageUpload: "تحميل الصورة",
+	submit: "تأكيد",
+	back: "ارجع",
+	noTransactionsYet: "لا يوجد معاملات",
 };
 
 

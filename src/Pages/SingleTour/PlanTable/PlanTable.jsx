@@ -2,12 +2,13 @@ import React from 'react'
 import { FormattedMessage } from 'react-intl'
 
 export const PlanTable = ({ tour }) => {
+    console.log(tour)
     return (
         <table className='table-fixed border-collapse '>
             <tbody>
                 <tr>
                     <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{<FormattedMessage id='departure' />}</td>
-                    <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white" >{tour.meetingPoint}</td>
+                    <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{tour.meetingPoint}</td>
                 </tr>
                 <tr className='bg-slate-200  dark:!bg-slate-800 '>
                     <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{<FormattedMessage id='highlights' />}</td>

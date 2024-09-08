@@ -37,7 +37,7 @@ export default function CategoryTours() {
                 const data = response?.data?.filter((item) => {
                     return langState === 'ar' ? item.ar.category === category : item.en.category === category;
                 });
-                console.log(data); // Check the filtered data in the console
+                console.log(data);
                 setCategoryTours(data);
                 setFilteredTours(data);
             })
@@ -81,7 +81,7 @@ export default function CategoryTours() {
     } else {
         content = (
             <div className='justify-center items-start  md:grid flex-col'>
-                <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:px-5  gap-11 justify-center items-center mt-16">
+                <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:px-5 gap-11 justify-center items-center mt-16">
                     {displayTours.map((tour, index) => (
                         <FlipCard key={`tour__item__${index}`} tour={tour[`${langState}`]} id={tour.id} />
                     ))}
@@ -91,7 +91,7 @@ export default function CategoryTours() {
     }
 
     return (
-        <div id='categoryTours' className='dark:!bg-[#0e1b31] mb-4'>
+        <div id='categoryTours' className='dark:!bg-[#0e1b31] py-4 '>
             <Header title={<FormattedMessage id='popularTours' />} heading={<span className='capitalize !text-white'>{category}</span>} bgImg={`url('../assets/${category}Bg.jpg')`} />
             <div className='form'>
                 <SearchForm onSearch={onSearch} />

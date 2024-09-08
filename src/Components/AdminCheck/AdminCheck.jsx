@@ -14,7 +14,7 @@ export const AdminCheck = ({ children }) => {
         navigate('/')
         toast.error('You do not have permission to access this')
         return (
-            <ToastContainer />
+            ''
         )
     }
 }

@@ -61,3 +61,7 @@ export const $bookedTourInfo = atom({
 		bookedDate: null,
 	}
 });
+export const $tours = atom({
+	key: "$tours",
+	default: [],
+});

@@ -89,7 +89,7 @@ export const ReviewsDashboard = () => {
         content = <h3 className='text-center h-full dark:!text-white py-60 font-medium'>{<FormattedMessage id='noReviewsToShow' />}</h3>;
     } else {
         content = (
-            <div>
+            <div className='flex flex-col w-full justify-center items-center'>
                 <ReviewsTableDashboard reviews={currentReviews} deletReview={handleDelete} />
                 <ReactPaginate
                     previousLabel={<FormattedMessage id='previous' />}
@@ -110,7 +110,6 @@ export const ReviewsDashboard = () => {
     return (
         <div id='reviewDashboard'>
             {content}
-            <ToastContainer />
         </div>
     );
 };

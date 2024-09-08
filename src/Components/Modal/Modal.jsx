@@ -13,19 +13,22 @@ export const Modal = ({ show, children, size, setAddForm, setEditForm }) => {
         if (e.target.closest(".modal__overlay") && (!e.target.closest(".modal")) && (!e.target.closest(".aForm"))) {
             setisOpen(false);
             setAddForm(false)
+            return;
         }
     }
+
     function closeEditForm(e) {
         if (e.target.closest(".modal__overlay") && (!e.target.closest(".modal")) && (!e.target.closest(".eForm"))) {
             setisOpen(false);
             setEditForm(false)
+            return;
         }
     }
 
     useEffect(() => {
-        document.addEventListener("click", closeModal);
+        document.addEventListener("click", setAddForm ? closeModal : closeEditForm);
         return () => {
-            document.removeEventListener("click", closeModal);
+            document.removeEventListener("click", setAddForm ? closeModal : closeEditForm);
         };
     }, []);
 

@@ -73,7 +73,7 @@ export const ContactMessagesDashboard = () => {
     content = <h3 className='text-center h-full dark:!text-white py-60 font-medium'>{<FormattedMessage id='noMessagesToShow' />}</h3>;
   } else {
     content = (
-      <div>
+      <div className='flex flex-col w-full justify-center items-center'>
         <ContactMessagesTableDashboard messages={messages} deleteMessage={handleDelete} />
       </div>
     );
@@ -81,7 +81,6 @@ export const ContactMessagesDashboard = () => {
   return (
     <div id='contactMessageDashboard'>
       {content}
-      <ToastContainer />
     </div>
   )
 
