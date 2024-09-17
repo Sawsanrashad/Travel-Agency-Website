@@ -5,11 +5,14 @@ import './UserTransaction.scss'
 import axios from 'axios';
 import { Loading } from '../../Loading/Loading';
 import { FormattedMessage } from 'react-intl';
+import { useNavigate } from 'react-router-dom';
+import suitcase from '../../../assets/images/suitcase.png';
 
 export const UserTransactions = () => {
     const [loggedState, setLoggedState] = useRecoilState($loggedIn);
     const [bookedTours, setBookedTours] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setIsLoading(true);
@@ -65,9 +68,21 @@ export const UserTransactions = () => {
         )
     } else {
         return (
-            <h2 className='userTransaction dark:text-white font-medium px-2 md:px-7 py-3 md:text-xl'>
-                {<FormattedMessage id='noTransactionsYet' />}
-            </h2>
+            <div className='userTransaction flex flex-col md:flex-row justify-between'>
+                <div className='flex flex-col gap-5 md:gap-14 px-2 md:px-5 py-3'>
+                    <h2 className='dark:text-white font-medium  md:text-xl'>
+                        {<FormattedMessage id='noTransactionsYet' />}
+
+                    </h2>
+                    <button onClick={() => { navigate('/tours') }} className='p-3 ]'>
+                        Go Book Your First Trip
+                    </button>
+                </div>
+                <div className='flex flex-col gap-6'>
+
+                    <img src={suitcase} alt="suitcase" width={500} height={500} />
+                </div>
+            </div>
         );
     }
 }

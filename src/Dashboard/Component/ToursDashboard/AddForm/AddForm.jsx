@@ -17,13 +17,15 @@ export const AddForm = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     let handleAddNewTour = (values, { resetForm }) => {
+        values.en.imageUrl = `/src/assets/images/${values.en.imageUrl.name}`
+        values.ar.imageUrl = `/src/assets/images/${values.ar.imageUrl.name}`
         const formData = {
             en: {
                 title: values.en.title,
                 description: values.en.description,
                 price: values.en.price,
                 duration: values.en.duration,
-                imageUrl: values.en.image ? URL.createObjectURL(values.en.image) : '',
+                imageUrl: values.en.imageUrl,
                 category: values.en.category,
                 location: values.en.location,
                 historicalInfo: values.en.historicalInfo,
@@ -43,7 +45,7 @@ export const AddForm = () => {
                 description: values.ar.description,
                 price: values.ar.price,
                 duration: values.ar.duration,
-                imageUrl: values.ar.image ? URL.createObjectURL(values.ar.image) : '',
+                imageUrl: values.ar.imageUrl,
                 category: values.ar.category,
                 location: values.ar.location,
                 historicalInfo: values.ar.historicalInfo,
@@ -67,6 +69,7 @@ export const AddForm = () => {
                 toast.success("Tour successfully Added!");
                 resetForm();
                 setIsOpen(false);
+                setAddForm(false);
                 setStep(1)
             })
             .catch((err) => {
@@ -77,12 +80,11 @@ export const AddForm = () => {
     return (
         <>
             <Modal show={addForm} setAddForm={setAddForm} size={'md'}>
-                {/* Modal that wraps the form */}
                 <div id='addForm' className='addForm my-8'>
                     <Formik
                         initialValues={{
                             en: {
-                                image: null,
+                                imageUrl: null,
                                 title: '',
                                 description: '',
                                 price: '',
@@ -101,7 +103,7 @@ export const AddForm = () => {
                                 cancellationPolicy: '',
                             },
                             ar: {
-                                image: null,
+                                imageUrl: null,
                                 title: '',
                                 description: '',
                                 duration: '',
@@ -134,14 +136,14 @@ export const AddForm = () => {
                                         <div className='flex flex-col gap-3'>
                                             <label className='font-medium dark:text-white'>{<FormattedMessage id='imageUpload' />}</label>
                                             <input
-                                                name="en.image"
+                                                name="en.imageUrl"
                                                 type="file"
                                                 onChange={(event) => {
-                                                    setFieldValue("en.image", event.currentTarget.files[0]);
+                                                    setFieldValue("en.imageUrl", event.currentTarget.files[0]);
                                                 }}
                                                 className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800 dark:text-white"
                                             />
-                                            <Error><ErrorMessage name="en.image" /></Error>
+                                            <Error><ErrorMessage name="en.imageUrl" /></Error>
                                         </div>
 
 
@@ -251,12 +253,11 @@ export const AddForm = () => {
                                                             ))
                                                         }
                                                         <button type="button" onClick={() => push('')}>
-                                                            Add option
+                                                            Add Inclusions
                                                         </button>
                                                     </>
                                                 )}
                                             />
-
                                             <Error><ErrorMessage name="en.inclusions" /></Error>
                                         </div>
                                         <div className='flex flex-col gap-3'>
@@ -270,7 +271,7 @@ export const AddForm = () => {
                                                                 <div key={idx}>
                                                                     <Field
                                                                         type="text"
-                                                                        name={`ar.exclusions[${idx}]`}
+                                                                        name={`en.exclusions[${idx}]`}
                                                                         value={option}
                                                                         placeholder={intl.formatMessage({ id: "exclusions" })}
                                                                         className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800 dark:text-white dark:placeholder-white"
@@ -279,7 +280,7 @@ export const AddForm = () => {
                                                             ))
                                                         }
                                                         <button type="button" onClick={() => push('')}>
-                                                            Add option
+                                                            Add Exclusions
                                                         </button>
                                                     </>
                                                 )}
@@ -386,7 +387,6 @@ export const AddForm = () => {
                                             />
                                             <Error><ErrorMessage name="en.cancellationPolicy" /></Error>
                                         </div>
-
                                         <button
                                             type="button"
                                             onClick={() => {
@@ -412,14 +412,14 @@ export const AddForm = () => {
                                         <div className='flex flex-col gap-3'>
                                             <label className='font-medium dark:text-white'>{<FormattedMessage id='imageUpload' />}</label>
                                             <input
-                                                name="ar.image"
+                                                name="ar.imageUrl"
                                                 type="file"
                                                 onChange={(event) => {
-                                                    setFieldValue("ar.image", event.currentTarget.files[0]);
+                                                    setFieldValue("ar.imageUrl", event.currentTarget.files[0]);
                                                 }}
                                                 className="w-full px-3 py-4 border-0 rounded-lg bg-gray-100 dark:!bg-slate-800"
                                             />
-                                            <Error><ErrorMessage name="ar.image" /></Error>
+                                            <Error><ErrorMessage name="ar.imageUrl" /></Error>
                                         </div>
 
 
@@ -529,7 +529,7 @@ export const AddForm = () => {
                                                             ))
                                                         }
                                                         <button type="button" onClick={() => push('')}>
-                                                            Add option
+                                                            Add Inclusions
                                                         </button>
                                                     </>
                                                 )}
@@ -556,7 +556,7 @@ export const AddForm = () => {
                                                             ))
                                                         }
                                                         <button type="button" onClick={() => push('')}>
-                                                            Add option
+                                                            Add Exclusions
                                                         </button>
                                                     </>
                                                 )}
@@ -612,7 +612,7 @@ export const AddForm = () => {
                                                             ))
                                                         }
                                                         <button type="button" onClick={() => push('')}>
-                                                            Add option
+                                                            Add Highlights
                                                         </button>
                                                     </>
                                                 )}
@@ -638,7 +638,7 @@ export const AddForm = () => {
                                                             ))
                                                         }
                                                         <button type="button" onClick={() => push('')}>
-                                                            Add option
+                                                            Add Languages
                                                         </button>
                                                     </>
                                                 )}

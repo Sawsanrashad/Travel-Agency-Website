@@ -59,11 +59,11 @@ export default function LoginPage() {
                             >
                                 <Form className=' w-full p-3 flex flex-col justify-center items-center gap-3'>
                                     <div className='flex flex-col gap-2 w-full'>
-                                        <Field name="email" placeHolder={intl.formatMessage({ id: "email" })} type="email" className="p-4  bg-slate-200 border-0 rounded-sm dark:bg-slate-700 dark:placeholder-white dark:text-white" />
+                                        <Field name="email" placeholder={intl.formatMessage({ id: "email" })} type="email" className="p-4  bg-slate-200 border-0 rounded-sm dark:bg-slate-700 dark:placeholder-white dark:text-white" />
                                         <Error><ErrorMessage name="email" /></Error>
                                     </div>
                                     <div className='flex flex-col gap-2 w-full'>
-                                        <Field name="password" placeHolder={intl.formatMessage({ id: "password" })} type="password" className="p-4 bg-slate-200 border-0 rounded-sm dark:bg-slate-700 dark:placeholder-white dark:text-white" />
+                                        <Field name="password" placeholder={intl.formatMessage({ id: "password" })} type="password" className="p-4 bg-slate-200 border-0 rounded-sm dark:bg-slate-700 dark:placeholder-white dark:text-white" />
                                         <Error><ErrorMessage name="password" /></Error>
                                     </div>
                                     <button type='submit' className='button p-3 w-[45%] md:w-[25%] bg-cyan-700 hover:bg-sky-800 text-white rounded-md pointer-events-auto font-medium'><FormattedMessage id='login' /></button>

@@ -10895,88 +10895,6 @@
         "specialRequirements": "ملابس مريحة ومحتشمة، رغبة في خدمات VIP",
         "cancellationPolicy": "إلغاء مجاني حتى 30 يومًا قبل المغادرة."
       }
-    },
-    {
-      "id": "226f",
-      "en": {
-        "title": "airplane",
-        "description": "airplane",
-        "price": 2221,
-        "duration": "3",
-        "imageUrl": "blob:http://localhost:5173/eab1c48f-eee3-43fb-ab5f-a33909f010a7",
-        "category": "egypt",
-        "location": "egypt",
-        "historicalInfo": "airplane",
-        "itinerary": "airplane",
-        "inclusions": "airplane",
-        "exclusions": "airplane",
-        "meetingPoint": "airplane",
-        "groupSize": "2",
-        "difficultyLevel": "airplane",
-        "languages": "airplane",
-        "specialRequirements": "airplane",
-        "cancellationPolicy": "airplane"
-      },
-      "ar": {
-        "title": "سوسن",
-        "description": "airplane سوسن",
-        "price": 22222,
-        "duration": "سوسن",
-        "imageUrl": "blob:http://localhost:5173/1187986c-ca1f-4ef6-bb4b-ec17cf4d279a",
-        "category": "مصر",
-        "location": "مصر",
-        "historicalInfo": "سوسن",
-        "itinerary": "سوسن",
-        "inclusions": "سوسن",
-        "exclusions": "سوسن",
-        "meetingPoint": "سوسن",
-        "groupSize": "سوسن",
-        "difficultyLevel": "سوسن",
-        "languages": "سوسن",
-        "specialRequirements": "سوسن",
-        "cancellationPolicy": "سوسن"
-      }
-    },
-    {
-      "en": {
-        "title": "Minim neque exercita",
-        "description": "Necessitatibus cum u",
-        "price": 164,
-        "duration": "Consectetur volupta",
-        "imageUrl": "blob:http://localhost:5173/5b1b96d8-f996-42c1-a8e3-2df18d04240f",
-        "category": "Enim ea aut dolorum ",
-        "location": "Autem perferendis in",
-        "historicalInfo": "Ullam qui deserunt v",
-        "itinerary": "Quis autem nobis rat",
-        "inclusions": "Molestias fuga Aliq",
-        "exclusions": "Proident expedita e",
-        "meetingPoint": "Quae eligendi dicta ",
-        "groupSize": "Non consequuntur exp",
-        "difficultyLevel": "Eum ea officiis ea e",
-        "languages": "Facilis incidunt eo",
-        "specialRequirements": "Maxime doloremque ex",
-        "cancellationPolicy": "Assumenda molestiae "
-      },
-      "ar": {
-        "title": "Non commodi doloremq",
-        "description": "Reiciendis sunt earu",
-        "price": 930,
-        "duration": "Veniam similique si",
-        "imageUrl": "blob:http://localhost:5173/2b32dd08-c6f2-4a59-961c-cc7af45071e6",
-        "category": "Exercitationem sit ",
-        "location": "Nulla eligendi do ip",
-        "historicalInfo": "Rerum non assumenda ",
-        "itinerary": "Optio id commodo u",
-        "inclusions": "Quia quis iure et pl",
-        "exclusions": "Ea ea et pariatur Q",
-        "meetingPoint": "Anim aliquid amet s",
-        "groupSize": "Id voluptatem dolore",
-        "difficultyLevel": "Qui ut magnam sint a",
-        "languages": "Rem dolores quis ame",
-        "specialRequirements": "Exercitation modi ne",
-        "cancellationPolicy": "Quos dignissimos com"
-      },
-      "id": "oZpdqjr"
     }
   ],
   "reviews": [
@@ -11188,36 +11106,25 @@
         "role": "admin",
         "phone": "01007441528"
       }
+    },
+    {
+      "comment": "h",
+      "rating": 4,
+      "id": "rgd9S-z"
+    },
+    {
+      "comment": "uu",
+      "rating": "",
+      "id": "vzodIkV"
     }
   ],
   "contactMessages": [
-    {
-      "id": "45f0",
-      "name": "sawsan",
-      "email": "sawsan@gmail.com",
-      "subject": "sssss",
-      "message": "aaaaaaaaaaaaa"
-    },
     {
       "id": "ff35",
       "name": "sohila",
       "email": "sohila@gmail.com",
       "subject": "test",
       "message": "tessttt"
-    },
-    {
-      "id": "59a0",
-      "name": "sawsan",
-      "email": "sawsan@gmail.com",
-      "subject": "test",
-      "message": "testtt"
-    },
-    {
-      "id": "44ce",
-      "name": "sawsan",
-      "email": "sawsan@gmail.com",
-      "subject": "test",
-      "message": "test"
     },
     {
       "id": "9f15",
@@ -11272,7 +11179,7 @@
       "id": "453f",
       "name": "sohila sobhy",
       "email": "sohila@gmail.com",
-      "password": "1234",
+      "password": "soso",
       "role": "user",
       "phone": 1033660360
     },
@@ -11283,6 +11190,14 @@
       "password": "5678",
       "role": "user",
       "phone": 1011145004
+    },
+    {
+      "name": "yossif",
+      "email": "yossif@yossif.yossif",
+      "password": "yossifyossif",
+      "role": "user",
+      "phone": 111111,
+      "id": "gJ4e6Nj"
     }
   ],
   "bookedTours": [
@@ -11315,6 +11230,16 @@
       "clientEmail": "Nada@gmail.com",
       "bookedDate": "2024-09-07",
       "paymentDate": "8/29/2024"
+    },
+    {
+      "tourImage": "/src/assets/images/luxorTemples.jpg",
+      "tourTitle": "Luxor Temples",
+      "tourPrice": 150,
+      "clientName": "yossif",
+      "clientEmail": "yossif@yossif.yossif",
+      "bookedDate": "2024-09-12",
+      "paymentDate": "9/13/2024",
+      "id": "3xA7eMY"
     }
   ],
   "blogs": [

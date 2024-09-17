@@ -1,6 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import './Modal.css'
-export const Modal = ({ show, children, size, setAddForm, setEditForm }) => {
+export const Modal = ({ show, children, size, setAddForm, setEditForm, setAddBlog, setEditBlog }) => {
     const [isOpen, setisOpen] = useState(false);
     const [contentHeight, setContentHeight] = useState(300);
     const contentRef = useRef();
@@ -8,29 +8,50 @@ export const Modal = ({ show, children, size, setAddForm, setEditForm }) => {
     useEffect(() => {
         setisOpen(show)
     }, [show])
-
     function closeModal(e) {
-        if (e.target.closest(".modal__overlay") && (!e.target.closest(".modal")) && (!e.target.closest(".aForm"))) {
-            setisOpen(false);
-            setAddForm(false)
-            return;
-        }
+        if (setAddBlog) setAddBlog(false);
+        if (setAddForm) setAddForm(false);
+        if (setEditForm) setEditForm(false);
+        if (setEditBlog) setAddBlog(false);
     }
+    // function closeModal(e) {
+    //     if (e.target.closest(".modal__overlay") && (!e.target.closest(".modal")) && (!e.target.closest(".aForm"))) {
+    //         setisOpen(false);
+    //         setAddForm(false);
+    //     }
+    // }
 
-    function closeEditForm(e) {
-        if (e.target.closest(".modal__overlay") && (!e.target.closest(".modal")) && (!e.target.closest(".eForm"))) {
-            setisOpen(false);
-            setEditForm(false)
-            return;
-        }
-    }
+    // function closeEditForm(e) {
+    //     if (e.target.closest(".modal__overlay") && (!e.target.closest(".modal")) && (!e.target.closest(".eForm"))) {
+    //         setisOpen(false);
+    //         setEditForm(false);
+    //     }
+    // }
+    // function closeAddBlog(e) {
+    //     if (e.target.closest(".modal__overlay") && (!e.target.closest(".modal")) && (!e.target.closest(".addBlog"))) {
+    //         setisOpen(false);
+    //         setAddBlog(false);
+    //     }
+    // }
+    // function closeEditBlog(e) {
+    //     if (e.target.closest(".modal__overlay") && (!e.target.closest(".modal")) && (!e.target.closest(".editBlog"))) {
+    //         setisOpen(false);
+    //         setEditBlog(false);
+    //     }
+    // }
+    // useEffect(() => {
+    //     document.addEventListener("click", setAddForm ? closeModal : closeEditForm);
+    //     return () => {
+    //         document.removeEventListener("click", setAddForm ? closeModal : closeEditForm);
+    //     };
+    // }, []);
 
-    useEffect(() => {
-        document.addEventListener("click", setAddForm ? closeModal : closeEditForm);
-        return () => {
-            document.removeEventListener("click", setAddForm ? closeModal : closeEditForm);
-        };
-    }, []);
+    // useEffect(() => {
+    //     document.addEventListener("click", setAddBlog ? closeAddBlog : closeEditBlog);
+    //     return () => {
+    //         document.removeEventListener("click", setAddBlog ? closeAddBlog : closeEditBlog);
+    //     };
+    // }, []);
 
     useLayoutEffect(() => {
         if (!contentRef) return;
@@ -38,8 +59,8 @@ export const Modal = ({ show, children, size, setAddForm, setEditForm }) => {
     }, [contentRef, contentRef?.current?.scrollHeight, isOpen]);
 
     return (
-        <div className={`fixed inset-0 w-full h-full bg-[#00000073] z-20 flex items-center overflow-auto justify-center modal__overlay ${isOpen ? 'flex' : 'hidden'}`}>
-            <div className={`absolute ${contentHeight < 650 ? 'centerModal' : 'top-0'} py-20 flex items-center justify-center ${size == 'md' ? 'min-w-[50%]' : size == 'lg' ? 'min-w-[75%]' : ''}`}>
+        <div className={`fixed inset-0 w-full h-full bg-[#00000073] z-20 flex items-center overflow-auto justify-center modal__overlay ${isOpen ? 'flex' : 'hidden'}`} onClick={closeModal}>
+            <div className={`absolute ${contentHeight < 650 ? 'centerModal' : 'top-0'} py-20 flex items-center justify-center ${size == 'md' ? 'min-w-[50%]' : size == 'lg' ? 'min-w-[75%]' : ''}`} onClick={(event) => event.stopPropagation()}>
                 <div ref={contentRef} className='bg-white dark:bg-[#0e1b31] p-11 relative rounded-lg w-full '>
                     <span onClick={() => setisOpen(false)} className='opacity-60 hover:opacity-100 transition-all duration-500 absolute top-[10px] right-[10px] cursor-pointer'>
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 30 30">

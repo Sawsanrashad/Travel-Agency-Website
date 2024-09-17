@@ -47,7 +47,7 @@ export const PaymentForm = () => {
                         <label htmlFor="" className='dark:!text-white'>
                             {<FormattedMessage id='cardNumber' />}
                         </label>
-                        <Field name='cardNumber' type='number' placeHolder='  1234  5678  9101  1112' className='p-4 col-12 border rounded-sm dark:bg-sky-950 dark:border-0 dark:placeholder-white dark:text-white' />
+                        <Field name='cardNumber' type='number' placeholder='  1234  5678  9101  1112' className='p-4 col-12 border rounded-sm dark:bg-sky-950 dark:border-0 dark:placeholder-white dark:text-white' />
                         <Error><ErrorMessage name='cardNumber' /></Error>
                     </div>
                     <div className='md:grid md:grid-cols-2 flex-wrap justify-between gap-3'>
@@ -62,7 +62,7 @@ export const PaymentForm = () => {
                             <label htmlFor="" className='dark:!text-white'>
                                 {<FormattedMessage id='cvv' />}
                             </label>
-                            <Field name='cvv' type='number' placeHolder='123' className='p-4 w-full border rounded-sm dark:bg-sky-950 dark:border-0 dark:placeholder-white dark:text-white' />
+                            <Field name='cvv' type='number' placeholder='123' className='p-4 w-full border rounded-sm dark:bg-sky-950 dark:border-0 dark:placeholder-white dark:text-white' />
                             <Error><ErrorMessage name='cvv' /></Error>
                         </div>
                     </div>

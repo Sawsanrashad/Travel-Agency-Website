@@ -2,7 +2,7 @@ import * as Yup from "yup";
 
 export const AddFormValidationSchema = Yup.object().shape({
     en: Yup.object().shape({
-        image: Yup.mixed().required("English Image is required"),
+        imageUrl: Yup.mixed().required("English Image is required"),
         title: Yup.string().required("English Title is required"),
         description: Yup.string().required("English Description is required"),
         duration: Yup.string().required("English Duration is required"),
@@ -10,18 +10,19 @@ export const AddFormValidationSchema = Yup.object().shape({
         category: Yup.string().required("English Category is required"),
         location: Yup.string().required("English Location is required"),
         historicalInfo: Yup.string().required("English Info is required"),
+        highlights: Yup.mixed().required("English highlights is required"),
         itinerary: Yup.string().required("English Itinerary is required"),
-        inclusions: Yup.string().required("English inclusions is required"),
-        exclusions: Yup.string().required("English exclucions is required"),
+        inclusions: Yup.mixed().required("English inclusions is required"),
+        exclusions: Yup.mixed().required("English exclucions is required"),
         meetingPoint: Yup.string().required("English meeting point is required"),
         groupSize: Yup.string().required("English group size is required"),
         difficultyLevel: Yup.string().required("English dufficulity level is required"),
-        languages: Yup.string().required("English kanguages is required"),
+        languages: Yup.mixed().required("English kanguages is required"),
         specialRequirements: Yup.string().required("English special requirments is required"),
         cancellationPolicy: Yup.string().required("English cancellation Policy is required"),
     }),
     ar: Yup.object().shape({
-        image: Yup.mixed().required("Arabic Image is required"),
+        imageUrl: Yup.mixed().required("Arabic Image is required"),
         title: Yup.string().required("Arabic Title is required"),
         description: Yup.string().required("Arabic Description is required"),
         duration: Yup.string().required("Arabic Duration is required"),
@@ -29,27 +30,15 @@ export const AddFormValidationSchema = Yup.object().shape({
         category: Yup.string().required("Arabic Category is required"),
         location: Yup.string().required("Arabic Location is required"),
         historicalInfo: Yup.string().required("Arabic Info is required"),
+        highlights: Yup.mixed().required("Arabic highlights is required"),
         itinerary: Yup.string().required("Arabic Itinerary is required"),
-        inclusions: Yup.string().required("Arabic inclusions is required"),
-        exclusions: Yup.string().required("Arabic exclucions is required"),
+        inclusions: Yup.mixed().required("Arabic inclusions is required"),
+        exclusions: Yup.mixed().required("Arabic exclucions is required"),
         meetingPoint: Yup.string().required("Arabic meeting point is required"),
         groupSize: Yup.string().required("Arabic group size is required"),
         difficultyLevel: Yup.string().required("Arabic dufficulity level is required"),
-        languages: Yup.string().required("Arabic kanguages is required"),
+        languages: Yup.mixed().required("Arabic kanguages is required"),
         specialRequirements: Yup.string().required("Arabic special requirments is required"),
         cancellationPolicy: Yup.string().required("Arabic cancellation Policy is required"),
     }),
 });
-
-
-
-
-// import * as Yup from "yup";
-// export const AddFormValidationSchema = Yup.object().shape({
-//     title: Yup.string().required('Name is required'),
-//     image: Yup.mixed().required("image is required"),
-//     description: Yup.string().required('description is required'),
-//     duration: Yup.string().required('duration is required'),
-//     price: Yup.number().typeError('Enter Price').required('price is required'),
-
-// });

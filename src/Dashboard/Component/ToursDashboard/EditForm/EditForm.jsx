@@ -5,7 +5,7 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import { ErrorMessage, Field, FieldArray, Form, Formik } from 'formik';
 import { Error } from '../../../../Components/Error/Error';
 import { Modal } from '../../../../Components/Modal/Modal';
-import axios from 'axios'; // Import axios for fetching data
+import axios from 'axios';
 import './EditForm.scss';
 import { EditFormValidationSchema } from './EditFormValidationSchema';
 import { toast } from 'react-toastify';
@@ -13,7 +13,6 @@ import { toast } from 'react-toastify';
 export const EditForm = () => {
   const [editForm, setEditForm] = useRecoilState($editFormState);
   const [tours, setTours] = useRecoilState($tours);
-
   let intl = useIntl();
   let form = useRef();
   const [step, setStep] = useState(1);
@@ -51,7 +50,6 @@ export const EditForm = () => {
       .catch(error => console.error('Error updating data:', error));
   };
 
-
   return (
     <Modal show={editForm} setEditForm={setEditForm} size={'md'}>
       <div id='editForm' className='editForm my-8'>
@@ -61,7 +59,7 @@ export const EditForm = () => {
             enableReinitialize
             onSubmit={handleSaveChanges}
           >
-            {({ setFieldValue, validateForm, values }) => (
+            {({ setFieldValue, values }) => (
               <Form className='eForm flex flex-col'>
                 {step === 1 && (
                   <>
@@ -186,7 +184,7 @@ export const EditForm = () => {
                               ))
                             }
                             <button type="button" onClick={() => push('')}>
-                              Add option
+                              Add Inclusions
                             </button>
                           </>
                         )}
@@ -214,7 +212,7 @@ export const EditForm = () => {
                               ))
                             }
                             <button type="button" onClick={() => push('')}>
-                              Add option
+                              Add Exclusions
                             </button>
                           </>
                         )}
@@ -268,7 +266,7 @@ export const EditForm = () => {
                                 ))
                               }
                               <button type="button" onClick={() => push('')}>
-                                Add option
+                                Add Highlights
                               </button>
                             </>
                           )}
@@ -293,7 +291,7 @@ export const EditForm = () => {
                                 ))
                               }
                               <button type="button" onClick={() => push('')}>
-                                Add option
+                                Add Languages
                               </button>
                             </>
                           )}
@@ -325,14 +323,7 @@ export const EditForm = () => {
                     <button
                       type="button"
                       onClick={() => {
-                        validateForm().then(errors => {
-                          if (!errors.en) {
-                            setStep(2);
-                          }
-                          else {
-                            toast.error('Please fill in the required fields');
-                          }
-                        });
+                        setStep(2)
                       }}
                       className='buttons py-3 w-[25%] self-end rounded-lg dark:!text-[#0c112b]'>
                       {<FormattedMessage id='next' />}

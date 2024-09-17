@@ -43,7 +43,7 @@ export const ReviewForm = ({ reviews, setReviews }) => {
                     <Form className='reviewForm accordion-collapse border p-3 rounded-md dark:!border-slate-800'>
                         <div className='w-full'>
                             <RateStarsClick setFieldValue={setFieldValue} />
-                            <Field as="textarea" name="comment" type="text" placeHolder={intl.formatMessage({ id: "yourReview" })} className="w-full p-2 border-0 rounded-sm bg-slate-200 mb-2 dark:!bg-slate-800" />
+                            <Field as="textarea" name="comment" type="text" placeholder={intl.formatMessage({ id: "yourReview" })} className="w-full p-2 border-0 rounded-sm bg-slate-200 mb-2 dark:!bg-slate-800  dark:placeholder-white dark:text-white" />
                             <Error><ErrorMessage name='comment' /></Error>
                         </div>
                         <button type='submit' className='w-[25%] py-2 bg-slate-700 text-white rounded-md hover:bg-slate-500'>{<FormattedMessage id='post' />}</button>

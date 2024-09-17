@@ -12,7 +12,7 @@ export const PlanTable = ({ tour }) => {
                 </tr>
                 <tr className='bg-slate-200  dark:!bg-slate-800 '>
                     <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{<FormattedMessage id='highlights' />}</td>
-                    <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{tour.highlights.map((highlight, index) => (
+                    <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{tour?.highlights?.map((highlight, index) => (
                         <span key={index}>
                             {highlight}
                             {index !== tour.highlights.length - 1 && <br />}
@@ -22,7 +22,7 @@ export const PlanTable = ({ tour }) => {
                 </tr>
                 <tr>
                     <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{<FormattedMessage id='priceInclusions' />}</td>
-                    <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{tour.inclusions.map((inclusions, index) => (
+                    <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{tour?.inclusions?.map((inclusions, index) => (
                         <span key={index}>
                             {inclusions}
                             {index !== tour.inclusions.length - 1 && <br />}
@@ -32,7 +32,7 @@ export const PlanTable = ({ tour }) => {
                 </tr>
                 <tr className='bg-slate-200  dark:!bg-slate-800'>
                     <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{<FormattedMessage id='priceExclusions' />}</td>
-                    <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{tour.exclusions.map((exclusions, index) => (
+                    <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{tour?.exclusions?.map((exclusions, index) => (
                         <span key={index}>
                             {exclusions}
                             {index !== tour.exclusions.length - 1 && <br />}
@@ -50,7 +50,7 @@ export const PlanTable = ({ tour }) => {
                 </tr>
                 <tr>
                     <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{<FormattedMessage id='languages' />}</td>
-                    <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{tour.languages.map((languages, index) => (
+                    <td className="border border-slate-300 dark:!border-slate-800 p-3 dark:!text-white">{tour?.languages?.map((languages, index) => (
                         <span key={index}>
                             {languages}
                             {index !== tour.languages.length - 1 && <br />}

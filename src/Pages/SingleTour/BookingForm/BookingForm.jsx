@@ -51,16 +51,16 @@ export const BookingForm = ({ id, tour }) => {
                 >
                     <Form className='w-full flex justify-between items-center flex-wrap p-3 gap-7'>
                         <div className='w-full'>
-                            <Field name="name" type="text" placeHolder={intl.formatMessage({ id: "name" })} className=" w-full p-3 border-0 rounded-sm dark:!bg-slate-800 dark:placeholder-white dark:text-white" />
+                            <Field name="name" type="text" placeholder={intl.formatMessage({ id: "name" })} className=" w-full p-3 border-0 rounded-sm dark:!bg-slate-800 dark:placeholder-white dark:text-white" />
                             <Error><ErrorMessage name='name' /></Error>
                         </div>
                         <div className='w-full'>
-                            <Field name="email" type="email" placeHolder={intl.formatMessage({ id: "email" })} className=" w-full p-3 border-0 rounded-sm dark:!bg-slate-800 dark:placeholder-white dark:text-white" />
+                            <Field name="email" type="email" placeholder={intl.formatMessage({ id: "email" })} className=" w-full p-3 border-0 rounded-sm dark:!bg-slate-800 dark:placeholder-white dark:text-white" />
                             <Error><ErrorMessage name='email' /></Error>
                         </div>
 
                         <div className='w-full'>
-                            <Field name="date" type="date" placeHolder=" yyy-mm-dd" className=" w-full p-3 border-0 rounded-sm dark:!bg-slate-800" />
+                            <Field name="date" type="date" placeholder=" yyy-mm-dd" className=" w-full p-3 border-0 rounded-sm dark:!bg-slate-800" />
                             <Error><ErrorMessage name='date' /></Error>
                         </div>
                         <button type='submit' className='py-3 px-4 w-full dark:hover:!bg-[#0c112b]  dark:!text-[#0c112b]  dark:hover:!text-white'>{<FormattedMessage id='bookNow' />}</button>

@@ -5,14 +5,18 @@ import { BlogsTableDashboard } from './BlogsTableDashboard/BlogsTableDashboard';
 import './BlogsDashboard.scss';
 import { FormattedMessage } from 'react-intl';
 import { confirmAlert } from 'react-confirm-alert';
-import { ToastContainer } from 'react-toastify';
 import { Loading } from '../../../Components/Loading/Loading';
+import { useRecoilState } from 'recoil';
+import { $addBlog, $blogs } from '../../../Store';
+import { AddBlog } from './AddBlog/AddBlog';
+import { EditBlog } from './EditBlog/EditBlog';
 
 export const BlogsDashboard = () => {
-    const [blogs, setBlogs] = useState([]);
+    const [addBlog, setAddBlog] = useRecoilState($addBlog);
+    const [blogs, setBlogs] = useRecoilState($blogs);
     const [isLoading, setIsLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(0);
-    const blogsPerPage = 3; // Adjust this value based on your needs
+    const blogsPerPage = 3;
 
     useEffect(() => {
         setIsLoading(true);
@@ -89,7 +93,16 @@ export const BlogsDashboard = () => {
     } else {
         content = (
             <div className='flex flex-col justify-center items-center w-full'>
-                <button className='bg-cyan-800  p-2 rounded-md mb-3 text-white md:w-[20%] mr-7 self-end addFormButton'><FormattedMessage id='addNewBlog' /></button>
+                <button
+                    className='bg-cyan-800 p-2 rounded-md mb-3 text-white md:w-[20%] mr-7 self-end addFormButton hover:bg-sky-950'
+                    onClick={() => {
+                        setAddBlog(true);
+                        console.log("AddBlog state after click:", addBlog);
+                    }}
+                >
+                    <FormattedMessage id='addNewBlog' />
+                </button>
+
                 <BlogsTableDashboard blogs={displayBlogs} deleteBlog={handleDelete} />
                 <ReactPaginate
                     previousLabel={<FormattedMessage id='previous' />}
@@ -115,6 +128,8 @@ export const BlogsDashboard = () => {
     }
     return (
         <div id='blogs'>
+            <AddBlog />
+            <EditBlog />
             {content}
         </div>
     );

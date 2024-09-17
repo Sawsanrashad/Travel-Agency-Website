@@ -70,7 +70,7 @@ export default function CategoryTours() {
     };
 
     const displayTours = filteredTours.slice(currentPage * toursPerPage, (currentPage + 1) * toursPerPage);
-
+    console.log(category)
     let content;
     if (isLoading) {
         content = (
@@ -91,31 +91,34 @@ export default function CategoryTours() {
     }
 
     return (
-        <div id='categoryTours' className='dark:!bg-[#0e1b31] py-4 '>
+        <div id='categoryTours' className='dark:!bg-[#0e1b31]  '>
             <Header title={<FormattedMessage id='popularTours' />} heading={<span className='capitalize !text-white'>{category}</span>} bgImg={`url('../assets/${category}Bg.jpg')`} />
-            <div className='form'>
-                <SearchForm onSearch={onSearch} />
+            <div className='py-4'>
+                <div className='form'>
+                    <SearchForm onSearch={onSearch} />
+                </div>
+                {content}
+                <ReactPaginate
+                    previousLabel={<FormattedMessage id='previous' />}
+                    nextLabel={<FormattedMessage id='next' />}
+                    breakLabel={'...'}
+                    breakClassName={'break-me'}
+                    pageCount={Math.ceil(filteredTours.length / toursPerPage)}
+                    marginPagesDisplayed={2}
+                    pageRangeDisplayed={5}
+                    onPageChange={handlePageClick}
+                    containerClassName={'pagination'}
+                    activeClassName={'active'}
+                    previousClassName={'page-item'}
+                    nextClassName={'page-item'}
+                    pageClassName={'page-item'}
+                    pageLinkClassName={'page-link'}
+                    previousLinkClassName={'page-link'}
+                    nextLinkClassName={'page-link'}
+                    breakLinkClassName={'page-link'}
+                />
             </div>
-            {content}
-            <ReactPaginate
-                previousLabel={<FormattedMessage id='previous' />}
-                nextLabel={<FormattedMessage id='next' />}
-                breakLabel={'...'}
-                breakClassName={'break-me'}
-                pageCount={Math.ceil(filteredTours.length / toursPerPage)}
-                marginPagesDisplayed={2}
-                pageRangeDisplayed={5}
-                onPageChange={handlePageClick}
-                containerClassName={'pagination'}
-                activeClassName={'active'}
-                previousClassName={'page-item'}
-                nextClassName={'page-item'}
-                pageClassName={'page-item'}
-                pageLinkClassName={'page-link'}
-                previousLinkClassName={'page-link'}
-                nextLinkClassName={'page-link'}
-                breakLinkClassName={'page-link'}
-            />
+
         </div>
     );
 }

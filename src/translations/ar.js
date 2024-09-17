@@ -204,6 +204,12 @@ export const arabic = {
 	submit: "تأكيد",
 	back: "ارجع",
 	noTransactionsYet: "لا يوجد معاملات",
+	myProfile: "حسابي",
+	sendResetCode: "ارسل الكود",
+	verifyResetCode: "تأكد من صحة الكود",
+	enterResetCode: "ادخل الكود المرسل",
+	newPassword: "كلمة المرور الجديدة",
+	confirmNewPassword: "كلمة المرور الجديدة",
 };
 
 

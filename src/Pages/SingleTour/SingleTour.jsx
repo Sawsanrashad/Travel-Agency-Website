@@ -13,10 +13,9 @@ export default function SingleTour() {
     const [langState] = useRecoilState($lang);
     let { id } = useParams();
     const [tour, setTour] = useState(null);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        setIsLoading(true)
         axios.get(`http://localhost:3000/allTours/${id}`)
             .then((response) => {
                 setTour(response.data);
@@ -28,13 +27,12 @@ export default function SingleTour() {
                 setIsLoading(false);
             });
     }, [id]);
-
     let content;
     if (isLoading) {
         content = <Loading />
     } else if (!tour) {
         content =
-            <div className=' flex justify-center items-center'>
+            <div className='flex justify-center items-center'>
                 <h3 className='text-center py-48 font-medium dark:text-white'> {<FormattedMessage id='noToursToShow' />}</h3 >
             </div>
     } else {

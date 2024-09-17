@@ -72,7 +72,7 @@ export const SearchForm = ({ onSearch }) => {
 //                 >
 //                     <Form className=' contentForm w-[80%] flex justify-center  '>
 //                         <div className='flex flex-col gap-1 w-[75%]'>
-//                             <Field name="where" type="text" placeHolder={intl.formatMessage({ id: "whereTo" })} className="p-3 border-0 rounded-sm bg-slate-200 dark:!bg-slate-800" value={value} onChange={onChange} />
+//                             <Field name="where" type="text" placeholder={intl.formatMessage({ id: "whereTo" })} className="p-3 border-0 rounded-sm bg-slate-200 dark:!bg-slate-800" value={value} onChange={onChange} />
 //                             <Error><ErrorMessage name="where" /></Error>
 //                         </div>
 //                         <div className='w-[25%]'>

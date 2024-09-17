@@ -29,7 +29,7 @@ export default function ScrollProgressBar() {
     return (
         <>
             {window.scrollY >= 120 &&
-                <div onClick={ScrollTop} style={{ width: 50, height: 50, position: "fixed", bottom: "30px", right: "30px", zIndex: "9999" }}>
+                <div onClick={ScrollTop} style={{ width: 50, height: 50, position: "fixed", bottom: "30px", right: "30px", zIndex: "9999" ,backgroundColor:"#d6d6d6", borderRadius:"50%", fontWeight:"bold"}}>
                     <CircularProgressbar
                         value={percentage}
                         text={`${Math.round(percentage)}%`}
@@ -48,8 +48,8 @@ export default function ScrollProgressBar() {
 
                             // Colors
                             pathColor: `rgb(32, 149, 200, ${percentage / 100})`,
-                            textColor: 'rgb(32, 199, 194',
-                            trailColor: '#d6d6d6',
+                            textColor: 'rgb(32, 199, 195',
+                            trailColor: '#eee',
                             backgroundColor: '#3e98c7',
                         })}
                     />

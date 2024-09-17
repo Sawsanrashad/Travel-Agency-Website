@@ -27,6 +27,14 @@ export const $addFormState = atom({
 	key: "$addFormState",
 	default: false,
 });
+export const $editBlog = atom({
+	key: "$editBlog",
+	default: false,
+});
+export const $addBlog = atom({
+	key: "$addBlog",
+	default: false,
+});
 export const $modal = atom({
 	key: "$modal",
 	default: false,
@@ -63,5 +71,9 @@ export const $bookedTourInfo = atom({
 });
 export const $tours = atom({
 	key: "$tours",
+	default: [],
+});
+export const $blogs = atom({
+	key: "$blogs",
 	default: [],
 });

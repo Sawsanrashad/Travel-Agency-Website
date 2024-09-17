@@ -88,7 +88,7 @@ export default function Footer() {
                         <p className='my-3'>{<FormattedMessage id='subscribeDescription' />}</p>
                         <div className='bg-white p-2'>
                             <div className='relative'>
-                                <input type="email" className='p-3 w-full' placeHolder={intl.formatMessage({ id: "email" })} />
+                                <input type="email" className='p-3 w-full' placeholder={intl.formatMessage({ id: "email" })} />
                                 <button className='absolute'>{<FormattedMessage id='sendButton' />}</button>
                             </div>
                         </div>
