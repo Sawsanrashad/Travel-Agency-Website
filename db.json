@@ -3,7 +3,7 @@
     {
       "id": "1",
       "en": {
-        "title": "Cairo Highlights",
+        "title": "Cairo Highlights tour",
         "description": "Explore Cairo's most famous landmarks, including the Great Pyramids of Giza, the Sphinx, and the Egyptian Museum. Learn about the ancient history of Egypt and marvel at the architectural wonders of the Pharaohs.",
         "price": 100,
         "duration": "1 day",
@@ -10895,6 +10895,65 @@
         "specialRequirements": "ملابس مريحة ومحتشمة، رغبة في خدمات VIP",
         "cancellationPolicy": "إلغاء مجاني حتى 30 يومًا قبل المغادرة."
       }
+    },
+    {
+      "en": {
+        "title": "ssss",
+        "description": "ndjjf",
+        "price": 221,
+        "duration": "2",
+        "imageUrl": "/src/assets/images/1.jpg",
+        "category": "egypt",
+        "location": "egypt",
+        "historicalInfo": "jhhdhd",
+        "itinerary": "hheye",
+        "inclusions": [
+          "ee"
+        ],
+        "exclusions": [
+          "ddff"
+        ],
+        "meetingPoint": "fffg",
+        "groupSize": "3",
+        "difficultyLevel": "d",
+        "highlights": [
+          "sddf"
+        ],
+        "languages": [
+          "sshhed"
+        ],
+        "specialRequirements": "hshd",
+        "cancellationPolicy": "hshhd"
+      },
+      "ar": {
+        "title": "hjfdhfb",
+        "description": "bdjdjf",
+        "price": 3331,
+        "duration": "2",
+        "imageUrl": "/src/assets/images/1.jpg",
+        "category": "ndhbfdf",
+        "location": "مصر",
+        "historicalInfo": "تيتيب",
+        "itinerary": "تتي",
+        "inclusions": [
+          "ساليغي"
+        ],
+        "exclusions": [
+          "تساسس"
+        ],
+        "meetingPoint": "ءءء",
+        "groupSize": "3",
+        "difficultyLevel": "يتي",
+        "highlights": [
+          "سيي"
+        ],
+        "languages": [
+          "تنستست"
+        ],
+        "specialRequirements": "ستساي",
+        "cancellationPolicy": "اساساي"
+      },
+      "id": "-cEdX9z"
     }
   ],
   "reviews": [
@@ -11132,6 +11191,20 @@
       "email": "ddfsf@add.dw",
       "subject": "dw",
       "message": "dwd"
+    },
+    {
+      "name": "sawsan",
+      "email": "Nada@gmail.com",
+      "subject": "shshssh",
+      "message": "shdhbdvc",
+      "id": "hqB-cNt"
+    },
+    {
+      "name": "sawsan",
+      "email": "sawsanrashad200@gmail.com",
+      "subject": "shshssh",
+      "message": "ssssssssssssss",
+      "id": "KIe9vvN"
     }
   ],
   "users": [
@@ -11190,14 +11263,6 @@
       "password": "5678",
       "role": "user",
       "phone": 1011145004
-    },
-    {
-      "name": "yossif",
-      "email": "yossif@yossif.yossif",
-      "password": "yossifyossif",
-      "role": "user",
-      "phone": 111111,
-      "id": "gJ4e6Nj"
     }
   ],
   "bookedTours": [
@@ -11240,6 +11305,16 @@
       "bookedDate": "2024-09-12",
       "paymentDate": "9/13/2024",
       "id": "3xA7eMY"
+    },
+    {
+      "tourImage": "/src/assets/images/aswan.jpg",
+      "tourTitle": "Aswan Wonders",
+      "tourPrice": 120,
+      "clientName": "Nada",
+      "clientEmail": "Nada@gmail.com",
+      "bookedDate": "2024-10-03",
+      "paymentDate": "9/30/2024",
+      "id": "A4tXhlj"
     }
   ],
   "blogs": [

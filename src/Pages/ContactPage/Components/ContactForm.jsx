@@ -9,6 +9,7 @@ import emailjs from 'emailjs-com';
 import { useRef } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default function ContactForm() {
     let contactForm = useRef();
@@ -24,9 +25,11 @@ export default function ContactForm() {
         )
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
+                toast.success('Message sent successfully will contact you soon!');
             })
             .catch((error) => {
                 console.log('FAILED...', error);
+                toast.error('error sending the message try again!');
             });
     }
 
