@@ -114,7 +114,7 @@ export const AddBlog = () => {
                                                                 </div>
                                                             ))
                                                         }
-                                                        <button type="button" onClick={() => push('')}>
+                                                        <button className='py-3  rounded-lg dark:!text-[#0c112b]' type="button" onClick={() => push('')}>
                                                             Add description
                                                         </button>
                                                     </>
@@ -195,7 +195,7 @@ export const AddBlog = () => {
                                                                 </div>
                                                             ))
                                                         }
-                                                        <button type="button" onClick={() => push('')}>
+                                                        <button className='py-3  rounded-lg dark:!text-[#0c112b]' type="button" onClick={() => push('')}>
                                                             Add description
                                                         </button>
                                                     </>
