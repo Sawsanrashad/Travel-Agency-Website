@@ -333,7 +333,7 @@ export const AddForm = () => {
                                                                     </div>
                                                                 ))
                                                             }
-                                                            <button type="button" onClick={() => push('')}>
+                                                            <button  className='py-3  rounded-lg dark:!text-[#0c112b]' type="button" onClick={() => push('')}>
                                                                 Add option
                                                             </button>
                                                         </>
@@ -358,7 +358,7 @@ export const AddForm = () => {
                                                                     </div>
                                                                 ))
                                                             }
-                                                            <button type="button" onClick={() => push('')}>
+                                                            <button  className='py-3  rounded-lg dark:!text-[#0c112b]' type="button" onClick={() => push('')}>
                                                                 Add option
                                                             </button>
                                                         </>
