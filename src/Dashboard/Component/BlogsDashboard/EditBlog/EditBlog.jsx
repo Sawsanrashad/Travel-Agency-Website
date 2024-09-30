@@ -7,6 +7,7 @@ import { Modal } from '../../../../Components/Modal/Modal';
 import axios from 'axios';
 import { Error } from '../../../../Components/Error/Error';
 import './EditBlog.scss'
+import { toast } from 'react-toastify';
 
 export const EditBlog = () => {
     const [editBlog, setEditBlog] = useRecoilState($editBlog);

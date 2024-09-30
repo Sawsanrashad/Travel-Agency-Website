@@ -11205,6 +11205,13 @@
       "subject": "shshssh",
       "message": "ssssssssssssss",
       "id": "KIe9vvN"
+    },
+    {
+      "name": "sawsan",
+      "email": "sawsanrashad200@gmail.com",
+      "subject": "shshssh",
+      "message": "sshshshs",
+      "id": "zNeqg4s"
     }
   ],
   "users": [
@@ -11315,6 +11322,16 @@
       "bookedDate": "2024-10-03",
       "paymentDate": "9/30/2024",
       "id": "A4tXhlj"
+    },
+    {
+      "tourImage": "/src/assets/images/luxorTemples.jpg",
+      "tourTitle": "Luxor Temples",
+      "tourPrice": 150,
+      "clientName": "Nada",
+      "clientEmail": "Nada@gmail.com",
+      "bookedDate": "2024-10-12",
+      "paymentDate": "9/30/2024",
+      "id": "hISpCig"
     }
   ],
   "blogs": [
@@ -11485,6 +11502,25 @@
         "image": "/src/assets/images/s5.jpg",
         "date": "2 أغسطس"
       }
+    },
+    {
+      "en": {
+        "title": "shshshshs",
+        "description": [
+          "sjhshshs"
+        ],
+        "image": "/src/assets/images/abroad.jpg",
+        "date": "2024-09-19"
+      },
+      "ar": {
+        "title": "سفر",
+        "description": [
+          "اتيايليي"
+        ],
+        "image": "/src/assets/images/abroad.jpg",
+        "date": "2024-09-27"
+      },
+      "id": "Lfz4QvR"
     }
   ]
 }
