@@ -1,5 +1,5 @@
 import './ErrorPage.scss';
-import plane from '../../assets/images/airplane.gif'
+import plane from '../../assets/images/airplane2.gif'
 import compass from '../../assets/images/compass.png'
 import { useNavigate } from 'react-router-dom';
 

@@ -13,7 +13,7 @@ export default function TourDetails() {
     const [langState] = useRecoilState($lang);
     const [tours, setTours] = useState([]);
     const [filteredTours, setFilteredTours] = useState([]); // State for filtered tours
-    const [isLoading, setIsLoading] = useState(false);
+const [isLoading, setIsLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(0);
     const toursPerPage = 10;
 

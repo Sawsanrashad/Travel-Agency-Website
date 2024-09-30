@@ -12,8 +12,6 @@ import {
     Legend,
 } from 'chart.js';
 
-
-// Register the necessary components with ChartJS
 ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -98,11 +96,9 @@ export const HomeDashboard = () => {
 
     return (
         <div id='homeDashboard' className='py-6 custom_container'>
-            <h2 className='text-3xl font-medium dark:text-white'>
+            <h2 className='text-3xl font-medium dark:!text-white'>
                 <FormattedMessage id='welcome' /> {name}!
             </h2>
-
-            {/* Adding the Bar Chart */}
             <div className='chart-container mt-6'>
                 <Bar data={data} options={options} />
             </div>

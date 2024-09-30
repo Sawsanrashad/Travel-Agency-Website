@@ -59,7 +59,7 @@ export default function Navbar() {
                     </span>
                 </div>
                 <div>
-                    <span className='flex lg:hidden barIcon' onClick={() => setSideMenuIndex(true)}>
+                    <span className='flex lg:hidden barIcon' onClick={() => setSideMenuIndex(!sideMenuIndex)}>
                         <FaBarsStaggered size={25} />
                     </span>
                 </div>

@@ -24,7 +24,7 @@ export const DashboardNavSideMenu = () => {
     return (
         <div
             id='dashboardNavSideMenu'
-            className={`w-full h-full bg-cyan-700 dark:bg-[#0c112b] fixed top-0 left-0 p-3 dashMenu z-20 transform transition-transform duration-700 ease-in-out ${dashboardSideMenuIndex ? 'translate-x-0' : '-translate-x-full'
+            className={`md:w-[70%] h-full bg-cyan-700 dark:bg-[#0c112b] fixed top-0 left-0 p-3 dashMenu z-20 transform transition-transform duration-1000 ease-in-out ${dashboardSideMenuIndex ? 'translate-x-0' : '-translate-x-full'
                 }`}
         >
             <div className='flex justify-between'>

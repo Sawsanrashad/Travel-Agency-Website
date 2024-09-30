@@ -20,8 +20,8 @@ export const SearchForm = ({ onSearch }) => {
                     enableReinitialize
                     onSubmit={() => console.log("object")}
                 >
-                    <Form className='contentForm w-[80%] md:flex justify-center'>
-                        <div className='flex flex-col gap-1 md:w-[75%]'>
+                    <Form className='contentForm w-[80%] md:flex justify-center mb-8'>
+                        <div className='flex flex-col gap-1 md:w-[80%] my-2'>
                             <Field
                                 name="where"
                                 type="text"
@@ -35,11 +35,7 @@ export const SearchForm = ({ onSearch }) => {
                             />
                             {/* <Error><ErrorMessage name="where" /></Error> */}
                         </div>
-                        <div className='md:w-[25%] h-full'>
-                            <button type='submit' className='w-full h-full p-3'>
-                                <FormattedMessage id='searchNow' />
-                            </button>
-                        </div>
+
                     </Form>
                 </Formik>
             </div>

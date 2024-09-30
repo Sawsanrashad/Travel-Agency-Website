@@ -9,7 +9,7 @@ export default function TeamImage({ image, name, specialize, description }) {
     return (
         <div id='teamImage' onMouseEnter={() => setTimeout(() => { setEnterd(true) }, 600)} onMouseLeave={() => setEnterd(false)}>
             <div className='relative tab'>
-                <img src={image} alt="" className='w-full' />
+                <img src={image} alt="" className='w-full object-cover' />
                 <div className='text absolute flex flex-col justify-center items-center p-3 rounded-md hover:rounded-none'>
                     <h4 className='dark:!text-[#121c2a]'>{name}</h4>
                     <h6 className='dark:!text-[#121c2a]'>{specialize}</h6>

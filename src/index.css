@@ -67,3 +67,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.dark .spinner span {
+  border-color: rgb(255, 255, 255) rgb(255, 255, 255) transparent !important;
+}

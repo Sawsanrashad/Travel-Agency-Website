@@ -13,7 +13,7 @@ export default function Team() {
                     <p>{<FormattedMessage id='travelExperts' />}</p>
                     <h3>{<><FormattedMessage id='meetOur' /> <span><FormattedMessage id='guides' /></span></>}</h3>
                 </div>
-                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 justify-between items-center teamdiv'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-between items-center teamdiv'>
                     <TeamImage image={guide1} name={"Leonie Norman"} specialize={<FormattedMessage id='switzerlandGuide' />} description={<FormattedMessage id='switzerlandDescription' />} />
                     <TeamImage image={guide2} name={"Andreas Brown"} specialize={<FormattedMessage id='maldivesGuide' />} description={<FormattedMessage id='maldivesDescription' />} />
                     <TeamImage image={guide3} name={"Angelina White"} specialize={<FormattedMessage id='greeceGuide' />} description={<FormattedMessage id='greeceDescription' />} />

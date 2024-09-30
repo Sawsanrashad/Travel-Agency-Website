@@ -11,7 +11,7 @@ export const DashboardNav = () => {
     return (
         <div>
             <div>
-                <span className='flex lg:hidden dashboardBarIcon fixed top-[20px] left-[20px] ' onClick={() => setDashboardSideMenuIndex(true)}>
+                <span className='flex lg:hidden dashboardBarIcon fixed top-[20px] left-[20px] dark:text-white ' onClick={() => setDashboardSideMenuIndex(true)}>
                     <FaBarsStaggered size={25} />
                 </span>
             </div>

@@ -46,7 +46,7 @@ export default function NavSideMenu() {
         return (
             <div
                 id='navMenu'
-                className={`w-full md:w-[75%] h-full bg-slate-200 dark:bg-[#0c112b] fixed top-0 p-3 menu transform transition-transform duration-700 ease-in-out ${sideMenuIndex ? 'translate-x-0' : 'translate-x-full'
+                className={`w-full md:w-[75%] h-full bg-slate-200 dark:bg-[#0c112b] fixed top-0 p-3 menu transform transition-transform duration-700 ${sideMenuIndex ? 'translate-x-0' : '-translate-x-full'
                     }`}
             >
                 <div className='flex justify-between'>

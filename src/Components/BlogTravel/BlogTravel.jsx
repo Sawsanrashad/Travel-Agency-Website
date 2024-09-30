@@ -15,7 +15,7 @@ import { $lang } from '../../Store';
 import { Loading } from '../Loading/Loading';
 export default function BlogTravel() {
     const [langState] = useRecoilState($lang);
-    const [blogs, setBlogs] = useState(null);
+    const [blogs, setBlogs] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     useEffect(() => {
         setIsLoading(true)

@@ -1,11 +1,13 @@
 #navMenu {
   top: 0;
   z-index: 9999;
-  right: 0;
+  left: 0;
+  [dir="rtl"] & {
+    left: auto !important;
+    right: 0 !important;
+  }
   button {
-    // color: white;
     color: rgb(32, 149, 174) !important;
-    // background-color: rgb(32, 149, 174);
     right: 0;
   }
   .Icon {

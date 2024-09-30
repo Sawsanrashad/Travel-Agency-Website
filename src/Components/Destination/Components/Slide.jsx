@@ -27,7 +27,7 @@ export default function Slide({ tour, col }) {
                         <p className='m-0'>{tour[`${langState}`]?.duration}</p>
                     </div>
                     <div>
-                        <Link to={`/tour/${tour?.id}`} className='flex justify-center items-center'>
+                        <Link to={`/tour/${tour?.id}`} className='flex justify-center items-center gap-2'>
                             {<FormattedMessage id='explore' />}
                             <FontAwesomeIcon icon={faArrowRight} />
                         </Link>

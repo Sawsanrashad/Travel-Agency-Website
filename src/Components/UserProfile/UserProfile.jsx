@@ -20,7 +20,7 @@ export const UserProfile = () => {
     return (
         <LoggedIn>
             <div id='profile' className='dark:bg-[#0e1b31]'>
-                <Header title={<FormattedMessage id='myProfile' />} heading={<FormattedMessage id='welcome' />} span={authUser.name} bgImg={`url('/assets/images/bg.jpg')`} />
+                <Header title={<FormattedMessage id='myProfile' />} heading={<FormattedMessage id='welcome' />} span={authUser[0].name} bgImg={`url('/assets/images/bg.jpg')`} />
                 <div className='custom_container'>
                     <div className='py-10 flex justify-start gap-4'>
                         <NavLink to={'/profile/info'} className='dark:text-white font-medium px-2 md:px-7 py-3 md:text-xl' >{<FormattedMessage id='myInformation' />}</NavLink>

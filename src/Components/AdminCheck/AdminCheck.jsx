@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 export const AdminCheck = ({ children }) => {
     const [user, setUser] = useRecoilState($loggedIn)
     const navigate = useNavigate();
-    if (user.role == 'admin') {
+    if (user?.role == 'admin') {
         return (children)
     }
     else {
