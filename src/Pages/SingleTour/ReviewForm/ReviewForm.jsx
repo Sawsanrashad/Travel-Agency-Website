@@ -9,7 +9,7 @@ import { useRecoilState } from 'recoil'
 import { $loggedIn } from '../../../Store'
 import { toast, ToastContainer } from 'react-toastify'
 
-export const ReviewForm = ({ reviews, setReviews }) => {
+export const ReviewForm = ({ reviews, setReviews, id }) => {
     const [loggedState, setLoggedState] = useRecoilState($loggedIn);
     let intl = useIntl();
     let form = useRef()
@@ -34,13 +34,18 @@ export const ReviewForm = ({ reviews, setReviews }) => {
                 initialValues={{
                     comment: "",
                     rating: '',
+                    customerid: loggedState.id,
+                    name: loggedState.name,
+                    tourid: id,
+                    img: loggedState.img
                 }}
                 innerRef={form}
                 validationSchema={ReviewSchema}
                 onSubmit={(values) => handleReviewSubmit(values)}
             >
-                {({ setFieldValue }) => (
+                {({ setFieldValue, values }) => (
                     <Form className='reviewForm accordion-collapse border p-3 rounded-md dark:!border-slate-800'>
+                        {console.log(values)}
                         <div className='w-full'>
                             <RateStarsClick setFieldValue={setFieldValue} />
                             <Field as="textarea" name="comment" type="text" placeholder={intl.formatMessage({ id: "yourReview" })} className="w-full p-2 border-0 rounded-sm bg-slate-200 mb-2 dark:!bg-slate-800  dark:placeholder-white dark:text-white" />

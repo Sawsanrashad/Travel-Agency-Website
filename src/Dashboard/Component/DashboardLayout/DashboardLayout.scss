@@ -1,5 +1,5 @@
 .outlet {
-  width: calc(100% - 300px) !important;
+  width: calc(100% - 300px);
 }
 [dir="rtl"] .outlet {
   right: auto;
@@ -10,7 +10,7 @@
     width: 100% !important;
   }
 }
-@media screen and (min-width: 768x) and (max-width: 992px) {
+@media screen and (min-width: 768x) and (max-width: 1020px) {
   .outlet {
     width: 100% !important;
   }

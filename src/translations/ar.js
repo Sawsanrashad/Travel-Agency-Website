@@ -171,7 +171,7 @@ export const arabic = {
 	addNewBlog: "إضافة موضوع جديد",
 	addNewTour: "إضافة رحلة جديدة",
 	previous: "قبل",
-	next: "بعد",
+	next: "التالي",
 	logout: "تسجيل خروج",
 	confirmBooking: "تأكيد الحجز",
 	payment: "الدفع",
@@ -210,6 +210,8 @@ export const arabic = {
 	enterResetCode: "ادخل الكود المرسل",
 	newPassword: "كلمة المرور الجديدة",
 	confirmNewPassword: "كلمة المرور الجديدة",
+	dashboard: "داشبورد",
+	tourId: "رقم الرحلة",
 };
 
 

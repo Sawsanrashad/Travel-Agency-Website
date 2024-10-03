@@ -3,7 +3,7 @@
     {
       "id": "1",
       "en": {
-        "title": "Cairo Highlights tour",
+        "title": "Cairo Highlights",
         "description": "Explore Cairo's most famous landmarks, including the Great Pyramids of Giza, the Sphinx, and the Egyptian Museum. Learn about the ancient history of Egypt and marvel at the architectural wonders of the Pharaohs.",
         "price": 100,
         "duration": "1 day",
@@ -11138,43 +11138,22 @@
       "comment": "Nice tour, beautiful scenery."
     },
     {
-      "id": "85dd",
-      "review": "",
+      "comment": "qwedqwdqw",
       "rating": 4,
-      "comment": "wwww"
+      "customerid": "1",
+      "name": "Sawsan Rashad",
+      "tourid": "1",
+      "img": "/src/assets/images/rev3.png",
+      "id": "BJS18bV"
     },
     {
-      "id": "7c4e",
-      "comment": "ssss",
-      "rating": 3
-    },
-    {
-      "id": "1fff",
-      "comment": "amazing tour",
-      "rating": 3
-    },
-    {
-      "id": "53e9",
-      "comment": "sssss",
-      "rating": 3,
-      "name": {
-        "id": "1",
-        "name": "Sawsan Rashad",
-        "email": "admin@gmail.com",
-        "password": "admin123",
-        "role": "admin",
-        "phone": "01007441528"
-      }
-    },
-    {
-      "comment": "h",
+      "comment": "ddd",
       "rating": 4,
-      "id": "rgd9S-z"
-    },
-    {
-      "comment": "uu",
-      "rating": "",
-      "id": "vzodIkV"
+      "customerid": "6419",
+      "name": "Nada",
+      "tourid": "2",
+      "img": "/src/assets/images/user2.png",
+      "id": "HhhBqQS"
     }
   ],
   "contactMessages": [
@@ -11194,13 +11173,6 @@
     },
     {
       "name": "sawsan",
-      "email": "Nada@gmail.com",
-      "subject": "shshssh",
-      "message": "shdhbdvc",
-      "id": "hqB-cNt"
-    },
-    {
-      "name": "sawsan",
       "email": "sawsanrashad200@gmail.com",
       "subject": "shshssh",
       "message": "ssssssssssssss",
@@ -11212,6 +11184,13 @@
       "subject": "shshssh",
       "message": "sshshshs",
       "id": "zNeqg4s"
+    },
+    {
+      "name": "sawsan",
+      "email": "sawsanrashad200@gmail.com",
+      "subject": "shshssh",
+      "message": "hshdhdhd",
+      "id": "X_-nekK"
     }
   ],
   "users": [
@@ -11221,6 +11200,7 @@
       "email": "admin@gmail.com",
       "password": "admin123",
       "role": "admin",
+      "img": "/src/assets/images/user2.png",
       "phone": "01007441528"
     },
     {
@@ -11229,14 +11209,16 @@
       "email": "youssef@gmail.com",
       "password": "1234",
       "role": "user",
+      "img": "/src/assets/images/user2.png",
       "phone": "01062697154"
     },
     {
       "id": "6419",
       "name": "Nada",
       "email": "Nada@gmail.com",
-      "password": "1234",
+      "password": "5678",
       "role": "user",
+      "img": "/src/assets/images/user2.png",
       "phone": "01092025777"
     },
     {
@@ -11245,15 +11227,8 @@
       "email": "sawsann@sawsann.sawsann",
       "password": "sawsann",
       "role": "user",
+      "img": "/src/assets/images/user2.png",
       "phone": "01062697154"
-    },
-    {
-      "id": "b8d5",
-      "name": "Menna",
-      "email": "mennafarouk307@gmail.com",
-      "password": "menna123",
-      "role": "user",
-      "phone": "01094854159"
     },
     {
       "id": "453f",
@@ -11261,15 +11236,8 @@
       "email": "sohila@gmail.com",
       "password": "soso",
       "role": "user",
+      "img": "/src/assets/images/user2.png",
       "phone": 1033660360
-    },
-    {
-      "id": "629e",
-      "name": "sara ",
-      "email": "sara@gmail.com",
-      "password": "5678",
-      "role": "user",
-      "phone": 1011145004
     }
   ],
   "bookedTours": [
@@ -11322,16 +11290,6 @@
       "bookedDate": "2024-10-03",
       "paymentDate": "9/30/2024",
       "id": "A4tXhlj"
-    },
-    {
-      "tourImage": "/src/assets/images/luxorTemples.jpg",
-      "tourTitle": "Luxor Temples",
-      "tourPrice": 150,
-      "clientName": "Nada",
-      "clientEmail": "Nada@gmail.com",
-      "bookedDate": "2024-10-12",
-      "paymentDate": "9/30/2024",
-      "id": "hISpCig"
     }
   ],
   "blogs": [
@@ -11521,6 +11479,25 @@
         "date": "2024-09-27"
       },
       "id": "Lfz4QvR"
+    },
+    {
+      "en": {
+        "title": "abu simple",
+        "description": [
+          "jshss"
+        ],
+        "image": "/src/assets/images/abuSimple.jpg",
+        "date": "2024-10-02"
+      },
+      "ar": {
+        "title": "سفر",
+        "description": [
+          "dkdjd"
+        ],
+        "image": "/src/assets/images/abuSimple.jpg",
+        "date": "2024-10-05"
+      },
+      "id": "CGKemNm"
     }
   ]
 }

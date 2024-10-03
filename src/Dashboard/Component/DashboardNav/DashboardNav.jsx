@@ -5,9 +5,26 @@ import { NavLink } from 'react-router-dom';
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FormattedMessage } from 'react-intl';
 import { useRecoilState } from 'recoil';
-import { $dashboardMenuState } from '../../../Store';
+import { $dashboardMenuState, $theme } from '../../../Store';
+import { GrLanguage } from "react-icons/gr";
+import { MdLightMode } from "react-icons/md";
+
+
 export const DashboardNav = () => {
     const [dashboardSideMenuIndex, setDashboardSideMenuIndex] = useRecoilState($dashboardMenuState);
+    const handleMode = () => {
+        const newTheme = theme === "dark" ? "light" : "dark";
+        settheme(newTheme);
+        localStorage.setItem("theme", newTheme);
+    };
+
+    const handleLang = () => {
+        const newLang = lang === "ltr" ? "rtl" : "ltr";
+        localStorage.setItem("lang", newLang);
+        window.location.reload();
+    };
+    const lang = localStorage.getItem("lang") || "ltr";
+    const [theme, settheme] = useRecoilState($theme);
     return (
         <div>
             <div>
@@ -20,6 +37,12 @@ export const DashboardNav = () => {
                     <p className='m-0 text-white'>BON VOYAGE</p>
                     <span className='planeIcon text-white'>
                         <FaPlaneDeparture size={25} />
+                    </span>
+                    <span onClick={handleLang} className='Icon'>
+                        <GrLanguage size={20} />
+                    </span>
+                    <span onClick={handleMode} className='Icon'>
+                        <MdLightMode size={25} />
                     </span>
                 </div>
                 <div className='flex flex-col gap-5 p-3'>

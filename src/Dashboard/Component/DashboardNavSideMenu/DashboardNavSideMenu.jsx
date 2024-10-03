@@ -1,14 +1,29 @@
 import React, { useEffect } from 'react';
 import { FaPlaneDeparture } from "react-icons/fa6";
 import { useRecoilState } from 'recoil';
-import { $dashboardMenuState } from '../../../Store';
+import { $dashboardMenuState, $theme } from '../../../Store';
 import { NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import './DashboardNavSideMenu.scss';
-
+import { GrLanguage } from "react-icons/gr";
+import { MdLightMode } from "react-icons/md";
 export const DashboardNavSideMenu = () => {
+
     const [dashboardSideMenuIndex, setDashboardSideMenuIndex] = useRecoilState($dashboardMenuState);
+    const lang = localStorage.getItem("lang") === "ltr" ? "rtl" : "ltr";
+    const handleMode = () => {
+        const newTheme = theme === "dark" ? "light" : "dark";
+        const [theme, settheme] = useRecoilState($theme);
+        settheme(newTheme);
+        localStorage.setItem("theme", newTheme);
+    };
+
+    const handleLang = () => {
+        const newLang = lang === "ltr" ? "rtl" : "ltr";
+        localStorage.setItem("lang", newLang);
+        window.location.reload();
+    };
 
     function closeDashboardSideBar(e) {
         if (!e.target.closest(".dashboardBarIcon") && !e.target.closest(".dashMenu")) {
@@ -24,7 +39,7 @@ export const DashboardNavSideMenu = () => {
     return (
         <div
             id='dashboardNavSideMenu'
-            className={`md:w-[70%] h-full bg-cyan-700 dark:bg-[#0c112b] fixed top-0 left-0 p-3 dashMenu z-20 transform transition-transform duration-1000 ease-in-out ${dashboardSideMenuIndex ? 'translate-x-0' : '-translate-x-full'
+            className={`md:w-[60%] h-full bg-cyan-700 dark:bg-[#0c112b] fixed top-0 left-0 p-3 dashMenu z-20 transform transition-transform duration-1000 ease-in-out ${dashboardSideMenuIndex ? 'translate-x-0' : `${lang == 'rtl' ? '-translate-x-full' : 'translate-x-full'}`
                 }`}
         >
             <div className='flex justify-between'>
@@ -32,6 +47,12 @@ export const DashboardNavSideMenu = () => {
                     <p className='m-0 text-white'>BON VOYAGE</p>
                     <span className='planeIcon text-white'>
                         <FaPlaneDeparture size={25} />
+                    </span>
+                    <span onClick={handleLang} className='Icon'>
+                        <GrLanguage size={20} />
+                    </span>
+                    <span onClick={handleMode} className='Icon'>
+                        <MdLightMode size={25} />
                     </span>
                 </div>
                 <button className='btn z-3 px-2 py-1' onClick={() => setDashboardSideMenuIndex(false)}>

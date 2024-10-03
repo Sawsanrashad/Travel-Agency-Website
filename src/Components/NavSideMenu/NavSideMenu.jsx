@@ -19,7 +19,7 @@ export default function NavSideMenu() {
     const [theme, settheme] = useRecoilState($theme);
     const [loggedState, setLoggedState] = useRecoilState($loggedIn);
     const [loggedInModalState, setLoggedInModalState] = useRecoilState($loggedInModal);
-
+    const lang = localStorage.getItem("lang") === "ltr" ? "rtl" : "ltr";
     useEffect(() => {
         document.addEventListener("click", closeSideBar);
         return () => document.removeEventListener("click", closeSideBar);
@@ -42,61 +42,59 @@ export default function NavSideMenu() {
         localStorage.setItem("lang", newLang);
         window.location.reload();
     };
-    if (sideMenuIndex == true) {
-        return (
-            <div
-                id='navMenu'
-                className={`w-full md:w-[75%] h-full bg-slate-200 dark:bg-[#0c112b] fixed top-0 p-3 menu transform transition-transform duration-700 ${sideMenuIndex ? 'translate-x-0' : '-translate-x-full'
-                    }`}
-            >
-                <div className='flex justify-between'>
-                    <div className='flex gap-2 justify-center '>
-                        <p>BON VOYAGE</p>
-                        <div className='planeIcon'>
-                            <FaPlaneDeparture size={25} />
-                        </div>
+    return (
+        <div
+            id='navMenu'
+            className={`w-full md:w-[75%] h-full bg-slate-200 dark:bg-[#0c112b] fixed top-0 p-3 menu  transition-transform duration-1000 ${sideMenuIndex ? 'translate-x-0' : `${lang == 'rtl' ? 'translate-x-full' : '-translate-x-full'}`
+                }`}
+        >
+            <div className='flex justify-between'>
+                <div className='flex gap-2 justify-center '>
+                    <p>BON VOYAGE</p>
+                    <div className='planeIcon'>
+                        <FaPlaneDeparture size={25} />
                     </div>
-                    <button className='btn z-3 px-2 py-1' onClick={() => setSideMenuIndex(false)}>
-                        <span className=' text-teal-700 dark:text-stone-300'>
-                            <IoMdCloseCircleOutline size={25} />
-                        </span>
-                    </button>
                 </div>
-
-                <div className='flex flex-col justify-center align-items-start gap-14 z-3 p-3'>
-                    <div className='flex gap-3 items-center justify-between'>
-                        <span className={`Icon relative logIcon ${loggedState ? 'hidden' : 'block'}`} onClick={() => setLoginState(!loginState)} >
-                            <PiUserCircleFill size={30} />
-                            <LoginModal />
-                        </span>
-                        <span className={`Icon relative loggedUser ${loggedState ? 'block' : 'hidden'}`} onClick={() => setLoggedInModalState(!loggedInModalState)} >
-                            <SlUserFollowing size={25} />
-                            <LoggedClientModal />
-                        </span>
-                        <span onClick={handleLang} className='Icon'>
-                            <GrLanguage size={20} />
-                        </span>
-                        <span onClick={handleMode} className='Icon'>
-                            <MdLightMode size={25} />
-                        </span>
-                    </div>
-                    <NavLink to={"/"} className='dark:text-white' onClick={() => setSideMenuIndex(false)}>
-                        <FormattedMessage id='home' />
-                    </NavLink>
-                    <NavLink to={"/about"} className='dark:text-white' onClick={() => setSideMenuIndex(false)}>
-                        <FormattedMessage id='about' />
-                    </NavLink>
-                    <NavLink to={"/tours"} className='dark:text-white' onClick={() => setSideMenuIndex(false)}>
-                        <FormattedMessage id='tours' />
-                    </NavLink>
-                    <NavLink to={"/blog"} className='dark:text-white' onClick={() => setSideMenuIndex(false)}>
-                        <FormattedMessage id='blog' />
-                    </NavLink>
-                    <NavLink to={"/contact"} className='dark:text-white' onClick={() => setSideMenuIndex(false)}>
-                        <FormattedMessage id='contact' />
-                    </NavLink>
-                </div>
+                <button className='btn z-3 px-2 py-1' onClick={() => setSideMenuIndex(false)}>
+                    <span className=' text-teal-700 dark:text-stone-300'>
+                        <IoMdCloseCircleOutline size={25} />
+                    </span>
+                </button>
             </div>
-        );
-    }
+
+            <div className='flex flex-col justify-center align-items-start gap-14 z-3 p-3'>
+                <div className='flex gap-3 items-center justify-between'>
+                    <span className={`Icon relative logIcon ${loggedState ? 'hidden' : 'block'}`} onClick={() => setLoginState(!loginState)} >
+                        <PiUserCircleFill size={30} />
+                        <LoginModal />
+                    </span>
+                    <span className={`Icon relative loggedUser ${loggedState ? 'block' : 'hidden'}`} onClick={() => setLoggedInModalState(!loggedInModalState)} >
+                        <SlUserFollowing size={25} />
+                        <LoggedClientModal />
+                    </span>
+                    <span onClick={handleLang} className='Icon'>
+                        <GrLanguage size={20} />
+                    </span>
+                    <span onClick={handleMode} className='Icon'>
+                        <MdLightMode size={25} />
+                    </span>
+                </div>
+                <NavLink to={"/"} className='dark:text-white' onClick={() => setSideMenuIndex(false)}>
+                    <FormattedMessage id='home' />
+                </NavLink>
+                <NavLink to={"/about"} className='dark:text-white' onClick={() => setSideMenuIndex(false)}>
+                    <FormattedMessage id='about' />
+                </NavLink>
+                <NavLink to={"/tours"} className='dark:text-white' onClick={() => setSideMenuIndex(false)}>
+                    <FormattedMessage id='tours' />
+                </NavLink>
+                <NavLink to={"/blog"} className='dark:text-white' onClick={() => setSideMenuIndex(false)}>
+                    <FormattedMessage id='blog' />
+                </NavLink>
+                <NavLink to={"/contact"} className='dark:text-white' onClick={() => setSideMenuIndex(false)}>
+                    <FormattedMessage id='contact' />
+                </NavLink>
+            </div>
+        </div>
+    );
 }

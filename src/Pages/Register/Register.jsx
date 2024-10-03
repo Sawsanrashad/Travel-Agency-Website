@@ -43,6 +43,7 @@ export default function Register() {
                                 password: "",
                                 confirm: "",
                                 role: "user",
+                                img: "/src/assets/images/user2.png",
                                 phone: "",
                             }}
                             innerRef={registerForm}

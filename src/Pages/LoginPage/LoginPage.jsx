@@ -15,22 +15,19 @@ export default function LoginPage() {
     let intl = useIntl()
     const [loggedState, setLoggedState] = useRecoilState($loggedIn);
     const params = new URLSearchParams(window.location.search);
-    const redirect = params.get('redirect');
     let loginForm = useRef();
     const navigate = useNavigate()
     let handleSubmit = (values) => {
-        console.log("Submitting form with values:", values);
         axios.get(`http://localhost:3000/users?email=${values.email}&password=${values.password}`)
             .then((response) => {
                 console.log("Response received:", response);
                 if (response.data.length) {
                     localStorage.setItem('AuthUser', JSON.stringify(response.data[0]));
-                    setLoggedState(response.data[0]);
                     loginForm.current.resetForm();
-                    redirect ? navigate(`/tour/${redirect}`) : navigate('/');
                     console.log("Showing toast notification");
                     toast.success(`Hello ${response.data[0].name} !`);
                     console.log(response.data[0].name);
+                    setLoggedState(response.data[0]);
                 } else {
                     toast.error('Wrong email or password');
                 }

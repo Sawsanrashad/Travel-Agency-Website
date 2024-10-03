@@ -16,7 +16,7 @@ export const ReviewsTableDashboard = ({ reviews, deletReview }) => {
                             <FormattedMessage id='clientName' />
                         </th>
                         <th className='border border-slate-300 p-3 dark:!text-white hidden md:table-cell'>
-                            <FormattedMessage id='tourTitle' />
+                            <FormattedMessage id='tourId' />
                         </th>
                         <th className='border border-slate-300 p-3 dark:!text-white hidden md:table-cell'>
                             <FormattedMessage id='comment' />

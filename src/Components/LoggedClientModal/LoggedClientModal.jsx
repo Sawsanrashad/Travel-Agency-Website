@@ -42,6 +42,9 @@ export const LoggedClientModal = () => {
                 <Link to={'/profile'} className={`${loggedState.role === 'user' ? "block" : "hidden"}`}>
                     <h2 className='text-black cursor-pointer'>{<FormattedMessage id='myProfile' />}</h2>
                 </Link>
+                <Link to={'/dashboard/home'} className={`${loggedState.role === 'admin' ? "block" : "hidden"}`}>
+                    <h2 className='text-black cursor-pointer'>{<FormattedMessage id='dashboard' />}</h2>
+                </Link>
                 <div className='separator w-full h-[1px] bg-slate-300'></div>
                 <div className='flex gap-3 items-center cursor-pointer text-black' onClick={handleClearStorage}>
                     <p className='!text-black !text-base'>{<FormattedMessage id='logout' />}</p>

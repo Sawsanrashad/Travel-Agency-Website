@@ -68,7 +68,7 @@ export const TourContent = ({ tour }) => {
                     <h5 className='dark:!text-white'>
                         {renderItinerary()}
                     </h5>
-                    <ReviewForm reviews={reviews} setReviews={setReviews} />
+                    <ReviewForm id={id} reviews={reviews} setReviews={setReviews} />
                     <div>
                         <h3 className='text-3xl dark:!text-white'>{<FormattedMessage id='reviews' />}</h3>
                         {reviews.length ?

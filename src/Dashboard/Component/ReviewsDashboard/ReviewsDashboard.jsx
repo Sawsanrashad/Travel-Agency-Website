@@ -13,7 +13,6 @@ export const ReviewsDashboard = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(0);
     const [reviewsPerPage] = useState(4);
-
     useEffect(() => {
         setIsLoading(true);
         axios.get(`http://localhost:3000/reviews`)
@@ -64,9 +63,6 @@ export const ReviewsDashboard = () => {
             },
             {
                 label: 'No',
-                onClick: () => {
-                    // Do nothing if 'No' is clicked
-                }
             }
             ]
         })
@@ -113,51 +109,3 @@ export const ReviewsDashboard = () => {
         </div>
     );
 };
-
-
-// import React, { useEffect, useState } from 'react'
-// // import { ReviewsTableDashboard } from './ReviewsTableDashboard/ReviewsTableDashboard';
-// import axios from 'axios';
-// import { ReviewsTableDashboard } from './ReviewsTableDashboard/ReviewsTableDashboard';
-
-// export const ReviewsDashboard = () => {
-//     const [reviews, setReviews] = useState([]);
-//     const [isLoading, setIsLoading] = useState(false);
-
-//     useEffect(() => {
-//         setIsLoading(true);
-//         axios.get(`http://localhost:3000/reviews`)
-//             .then((response) => {
-//                 setReviews(response.data);
-//             })
-//             .catch((error) => {
-//                 console.error("There was an error fetching the data!", error);
-//             })
-//             .finally(() => {
-//                 setIsLoading(false);
-//             });
-//     }, []);
-
-
-//     let content;
-//     if (isLoading) {
-//         content =
-//             <div className='flex items-center justify-center'>
-//                 <div className="spinner-border text-primary" role="status">
-//                     <span className="visually-hidden">Loading...</span>
-//                 </div>
-//             </div>;
-//     } else if (reviews.length === 0) {
-//         content = <h3 className='text-center h-full dark:text-white'> No Reviews To Show</h3>;
-//     } else {
-//         content =
-//             <div className=''>
-//                 <ReviewsTableDashboard reviews={reviews} />
-//             </div>;
-//         return (
-//             <div>
-//                 {content}
-//             </div>
-//         )
-//     }
-// }
