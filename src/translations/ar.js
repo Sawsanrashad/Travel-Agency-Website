@@ -212,6 +212,17 @@ export const arabic = {
 	confirmNewPassword: "كلمة المرور الجديدة",
 	dashboard: "داشبورد",
 	tourId: "رقم الرحلة",
+	nameIsRequired: "الاسم مطلوب",
+	emailIsRequired: "البريد الإلكتروني مطلوب",
+	dateIsRequired: "التاريخ مطلوب",
+	passwordIsRequired: "كلمة المرور مطلوبة",
+	commentIsRequired: "التعليق مطلوب",
+	messageIsRequired: "الرسالة مطلوبة",
+	subjectIsRequired: "الموضوع مطلوب",
+	phoneIsRequired: "رقم الهاتف مطلوب",
+	ConfirmPasswordShouldMatchThePassword: "يجب أن تتطابق كلمة المرور مع تأكيد كلمة المرور",
+
+
 };
 
 

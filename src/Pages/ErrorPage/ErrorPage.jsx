@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 
 export const ErrorPage = () => {
     let navigate = useNavigate();
-
     const navigateToHome = () => {
         navigate('/');
     }

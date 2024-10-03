@@ -14,12 +14,3 @@ export const PaymentSchema = Yup.object().shape({
         .max(4, 'CVV must be 3 or 4 digits')
         .required('CVV is required'),
 });
-
-
-// import * as Yup from "yup";
-// export const PaymentSchema = Yup.object().shape({
-//     cardNumber: Yup.number().typeError('Please Type Card Number Correctly').required('Card Number is required'),
-//     expDate: Yup.date().required('Expiration Date is required'),
-//     cvv: Yup.number().typeError('Please Type CVV Correctly').required('CVVF is required'),
-
-// });
