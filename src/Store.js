@@ -18,7 +18,10 @@ export const $lang = atom({
 	key: "$lang",
 	default: 'en',
 });
-
+export const $theme = atom({
+	key: "$theme",
+	default: localStorage.getItem("theme") ?? "light",
+});
 export const $editFormState = atom({
 	key: "$editFormState",
 	default: false,
@@ -31,6 +34,10 @@ export const $editBlog = atom({
 	key: "$editBlog",
 	default: false,
 });
+export const $editInfo = atom({
+	key: "$editInfo",
+	default: false,
+});
 export const $addBlog = atom({
 	key: "$addBlog",
 	default: false,
@@ -39,10 +46,7 @@ export const $modal = atom({
 	key: "$modal",
 	default: false,
 });
-export const $theme = atom({
-	key: "$theme",
-	default: localStorage.getItem("theme") ?? "light",
-});
+
 export const $loggedIn = atom({
 	key: "$loggedIn",
 	default: JSON.parse(localStorage.getItem('AuthUser')),
@@ -75,5 +79,9 @@ export const $tours = atom({
 });
 export const $blogs = atom({
 	key: "$blogs",
+	default: [],
+});
+export const $userInfo = atom({
+	key: "$userInfo",
 	default: [],
 });

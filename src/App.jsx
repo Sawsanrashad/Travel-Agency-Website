@@ -9,8 +9,8 @@ import router from './routes/routes'
 import { ToastContainer } from 'react-toastify';
 
 export default function App() {
-  const lang = localStorage.getItem("lang") || "ltr";
   const [langState, setLangState] = useRecoilState($lang);
+  const lang = localStorage.getItem("lang") || "ltr";
   const locale = lang == "ltr" ? "en" : "ar"
   const [theme] = useRecoilState($theme);
 

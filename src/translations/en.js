@@ -219,5 +219,6 @@ We are committed to delivering excellence in customer service and satisfaction.`
 	messageIsRequired: "Message Is Required",
 	subjectIsRequired: "Subject Is Required",
 	phoneIsRequired: "Phone Is Required",
-	ConfirmPasswordShouldMatchThePassword:"Confirm Password Should Match The Password",
+	ConfirmPasswordShouldMatchThePassword: "Confirm Password Should Match The Password",
+	number: "Number",
 };

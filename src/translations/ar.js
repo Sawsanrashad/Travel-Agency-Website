@@ -1,6 +1,6 @@
 export const arabic = {
 	comeTravelWithUs: "سافر معنا حول العالم",
-	exploreTheWorldWithBonVoyage: "اكتشف العالم مع بون فوياج",
+	exploreTheWorldWithBonVoyage: "اكتشف العالم معنا",
 	home: "الرئيسية",
 	about: "عنّا",
 	tours: "الرحلات",
@@ -221,8 +221,7 @@ export const arabic = {
 	subjectIsRequired: "الموضوع مطلوب",
 	phoneIsRequired: "رقم الهاتف مطلوب",
 	ConfirmPasswordShouldMatchThePassword: "يجب أن تتطابق كلمة المرور مع تأكيد كلمة المرور",
-
-
+	number: "رقم الموبايل",
 };
 
 

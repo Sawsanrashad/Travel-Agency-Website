@@ -8,8 +8,6 @@ import { FormattedMessage } from 'react-intl';
 export const BlogsTableDashboard = ({ blogs, deleteBlog }) => {
     const [langState] = useRecoilState($lang);
     const [editBlog, setEditBlog] = useRecoilState($editBlog);
-    console.log(Math.floor(Math.random() * 900000) + 100000);
-
     return (
         <div className='w-[90%] overflow-x-auto'>
             <table className='min-w-full table-auto border-collapse'>

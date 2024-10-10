@@ -7,7 +7,6 @@ import { Error } from '../../../../Components/Error/Error';
 import { Modal } from '../../../../Components/Modal/Modal';
 import axios from 'axios';
 import './EditForm.scss';
-import { EditFormValidationSchema } from './EditFormValidationSchema';
 import { toast } from 'react-toastify';
 
 export const EditForm = () => {

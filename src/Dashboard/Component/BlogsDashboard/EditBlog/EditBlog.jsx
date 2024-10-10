@@ -51,7 +51,7 @@ export const EditBlog = () => {
 
     return (
         <>
-            <Modal show={editBlog} setAddBlog={setEditBlog} size={'md'}>
+            <Modal show={editBlog} setEditBlog={setEditBlog} size={'md'}>
                 <div id='editBlog' className='editBlog my-8'>
                     <Formik
                         initialValues={blogData}
