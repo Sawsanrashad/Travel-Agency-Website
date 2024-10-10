@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { FaPlaneDeparture } from "react-icons/fa6";
 import { useRecoilState } from 'recoil';
 import { $dashboardMenuState, $theme } from '../../../Store';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import './DashboardNavSideMenu.scss';
@@ -43,10 +43,12 @@ export const DashboardNavSideMenu = () => {
             >
                 <div className='flex justify-between'>
                     <div className='flex gap-5 justify-center items-center'>
-                        <p className='m-0 text-white'>BON VOYAGE</p>
-                        <span className='planeIcon text-white'>
-                            <FaPlaneDeparture size={25} />
-                        </span>
+                        <Link to={'/'} className='flex gap-3 cursor-pointer'>
+                            <p className='m-0 text-white'>BON VOYAGE</p>
+                            <span className='planeIcon text-white'>
+                                <FaPlaneDeparture size={25} />
+                            </span>
+                        </Link>
                         <span onClick={handleLang} className='Icon'>
                             <GrLanguage size={20} />
                         </span>

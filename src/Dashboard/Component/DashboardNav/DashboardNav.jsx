@@ -1,7 +1,7 @@
 import React from 'react'
 import './DashboardNav.scss';
 import { FaPlaneDeparture } from "react-icons/fa6";
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaBarsStaggered } from "react-icons/fa6";
 import { FormattedMessage } from 'react-intl';
 import { useRecoilState } from 'recoil';
@@ -34,10 +34,12 @@ export const DashboardNav = () => {
             </div>
             <div id='dashboardNav' className='lg:w-72 bg-cyan-700 rounded-r-md pt-5 hidden lg:flex lg:flex-col gap-5 dark:bg-sky-950 fixed top-0 left-0 min-h-screen'>
                 <div className='flex gap-5 justify-center items-center'>
-                    <p className='m-0 text-white'>BON VOYAGE</p>
-                    <span className='planeIcon text-white'>
-                        <FaPlaneDeparture size={25} />
-                    </span>
+                    <Link to={'/'} className='flex gap-3 cursor-pointer'>
+                        <p className='m-0 text-white'>BON VOYAGE</p>
+                        <span className='planeIcon text-white'>
+                            <FaPlaneDeparture size={25} />
+                        </span>
+                    </Link>
                     <span onClick={handleLang} className='Icon'>
                         <GrLanguage size={20} />
                     </span>
